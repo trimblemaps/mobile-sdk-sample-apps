@@ -26,6 +26,7 @@ public final class MainActivity extends AppCompatActivity {
         public void onExplanationNeeded(List<String> permissionsToExplain) {
         }
 
+        @Override
         public void onPermissionResult(boolean granted) {
             if (granted && PermissionsManager.isAndroidElevenPlus() && !PermissionsManager.areLocationPermissionsGranted(MainActivity.this)) {
                 permissionsManager.requestBackgroundLocationPermissions(MainActivity.this);
@@ -63,7 +64,11 @@ public final class MainActivity extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
         if (PermissionsManager.isAndroidElevenPlus()) {
-            if (permissions.length != 0 && ArraysKt.contains(permissions, "android.permission.ACCESS_BACKGROUND_LOCATION")) {
+            if (ArraysKt.contains(permissions, "android.permission.ACCESS_FINE_LOCATION") &&
+                    !PermissionsManager.areLocationPermissionsGranted(MainActivity.this)) {
+                permissionsManager.requestBackgroundLocationPermissions(MainActivity.this);
+            }
+            else if (ArraysKt.contains(permissions, "android.permission.ACCESS_BACKGROUND_LOCATION")) {
                 this.startActivity(new Intent((Context)this, AllInOneViewActivity.class));
             }
         } else if (permissions.length != 0 && ArraysKt.contains(permissions, "android.permission.ACCESS_FINE_LOCATION")) {

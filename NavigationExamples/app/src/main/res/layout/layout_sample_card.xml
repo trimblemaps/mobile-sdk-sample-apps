@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    style="@style/DemoCard"
+    card_view:cardCornerRadius="4dp">
+
+    <ImageView
+        android:id="@+id/card_template_image"
+        android:scaleType="fitXY"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:background="@color/black"
+        />
+
+    <TextView
+        android:id="@+id/card_template_text"
+        style="@style/CardTitle"
+        />
+
+</androidx.cardview.widget.CardView>

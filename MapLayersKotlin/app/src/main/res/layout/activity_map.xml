@@ -1,0 +1,13 @@
+<FrameLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    tools:ignore="MissingDefaultResource">
+
+    <com.trimblemaps.mapsdk.maps.MapView
+        android:id="@+id/trimblemaps_mapView"
+        android:background="@color/cardview_light_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</FrameLayout>

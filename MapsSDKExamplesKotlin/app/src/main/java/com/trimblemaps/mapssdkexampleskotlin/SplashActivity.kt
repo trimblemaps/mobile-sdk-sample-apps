@@ -8,8 +8,13 @@ import android.os.Bundle
 import android.view.Gravity
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
+import com.trimblemaps.account.LicensedFeature
+import com.trimblemaps.account.TrimbleMapsAccountManager
+import com.trimblemaps.account.models.TrimbleMapsAccount
 import com.trimblemaps.android.core.permissions.PermissionsListener
 import com.trimblemaps.android.core.permissions.PermissionsManager
+import com.trimblemaps.core.EnvironmentCriteria
+import com.trimblemaps.mapsdk.TrimbleMaps
 import kotlinx.coroutines.*
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.Executors
@@ -79,28 +84,51 @@ class SplashActivity : Activity() {
         MainScope().launch {
             withContext(dispatcher) {
 
+                // Authorize the api key for the session.
+                // .apiKey() requires your Trimble Maps API key
+                // It will be placed in /res/values/strings.xml
+                val account = TrimbleMapsAccount.builder()
+                    .apiKey(getString(R.string.API_KEY))
+                    .region(EnvironmentCriteria.Region.WORLDWIDE)
+                    .addLicensedFeature(LicensedFeature.NAVIGATION_SDK)
+                    .addLicensedFeature(LicensedFeature.MAPS_SDK)
+                    .build()
 
-//                launch(Dispatchers.Main) {
-//                    TrimbleMaps.getInstance(applicationContext)
-//                }
+                TrimbleMapsAccountManager.initialize(account)
+                TrimbleMapsAccountManager.awaitInitialization()
 
-                if ((PermissionsManager.isAndroidElevenPlus() && ContextCompat.checkSelfPermission(this@SplashActivity,
-                        Manifest.permission.ACCESS_BACKGROUND_LOCATION
-                    ) == 0)
-                    || ContextCompat.checkSelfPermission(this@SplashActivity, Manifest.permission.ACCESS_FINE_LOCATION) == 0) {
+                if (!TrimbleMapsAccountManager.isLicensedForMaps() || !TrimbleMapsAccountManager.isLicensedForNavigation()) {
+                    launch(Dispatchers.Main) {
+                        showLicensingAlert()
+                    }
+                } else {
+
+                    launch(Dispatchers.Main) {
+                        TrimbleMaps.getInstance(applicationContext)
+                    }
+
+                    if ((PermissionsManager.isAndroidElevenPlus() && ContextCompat.checkSelfPermission(
+                            this@SplashActivity,
+                            Manifest.permission.ACCESS_BACKGROUND_LOCATION
+                        ) == 0)
+                        || ContextCompat.checkSelfPermission(
+                            this@SplashActivity,
+                            Manifest.permission.ACCESS_FINE_LOCATION
+                        ) == 0
+                    ) {
+                        countDownLatch.countDown()
+                    } else {
+                        permissionsManager.listener = permissionsListener
+                        permissionsManager.requestLocationPermissions(this@SplashActivity)
+                    }
+                    delay(750L)
                     countDownLatch.countDown()
-                }
-                else {
-                    permissionsManager.listener = permissionsListener
-                    permissionsManager.requestLocationPermissions(this@SplashActivity)
-                }
-                delay(750L)
-                countDownLatch.countDown()
 
-                countDownLatch.await()
-                launch(Dispatchers.Main) {
-                    startActivity(Intent(this@SplashActivity, MainActivity::class.java))
-                    finish()
+                    countDownLatch.await()
+                    launch(Dispatchers.Main) {
+                        startActivity(Intent(this@SplashActivity, MainActivity::class.java))
+                        finish()
+                    }
                 }
             }
         }

@@ -30,16 +30,6 @@ class SampleRoutingActivity : Activity() {
     private var routePlugin: RoutePlugin? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // Authorize the api key for the session.
-        // .apiKey() requires your Trimble Maps API key
-        val trimbleMapsAccount = TrimbleMapsAccount.builder()
-            .apiKey(getString(R.string.API_KEY))
-            .addLicensedFeature(LicensedFeature.MAPS_SDK)
-            .build()
-
-        // Initialize the session
-        TrimbleMapsAccountManager.initialize(trimbleMapsAccount)
-        TrimbleMapsAccountManager.awaitInitialization()
 
         // Get an instance of the map, done before the layout is set.
         TrimbleMaps.getInstance(this)

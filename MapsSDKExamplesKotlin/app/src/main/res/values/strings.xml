@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Maps SDK Examples Kotlin</string>
+    <string name="API_KEY"></string>
+</resources>

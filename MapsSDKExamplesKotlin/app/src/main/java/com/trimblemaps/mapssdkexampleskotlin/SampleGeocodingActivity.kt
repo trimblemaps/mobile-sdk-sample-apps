@@ -3,13 +3,10 @@ package com.trimblemaps.mapssdkexampleskotlin
 import android.app.Activity
 import android.os.Bundle
 import android.view.View
-import com.trimblemaps.account.LicensedFeature
-import com.trimblemaps.account.TrimbleMapsAccountManager
-import com.trimblemaps.account.models.TrimbleMapsAccount
 import com.trimblemaps.api.geocoding.v1.TrimbleMapsGeocoding
-import com.trimblemaps.api.geocoding.v1.models.Coords
 import com.trimblemaps.api.geocoding.v1.models.GeocodingResponse
 import com.trimblemaps.api.geocoding.v1.models.TrimbleMapsLocation
+import com.trimblemaps.api.models.v1.models.Coords
 import com.trimblemaps.mapsdk.TrimbleMaps
 import com.trimblemaps.mapsdk.camera.CameraPosition
 import com.trimblemaps.mapsdk.camera.CameraUpdateFactory
@@ -72,6 +69,43 @@ class SampleGeocodingActivity : Activity() {
                 // Geocoding failed
             }
         })
+    }
+
+    override fun onStart() {
+        super.onStart()
+        mapView?.onStart()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        mapView?.onResume()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        mapView?.onPause()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        mapView?.onStop()
+    }
+
+    override fun onLowMemory() {
+        super.onLowMemory()
+        mapView?.onLowMemory()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mapView?.onDestroy()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        if (outState != null) {
+            super.onSaveInstanceState(outState)
+            mapView?.onSaveInstanceState(outState)
+        }
     }
 }
 

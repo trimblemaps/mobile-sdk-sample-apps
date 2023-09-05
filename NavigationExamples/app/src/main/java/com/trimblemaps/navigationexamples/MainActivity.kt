@@ -61,10 +61,12 @@ class MainActivity : AppCompatActivity() {
                             .placeName(Constants.DESTINATION)
                             .build().toTripStop()
                         )
-                        routingProfile = Constants.MEDIUM_DUTY_STRAIGHT
-                        language = inferDeviceLocale().language
-                        voiceUnits = inferDeviceLocale().getUnitTypeForLocale()
-                        alternatives = false
+                        options.apply {
+                            routingProfile = Constants.MEDIUM_DUTY_STRAIGHT
+                            language = inferDeviceLocale().language
+                            voiceUnits = inferDeviceLocale().getUnitTypeForLocale()
+                            alternatives = false
+                        }
                     }
                     Constants.MULTI_STOP -> TrimbleMapsTripProvider.create(). apply {
                         addStop(TrimbleMapsLocation.builder()
@@ -107,10 +109,12 @@ class MainActivity : AppCompatActivity() {
                             .placeName("Stop 7")
                             .build().toTripStop()
                         )
-                        routingProfile = Constants.MEDIUM_DUTY_STRAIGHT
-                        language = inferDeviceLocale().language
-                        voiceUnits = inferDeviceLocale().getUnitTypeForLocale()
-                        alternatives = false
+                        options.apply {
+                            routingProfile = Constants.MEDIUM_DUTY_STRAIGHT
+                            language = inferDeviceLocale().language
+                            voiceUnits = inferDeviceLocale().getUnitTypeForLocale()
+                            alternatives = false
+                        }
                     }
                     Constants.HGV -> TrimbleMapsTripProvider.create(). apply {
                         addStop(TrimbleMapsLocation.builder()
@@ -123,10 +127,12 @@ class MainActivity : AppCompatActivity() {
                             .placeName(Constants.DESTINATION)
                             .build().toTripStop()
                         )
-                        routingProfile = Constants.HEAVY_DUTY_STRAIGHT
-                        language = inferDeviceLocale().language
-                        voiceUnits = inferDeviceLocale().getUnitTypeForLocale()
-                        alternatives = false
+                        options.apply {
+                            routingProfile = Constants.HEAVY_DUTY_STRAIGHT
+                            language = inferDeviceLocale().language
+                            voiceUnits = inferDeviceLocale().getUnitTypeForLocale()
+                            alternatives = false
+                        }
                     }
                 }
                 startActivity(Intent(this, ActivityList[position].activityToLaunch))

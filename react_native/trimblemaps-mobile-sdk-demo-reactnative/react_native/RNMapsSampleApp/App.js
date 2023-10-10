@@ -48,11 +48,11 @@ const App = (props) => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen
           name="Home"
           component={TrimbleMapsAccountScreen}
-          options={{ title: "Home" }}
+          options={{ title: "Home", headerShown: true}}
         />
         <Stack.Screen
           name="BasicMap"

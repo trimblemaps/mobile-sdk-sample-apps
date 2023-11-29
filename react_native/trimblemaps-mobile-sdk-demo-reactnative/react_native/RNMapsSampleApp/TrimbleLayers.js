@@ -10,6 +10,7 @@ import {
   findNodeHandle,
   Button,
   Text,
+  Platform,
 } from "react-native";
 
 import { MapViewManager } from "./MapViewManager";
@@ -22,6 +23,7 @@ const StyleConstants = StyleManagerModule?.getConstants();
 
 export const TrimbleLayers = () => {
   const ref = useRef(null);
+  const mapViewTag = 123; // only for ios
 
   const createMapViewFragment = (viewId) =>
     UIManager.dispatchViewManagerCommand(
@@ -63,20 +65,26 @@ export const TrimbleLayers = () => {
     const viewId = findNodeHandle(ref.current);
     console.log(String(viewId));
 
-    const eventEmitter = new NativeEventEmitter();
-    let eventListener = eventEmitter.addListener(
-      "MapViewInitialized",
-      (event) => {
-        drawOnMap(viewId);
-      }
-    );
+    if (Platform.OS === "android") {
+      const eventEmitter = new NativeEventEmitter();
+      let eventListener = eventEmitter.addListener(
+        "MapViewInitialized",
+        (event) => {
+          drawOnMap(viewId);
+        }
+      );
 
-    createMapViewFragment(viewId);
-    return () => {
-      eventListener.remove();
-      StyleManagerModule.removeStyle(String(viewId));
-      MapViewModule.releaseMap();
-    };
+      createMapViewFragment(viewId);
+      return () => {
+        eventListener.remove();
+        StyleManagerModule.removeStyle(String(viewId));
+        MapViewModule.releaseMap();
+      };
+    } else {
+      return () => {
+        MapViewModule.releaseMap();
+      };
+    }
   }, []);
 
   const toggleTraffic = async () => {
@@ -116,9 +124,18 @@ export const TrimbleLayers = () => {
       justifyContent: "space-between",
       alignItems: "center",
       flexDirection: "row",
-      zIndex: 2
+      zIndex: 2,
     },
   });
+
+  const onMapLoaded = async (e) => {
+    await MapViewModule.setMapView(mapViewTag);
+    await CameraPositionModule.latLng(40.7584766, -73.9840227);
+    await CameraPositionModule.target();
+    await CameraPositionModule.altitude(1e7);
+    await CameraPositionModule.build();
+    await MapViewModule.zoomPosition();
+  };
 
   const [buttonsStates, setButtonStates] = useState([
     false,
@@ -163,9 +180,12 @@ export const TrimbleLayers = () => {
             width: PixelRatio.getPixelSizeForLayoutSize(
               Dimensions.get("window").width
             ),
+            flex: 1,
           }}
+          onMapLoaded={onMapLoaded}
           theme={StyleConstants?.MOBILE_DEFAULT}
           ref={ref}
+          tag={mapViewTag}
         />
       </View>
     </View>

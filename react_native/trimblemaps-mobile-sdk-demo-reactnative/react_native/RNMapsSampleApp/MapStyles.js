@@ -23,6 +23,7 @@ const StyleConstants = StyleManagerModule?.getConstants();
 
 export const MapStyles = () => {
   const ref = useRef(null);
+  const mapViewTag = 1234; // map view id for ios
 
   const BUTTONS = [
     { id: 0, label: "MOBILE_DAY", style: StyleConstants?.MOBILE_DAY },
@@ -72,22 +73,26 @@ export const MapStyles = () => {
       return;
     }
     const viewId = findNodeHandle(ref.current);
-    console.log(String(viewId));
+    if (Platform.OS === "android") {
+      const eventEmitter = new NativeEventEmitter();
+      let eventListener = eventEmitter.addListener(
+        "MapViewInitialized",
+        (event) => {
+          drawOnMap(viewId);
+        }
+      );
 
-    const eventEmitter = new NativeEventEmitter();
-    let eventListener = eventEmitter.addListener(
-      "MapViewInitialized",
-      (event) => {
-        drawOnMap(viewId);
-      }
-    );
-
-    createMapViewFragment(viewId);
-    return () => {
-      eventListener.remove();
-      StyleManagerModule.removeStyle(String(viewId));
-      MapViewModule.releaseMap();
-    };
+      createMapViewFragment(viewId);
+      return () => {
+        eventListener.remove();
+        MapViewModule.releaseMap();
+        StyleManagerModule.removeStyle(String(viewId));
+      };
+    } else {
+      return () => {
+        MapViewModule.releaseMap();
+      };
+    }
   }, []);
 
   const loadedRequiredModules = () => {
@@ -99,6 +104,17 @@ export const MapStyles = () => {
       return false;
     }
     return true;
+  };
+
+  const onMapLoaded = async (e) => {
+    // ios on map loaded callback
+    let tag = e.nativeEvent.tag;
+    await MapViewModule.setMapView(tag);
+    await CameraPositionModule.latLng(40.7584766, -73.9840227);
+    await CameraPositionModule.target();
+    await CameraPositionModule.altitude(1e4);
+    await CameraPositionModule.build();
+    await MapViewModule.zoomPosition();
   };
 
   const styles = StyleSheet.create({
@@ -130,13 +146,30 @@ export const MapStyles = () => {
       fontSize: 12,
       fontWeight: "500",
     },
+    androidStyle: {
+      // converts dpi to px, provide desired height
+      height: PixelRatio.getPixelSizeForLayoutSize(
+        Dimensions.get("window").height
+      ),
+      // converts dpi to px, provide desired width
+      width: PixelRatio.getPixelSizeForLayoutSize(
+        Dimensions.get("window").width
+      ),
+    },
+    iOSStyle: {
+      flex: 1,
+    },
   });
 
   const switchStyles = async (buttonId, buttonStyle) => {
     setHighlightedButtonId(buttonId);
-    MapViewModule.getMapAsync(() => {
+    if (Platform.OS === "android") {
+      MapViewModule.getMapAsync(() => {
+        MapViewModule.setStyle(buttonStyle);
+      });
+    } else {
       MapViewModule.setStyle(buttonStyle);
-    });
+    }
   };
 
   const errorView = <Text>Missing required modules</Text>;
@@ -144,18 +177,13 @@ export const MapStyles = () => {
     <View style={styles.container}>
       <View style={styles.container}>
         <MapViewManager
-          style={{
-            // converts dpi to px, provide desired height
-            height: PixelRatio.getPixelSizeForLayoutSize(
-              Dimensions.get("window").height
-            ),
-            // converts dpi to px, provide desired width
-            width: PixelRatio.getPixelSizeForLayoutSize(
-              Dimensions.get("window").width
-            ),
-          }}
+          onMapLoaded={onMapLoaded}
+          style={
+            Platform.OS === "android" ? styles.androidstyle : styles.iOSStyle
+          }
           theme={StyleConstants?.MOBILE_DAY}
           ref={ref}
+          tag={mapViewTag}
         />
         <View style={styles.buttonContainer}>
           {BUTTONS.map((button) => (

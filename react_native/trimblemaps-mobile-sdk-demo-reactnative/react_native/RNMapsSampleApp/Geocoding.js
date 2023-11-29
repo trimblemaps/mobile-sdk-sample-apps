@@ -9,10 +9,14 @@ import {
   Dimensions,
   StyleSheet,
   Text,
+  Platform
 } from "react-native";
 import { GeocodingViewManager } from "./GeocodingViewManager";
+import { MapViewManager } from "./MapViewManager";
 
 const StyleManagerModule = NativeModules.StyleManagerModule;
+const CameraPositionModule = NativeModules.CameraPositionModule;
+const MapViewModule = NativeModules.MapViewModule;
 const TrimbleMapsGeocodingViewModule =
   NativeModules.TrimbleMapsGeocodingViewModule;
 const TrimbleMapsGeocodingModule = NativeModules.TrimbleMapsGeocodingModule;
@@ -21,6 +25,9 @@ const StyleConstants = StyleManagerModule?.getConstants();
 
 export const Geocoding = () => {
   const ref = useRef(null);
+  const iosMapViewTag = 123;
+  const searchTerm = "1 Independence Way Princeton NJ 08540";
+  const eventEmitter = new NativeEventEmitter(TrimbleMapsGeocodingModule);
 
   const createGeocodingViewFragment = (viewId) =>
     UIManager.dispatchViewManagerCommand(
@@ -45,30 +52,67 @@ export const Geocoding = () => {
       return;
     }
     const viewId = findNodeHandle(ref.current);
-    console.log("Geocoding viewId: " + String(viewId));
 
-    const eventEmitter = new NativeEventEmitter();
-    let eventListener = eventEmitter.addListener(
-      "TrimbleMapsGeocodingViewInitialized",
-      (event) => {
-        drawOnMap(viewId);
-      }
-    );
+    if (Platform.OS === "android") {
+      const eventEmitter = new NativeEventEmitter();
+      let eventListener = eventEmitter.addListener(
+        "TrimbleMapsGeocodingViewInitialized",
+        (event) => {
+          drawOnMap(viewId);
+        }
+      );
 
-    createGeocodingViewFragment(viewId);
-    return () => {
-      eventListener.remove();
-      StyleManagerModule.removeStyle(String(viewId));
-      TrimbleMapsGeocodingViewModule.releaseMap();
-    };
+      createGeocodingViewFragment(viewId);
+      return () => {
+        eventListener.remove();
+        StyleManagerModule.removeStyle(String(viewId));
+        TrimbleMapsGeocodingViewModule.releaseMap();
+      };
+    } else {
+      let eventListener = eventEmitter.addListener(
+        "GeocodeResponseEvent",
+        async (event) => {
+          if (event.locations.length > 0) {
+            let location = JSON.parse(event.locations[0]);
+            await CameraPositionModule.latLng(
+              parseFloat(location.Coords.Lat),
+              parseFloat(location.Coords.Lon)
+            );
+            await CameraPositionModule.target();
+            await CameraPositionModule.altitude(1e4);
+            await CameraPositionModule.build();
+            await MapViewModule.setMapView(iosMapViewTag);
+            await MapViewModule.zoomPosition();
+          }
+        }
+      );
+
+      return () => {
+        eventListener.remove();
+      };
+    }
   }, []);
 
   const loadedRequiredModules = () => {
+    return Platform.OS === "android" ? loadedAndroidModules() : loadedIOSModules();
+  };
+
+  const loadedAndroidModules = () => {
     if (
       StyleManagerModule == null ||
       TrimbleMapsGeocodingViewModule == null ||
       TrimbleMapsGeocodingModule == null
     ) {
+      return false;
+    }
+    return true;
+  };
+
+  const loadedIOSModules = () => {
+    if (StyleManagerModule == null ||
+      TrimbleMapsGeocodingModule == null ||
+      CameraPositionModule == null ||
+      MapViewModule == null) {
       return false;
     }
     return true;
@@ -85,8 +129,24 @@ export const Geocoding = () => {
     await TrimbleMapsGeocodingModule.addGeocoding(viewId, zoom);
   };
 
+  const onMapLoaded = async (e) => {
+    await TrimbleMapsGeocodingModule.createGeocodingBuilder(searchTerm);
+    await TrimbleMapsGeocodingModule.singleSearch();
+  };
+
   const styles = StyleSheet.create({
     container: {
+      flex: 1,
+    },
+    androidStyle: {
+      height: PixelRatio.getPixelSizeForLayoutSize(
+        Dimensions.get("window").height
+      ),
+      width: PixelRatio.getPixelSizeForLayoutSize(
+        Dimensions.get("window").width
+      ),
+    },
+    iosStyle: {
       flex: 1,
     },
   });
@@ -95,18 +155,20 @@ export const Geocoding = () => {
   const defaultView = (
     <View style={styles.container}>
       <View style={styles.container}>
-        <GeocodingViewManager
-          style={{
-            height: PixelRatio.getPixelSizeForLayoutSize(
-              Dimensions.get("window").height
-            ),
-            width: PixelRatio.getPixelSizeForLayoutSize(
-              Dimensions.get("window").width
-            ),
-          }}
-          theme={StyleConstants?.MOBILE_DAY}
-          ref={ref}
-        />
+        {Platform.OS === "android" ? (
+          <GeocodingViewManager
+            style={styles.androidStyle}
+            theme={StyleConstants?.MOBILE_DAY}
+            ref={ref}
+          />
+        ) : (
+          <MapViewManager
+            style={styles.iosStyle}
+            ref={ref}
+            onMapLoaded={onMapLoaded}
+            tag={iosMapViewTag}
+          />
+        )}
       </View>
     </View>
   );

@@ -4,6 +4,7 @@ import {
   NativeModules,
   NativeEventEmitter,
   PixelRatio,
+  Platform,
   StyleSheet,
   UIManager,
   View,
@@ -12,15 +13,21 @@ import {
 } from "react-native";
 
 import { RouteViewManager } from "./RouteViewManager";
+import { MapViewManager } from "./MapViewManager";
 
 const StyleManagerModule = NativeModules.StyleManagerModule;
 const RouteViewModule = NativeModules.RouteViewModule;
 const DirectionsModule = NativeModules.DirectionsModule;
+const RoutingModule = NativeModules.RoutingModule;
+const RoutePluginModule = NativeModules.RoutePluginModule;
+const CameraPositionModule = NativeModules.CameraPositionModule;
+const MapViewModule = NativeModules.MapViewModule;
 
 const StyleConstants = StyleManagerModule?.getConstants();
 
 export const SimpleRoute = () => {
   const ref = useRef(null);
+  const iosMapViewTag = 123;
 
   const createRouteViewFragment = (viewId) =>
     UIManager.dispatchViewManagerCommand(
@@ -45,25 +52,58 @@ export const SimpleRoute = () => {
       return;
     }
     const viewId = findNodeHandle(ref.current);
-    console.log(String(viewId));
 
-    const eventEmitter = new NativeEventEmitter();
-    let eventListener = eventEmitter.addListener(
-      "RouteViewInitialized",
-      (event) => {
-        drawOnMap(viewId);
-      }
-    );
+    if (Platform.OS === "android") {
+      const eventEmitter = new NativeEventEmitter();
+      let eventListener = eventEmitter.addListener(
+        "RouteViewInitialized",
+        (event) => {
+          drawOnMap(viewId);
+        }
+      );
 
-    createRouteViewFragment(viewId);
-    return () => {
-      eventListener.remove();
-      StyleManagerModule.removeStyle(String(viewId));
-      RouteViewModule.releaseMap();
-    };
+      createRouteViewFragment(viewId);
+      return () => {
+        eventListener.remove();
+        StyleManagerModule.removeStyle(String(viewId));
+        RouteViewModule.releaseMap();
+      };
+    } else {
+      const eventEmitter = new NativeEventEmitter(RoutePluginModule);
+      let eventListener = eventEmitter.addListener(
+        "RoutePluginInit",
+        async (e) => {
+          console.log(e);
+          if (e.status === "success") {
+            await RoutePluginModule.addRoute("route");
+            await MapViewModule.setMapView(iosMapViewTag);
+
+            await CameraPositionModule.latLng(
+              40.361202627269634,
+              -74.59977385874882
+            );
+            await CameraPositionModule.target();
+            await CameraPositionModule.altitude(1e5);
+            await CameraPositionModule.build();
+            await MapViewModule.zoomPosition();
+          } else {
+            console.log("failed");
+          }
+        }
+      );
+      return () => {
+        eventListener.remove();
+      };
+    }
   }, []);
 
   const loadedRequiredModules = () => {
+    return Platform.OS === "android"
+      ? loadedAndroidModules()
+      : loadedIOSModules();
+  };
+
+  const loadedAndroidModules = () => {
     if (
       StyleManagerModule == null ||
       RouteViewModule == null ||
@@ -72,6 +112,15 @@ export const SimpleRoute = () => {
       return false;
     }
     return true;
+  };
+
+  const loadedIOSModules = () => {
+    return !(
+      StyleManagerModule == null ||
+      RoutePluginModule == null ||
+      CameraPositionModule == null ||
+      MapViewModule == null
+    );
   };
 
   const routeCallback = async (result) => {
@@ -93,31 +142,53 @@ export const SimpleRoute = () => {
     await RouteViewModule.frameRoute();
   };
 
+  const onMapStyleLoaded = async (e) => {
+    await RoutingModule.initializeRouteOptions([
+      [40.361202627269634, -74.59977385874882],
+      [40.23296852563686, -74.77334837439244],
+    ]);
+    await RoutePluginModule.initializeRoutePlugin(iosMapViewTag);
+    await RoutePluginModule.setColor("#FF00FF");
+  };
+
   const styles = StyleSheet.create({
     container: {
+      flex: 1,
+    },
+    androidStyle: {
+      // converts dpi to px, provide desired height
+      height: PixelRatio.getPixelSizeForLayoutSize(
+        Dimensions.get("window").height
+      ),
+      // converts dpi to px, provide desired width
+      width: PixelRatio.getPixelSizeForLayoutSize(
+        Dimensions.get("window").width
+      ),
+    },
+    iOSStyle: {
       flex: 1,
     },
   });
 
   const errorView = <Text>Missing required modules</Text>;
+  const mapView =
+    Platform.OS === "android" ? (
+      <RouteViewManager
+        style={styles.androidStyle}
+        theme={StyleConstants?.MOBILE_DEFAULT}
+        ref={ref}
+      />
+    ) : (
+      <MapViewManager
+        style={styles.iOSStyle}
+        ref={ref}
+        tag={iosMapViewTag}
+        onMapLoaded={onMapStyleLoaded}
+      />
+    );
   const defaultView = (
     <View style={styles.container}>
-      <View style={styles.container}>
-        <RouteViewManager
-          style={{
-            // converts dpi to px, provide desired height
-            height: PixelRatio.getPixelSizeForLayoutSize(
-              Dimensions.get("window").height
-            ),
-            // converts dpi to px, provide desired width
-            width: PixelRatio.getPixelSizeForLayoutSize(
-              Dimensions.get("window").width
-            ),
-          }}
-          theme={StyleConstants?.MOBILE_DEFAULT}
-          ref={ref}
-        />
-      </View>
+      <View style={styles.container}>{mapView}</View>
     </View>
   );
 

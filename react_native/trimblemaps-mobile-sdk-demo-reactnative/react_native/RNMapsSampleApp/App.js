@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { PermissionsAndroid } from "react-native";
+import { PermissionsAndroid, Platform } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import SplashScreen from "react-native-splash-screen";
@@ -19,7 +19,9 @@ const App = (props) => {
   const [locationPermission, setLocationPermission] = useState("");
 
   useEffect(() => {
-    checkLocationPermission();
+    if (Platform.OS === "android") {
+      checkLocationPermission();
+    }
     SplashScreen.hide();
   }, []);
 
@@ -48,7 +50,7 @@ const App = (props) => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Navigator screenOptions={{headerShown: Platform.OS !== "android"}}>
         <Stack.Screen
           name="Home"
           component={TrimbleMapsAccountScreen}

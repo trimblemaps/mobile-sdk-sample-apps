@@ -1,177 +1,79 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import {
   View,
   NativeModules,
-  UIManager,
-  findNodeHandle,
-  NativeEventEmitter,
-  PixelRatio,
-  Dimensions,
   StyleSheet,
-  Text,
-  Platform
+  Platform,
 } from "react-native";
-import { GeocodingViewManager } from "./GeocodingViewManager";
-import { MapViewManager } from "./MapViewManager";
 
-const StyleManagerModule = NativeModules.StyleManagerModule;
-const CameraPositionModule = NativeModules.CameraPositionModule;
-const MapViewModule = NativeModules.MapViewModule;
-const TrimbleMapsGeocodingViewModule =
-  NativeModules.TrimbleMapsGeocodingViewModule;
-const TrimbleMapsGeocodingModule = NativeModules.TrimbleMapsGeocodingModule;
+import { TrimbleMapsMap } from "./TrimbleMapsMapViewManager";
 
-const StyleConstants = StyleManagerModule?.getConstants();
+const TrimbleMapsMapView = NativeModules.TrimbleMapsMapViewModule;
+const TrimbleMapsGeocoding = NativeModules.TrimbleMapsGeocoding;
+const TrimbleMapsMapViewConstants = TrimbleMapsMapView.getConstants();
 
 export const Geocoding = () => {
-  const ref = useRef(null);
-  const iosMapViewTag = 123;
+  const [mapLoaded, setMapLoaded] = useState(false);
   const searchTerm = "1 Independence Way Princeton NJ 08540";
-  const eventEmitter = new NativeEventEmitter(TrimbleMapsGeocodingModule);
-
-  const createGeocodingViewFragment = (viewId) =>
-    UIManager.dispatchViewManagerCommand(
-      viewId,
-      UIManager.TrimbleMapsGeocodingViewManager.Commands.create.toString(),
-      [viewId]
-    );
-
-  const drawOnMap = async (viewId) => {
-    await TrimbleMapsGeocodingViewModule.setGeocodingView(String(viewId));
-    TrimbleMapsGeocodingViewModule.getMapAsync(() => {
-      TrimbleMapsGeocodingViewModule.setStyleWithCallback(
-        StyleConstants.MOBILE_DAY,
-        async (geocodingViewFragmentTag) => {}
-      );
-    });
-    geocoding();
-  };
 
   useEffect(() => {
-    if (!loadedRequiredModules()) {
-      return;
+    const geocodeCallback = (error, results) => {
+      if (error) {
+        console.log(error);
+      } else {
+        const firstResult = JSON.parse(results[0]);
+        console.log(results[0]);
+        const lat = parseFloat(firstResult.Coords.Lat);
+        const lon = parseFloat(firstResult.Coords.Lon);
+        moveCameraAndZoom(lat, lon, 13);
+      }
+    };
+
+    if (Platform.OS === "ios" && mapLoaded) {
+      TrimbleMapsGeocoding.createGeocodingParams(searchTerm);
+      TrimbleMapsGeocoding.geocode(geocodeCallback);
+    } else if (Platform.OS === "android") {
+      TrimbleMapsGeocoding.createGeocodingBuilder();
+      TrimbleMapsGeocoding.query(searchTerm);
+      TrimbleMapsGeocoding.buildGeocoding();
+      TrimbleMapsGeocoding.geocode(geocodeCallback);
     }
-    const viewId = findNodeHandle(ref.current);
+  }, [mapLoaded]);
 
-    if (Platform.OS === "android") {
-      const eventEmitter = new NativeEventEmitter();
-      let eventListener = eventEmitter.addListener(
-        "TrimbleMapsGeocodingViewInitialized",
-        (event) => {
-          drawOnMap(viewId);
-        }
-      );
-
-      createGeocodingViewFragment(viewId);
-      return () => {
-        eventListener.remove();
-        StyleManagerModule.removeStyle(String(viewId));
-        TrimbleMapsGeocodingViewModule.releaseMap();
-      };
+  const moveCameraAndZoom = async (lat, lon, zoom) => {
+    if (Platform.OS === "ios") {
+      await TrimbleMapsMapView.setCenterCoordinateAndZoom(lat, lon, zoom, true);
     } else {
-      let eventListener = eventEmitter.addListener(
-        "GeocodeResponseEvent",
-        async (event) => {
-          if (event.locations.length > 0) {
-            let location = JSON.parse(event.locations[0]);
-            await CameraPositionModule.latLng(
-              parseFloat(location.Coords.Lat),
-              parseFloat(location.Coords.Lon)
-            );
-            await CameraPositionModule.target();
-            await CameraPositionModule.altitude(1e4);
-            await CameraPositionModule.build();
-            await MapViewModule.setMapView(iosMapViewTag);
-            await MapViewModule.zoomPosition();
-          }
-        }
-      );
-
-      return () => {
-        eventListener.remove();
-      };
+      TrimbleMapsMapView.setZoom(13.0);
+      TrimbleMapsMapView.setTarget(lat, lon);
+      TrimbleMapsMapView.buildCameraPosition();
+      TrimbleMapsMapView.animateCamera();
     }
-  }, []);
-
-  const loadedRequiredModules = () => {
-    return Platform.OS === "android" ? loadedAndroidModules() : loadedIOSModules();
   };
 
-  const loadedAndroidModules = () => {
-    if (
-      StyleManagerModule == null ||
-      TrimbleMapsGeocodingViewModule == null ||
-      TrimbleMapsGeocodingModule == null
-    ) {
-      return false;
-    }
-    return true;
-  };
-
-  const loadedIOSModules = () => {
-    if (StyleManagerModule == null ||
-      TrimbleMapsGeocodingModule == null ||
-      CameraPositionModule == null ||
-      MapViewModule == null) {
-      return false;
-    }
-    return true;
-  };
-
-  const geocoding = async () => {
-    await TrimbleMapsGeocodingModule.createGeocodingBuilder();
-    await TrimbleMapsGeocodingModule.query(
-      "1 Independence Way Princeton NJ 08540"
-    );
-    await TrimbleMapsGeocodingModule.build();
-    viewId = findNodeHandle(ref.current);
-    zoom = 13.0;
-    await TrimbleMapsGeocodingModule.addGeocoding(viewId, zoom);
-  };
-
-  const onMapLoaded = async (e) => {
-    await TrimbleMapsGeocodingModule.createGeocodingBuilder(searchTerm);
-    await TrimbleMapsGeocodingModule.singleSearch();
+  const onMapLoaded = (e) => {
+    console.log("map loaded");
+    setMapLoaded(true);
   };
 
   const styles = StyleSheet.create({
     container: {
       flex: 1,
     },
-    androidStyle: {
-      height: PixelRatio.getPixelSizeForLayoutSize(
-        Dimensions.get("window").height
-      ),
-      width: PixelRatio.getPixelSizeForLayoutSize(
-        Dimensions.get("window").width
-      ),
-    },
-    iosStyle: {
+    mapStyle: {
       flex: 1,
     },
   });
 
-  const errorView = <Text>Missing required modules</Text>;
-  const defaultView = (
+  return (
     <View style={styles.container}>
       <View style={styles.container}>
-        {Platform.OS === "android" ? (
-          <GeocodingViewManager
-            style={styles.androidStyle}
-            theme={StyleConstants?.MOBILE_DAY}
-            ref={ref}
-          />
-        ) : (
-          <MapViewManager
-            style={styles.iosStyle}
-            ref={ref}
-            onMapLoaded={onMapLoaded}
-            tag={iosMapViewTag}
-          />
-        )}
+        <TrimbleMapsMap
+          style={styles.mapStyle}
+          styleURL={TrimbleMapsMapViewConstants.MOBILE_DAY}
+          onMapLoaded={onMapLoaded}
+        />
       </View>
     </View>
   );
-
-  return loadedRequiredModules() ? defaultView : errorView;
 };

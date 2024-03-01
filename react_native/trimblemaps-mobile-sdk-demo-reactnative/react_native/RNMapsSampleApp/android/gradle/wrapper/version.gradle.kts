@@ -52,28 +52,35 @@ inline fun <T> assertEquals(expected: T, actual: T, message: String? = null) {
 extra.apply {
     var gitDescribe = "git describe --first-parent @".runCommand()
 
-    // We want to find the lastest instance of  master or release so we know what branch we're on
-    val gitLog = "git --no-pager log -n 10 --pretty=%D HEAD".runCommand()
-        .lines()
-        .mapNotNull { it.findAnyOf(listOf("origin/master", "origin/release/"))?.second }
-        .first()
+    set("versionName", "")
+    set("versionCode", "")
 
-    val versionName = getVersion(gitDescribe, gitLog)
-    version = versionName
-    set("versionName", versionName)
+    try {
+        // We want to find the lastest instance of  master or release so we know what branch we're on
+        val gitLog = "git --no-pager log -n 50 --pretty=%D HEAD".runCommand()
+            .lines()
+            .mapNotNull { it.findAnyOf(listOf("origin/master", "origin/release/"))?.second }
+            .first()
 
-    val regex = """^(\d*)\.(\d*)\.?(\d*)(?:-?(\d*))?""".toRegex()
-    val matchResult = regex.find(versionName)
-    val (major, minor, patch, buildNumber) = matchResult!!.destructured
+        val versionName = getVersion(gitDescribe, gitLog)
+        version = versionName
+        set("versionName", versionName)
 
-    //Maximum 2100000000
-    //         ^^ major
-    //           ^^ minor
-    //             ^^ patch
-    //               ^^^ buildnumber
+        val regex = """^(\d*)\.(\d*)\.?(\d*)(?:-?(\d*))?""".toRegex()
+        val matchResult = regex.find(versionName)
+        val (major, minor, patch, buildNumber) = matchResult!!.destructured
 
-    val versionCode = "%1$2s%2$2s%3$2s%4$3s".format(major, minor, patch, buildNumber).replace(" ", "0").toInt()
-    set("versionCode", versionCode)
+        //Maximum 2100000000
+        //         ^^ major
+        //           ^^ minor
+        //             ^^ patch
+        //               ^^^ buildnumber
+
+        val versionCode = "%1$2s%2$2s%3$2s%4$3s".format(major, minor, patch, buildNumber).replace(" ", "0").toInt()
+        set("versionCode", versionCode)
+    } catch (e: NoSuchElementException) {
+        throw NoSuchElementException("Current branch is behind master, please rebase off master then gradle sync")
+    }
 }
 
 task("printVersion") {

@@ -1,195 +1,96 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import {
+  Alert,
   View,
   NativeModules,
-  UIManager,
-  findNodeHandle,
   NativeEventEmitter,
-  PixelRatio,
   Platform,
-  Dimensions,
   StyleSheet,
   ToastAndroid,
-  Text,
-  Alert,
 } from "react-native";
-import { GeocodingViewManager } from "./GeocodingViewManager";
-import { MapViewManager } from "./MapViewManager";
+import { TrimbleMapsMap } from "./TrimbleMapsMapViewManager";
 
-const StyleManagerModule = NativeModules.StyleManagerModule;
-const TrimbleMapsGeocodingViewModule =
-  NativeModules.TrimbleMapsGeocodingViewModule;
-const TrimbleMapsGeocodingModule = NativeModules.TrimbleMapsGeocodingModule;
-
-const StyleConstants = StyleManagerModule?.getConstants();
+const TrimbleMapsMapView = NativeModules.TrimbleMapsMapViewModule;
+const TrimbleMapsGeocoding = NativeModules.TrimbleMapsGeocoding;
+const TrimbleMapsMapViewConstants = TrimbleMapsMapView.getConstants();
 
 export const ReverseGeocoding = () => {
-  const ref = useRef(null);
-  const iosMapViewTag = 123;
-
-  const createGeocodingViewFragment = (viewId) =>
-    UIManager.dispatchViewManagerCommand(
-      viewId,
-      UIManager.TrimbleMapsGeocodingViewManager.Commands.create.toString(),
-      [viewId]
-    );
-
-  const reverseGeocoding = (viewId) =>
-    UIManager.dispatchViewManagerCommand(
-      viewId,
-      UIManager.TrimbleMapsGeocodingViewManager.Commands.reverse_geocoding.toString(),
-      [viewId]
-    );
-
-  const drawOnMap = async (viewId) => {
-    await TrimbleMapsGeocodingViewModule.setGeocodingView(String(viewId));
-    TrimbleMapsGeocodingViewModule.getMapAsync(() => {
-      TrimbleMapsGeocodingViewModule.setStyleWithCallback(
-        StyleConstants?.MOBILE_DAY,
-        async (geocodingViewFragmentTag) => {}
-      );
-
-      TrimbleMapsGeocodingViewModule.addOnMapClickListener();
-    });
-  };
-
-  const loadedAndroidModules = () => {
-    if (
-      StyleManagerModule == null ||
-      TrimbleMapsGeocodingModule == null ||
-      TrimbleMapsGeocodingViewModule == null
-    ) {
-      return false;
-    }
-    return true;
-  };
-
-  const loadedIOSModules = () => {
-    if (StyleManagerModule === null || TrimbleMapsGeocodingModule == null) {
-      return false;
-    }
-    return true;
-  };
-
-  const loadedRequiredModules = () => {
-    return Platform.OS === "android" ? loadedAndroidModules() : loadedIOSModules();
-  };
+  const [mapLoaded, setMapLoaded] = useState(false);
 
   useEffect(() => {
-    if (!loadedRequiredModules()) {
-      return;
-    }
-    const viewId = findNodeHandle(ref.current);
-    console.log("Geocoding viewId: " + String(viewId));
+    const reverseTrimbleMapsGeocoding = async (event) => {
+      if (Platform.OS === "android") {
+        TrimbleMapsGeocoding.createGeocodingBuilder();
+        TrimbleMapsGeocoding.queryLatLng(event.getLatitude, event.getLongitude);
+        TrimbleMapsGeocoding.buildGeocoding();
+        TrimbleMapsGeocoding.geocode(geocodeCallback);
+      } else if (Platform.OS === "ios") {
+        await TrimbleMapsGeocoding.createGeocodingParams(
+          `${event.getLatitude}, ${event.getLongitude}`
+        );
+        await TrimbleMapsGeocoding.geocode(geocodeCallback);
+      }
+    };
 
-    if (Platform.OS === "android") {
-      const eventEmitter = new NativeEventEmitter();
-      let eventListener = eventEmitter.addListener(
-        "TrimbleMapsGeocodingViewInitialized",
-        (event) => {
-          drawOnMap(viewId);
-        }
-      );
-
-      let onMapClickListener = eventEmitter.addListener("onMapClick", (event) => {
-        TrimbleMapsGeocodingModule.createGeocodingBuilder();
-        TrimbleMapsGeocodingModule.queryLatLng(event.lat, event.lng);
-        TrimbleMapsGeocodingModule.build();
-        reverseGeocoding(viewId);
-      });
-
-      let onResponseSuccessListener = eventEmitter.addListener(
-        "onResponseSuccess",
-        (event) => {
-          ToastAndroid.show(event.address, ToastAndroid.SHORT);
-        }
-      );
-
-      let onResponseFailureListener = eventEmitter.addListener(
-        "onResponseFailure",
-        (event) => {
-          ToastAndroid.show(event.error, ToastAndroid.SHORT);
-        }
-      );
-
-      createGeocodingViewFragment(viewId);
-      return () => {
-        eventListener.remove();
-        onMapClickListener.remove();
-        onResponseSuccessListener.remove();
-        onResponseFailureListener.remove();
-        StyleManagerModule.removeStyle(String(viewId));
-        TrimbleMapsGeocodingViewModule.releaseMap();
-      };
-    } else {
-      const eventEmitter = new NativeEventEmitter(TrimbleMapsGeocodingModule);
-      let eventListener = eventEmitter.addListener(
-        "GeocodeResponseEvent",
-        async (event) => {
-          if (event.locations.length > 0) {
-            let location = JSON.parse(event.locations[0]);
-            Alert.alert(location.ShortString);
-          }
-        }
-      );
-
-      return () => {
-        eventListener.remove();
-      };
-    }
-  }, []);
-
-  const onMapLoaded = async (e) => {
-    UIManager.dispatchViewManagerCommand(
-      findNodeHandle(ref.current),
-      UIManager.getViewManagerConfig("MapView").Commands.addTapGesture,
-      []
+    const eventEmitter = new NativeEventEmitter(TrimbleMapsMapView);
+    let onMapClickListener = eventEmitter.addListener(
+      "onMapClick",
+      reverseTrimbleMapsGeocoding
     );
+
+    TrimbleMapsMapView.addOnMapClickListener();
+
+    return () => {
+      onMapClickListener.remove();
+    };
+  }, [mapLoaded]);
+
+  const geocodeCallback = (error, results) => {
+    if (error) {
+      console.log(error);
+    } else {
+      var resultStr = "No Results";
+      if (results.length > 0) {
+        const firstResult = JSON.parse(results[0]);
+        resultStr = firstResult.ShortString;
+      }
+      if (Platform.OS === "android") {
+        ToastAndroid.show(resultStr, ToastAndroid.SHORT);
+      }
+      if (Platform.OS === "ios") {
+        Alert.alert(resultStr);
+      }
+    }
+  };
+
+  const onMapLoaded = (e) => {
+    setMapLoaded(true);
   };
 
   const onTapGesture = async (e) => {
-    await TrimbleMapsGeocodingModule.createGeocodingBuilder(`${e.nativeEvent.latitude}, ${e.nativeEvent.longitude}`);
-    await TrimbleMapsGeocodingModule.singleSearch();
+    // another way you can specify tap call back for iOS
+    console.log("Tap Gesture callback");
   };
 
   const styles = StyleSheet.create({
     container: {
       flex: 1,
     },
-    androidStyle: {
-      height: PixelRatio.getPixelSizeForLayoutSize(
-        Dimensions.get("window").height
-      ),
-      width: PixelRatio.getPixelSizeForLayoutSize(
-        Dimensions.get("window").width
-      ),
-    },
-    iosStyle: {
+    mapStyle: {
       flex: 1,
     },
   });
 
-  const errorView = <Text>Missing required modules</Text>;
-  const defaultView = (
+  return (
     <View style={styles.container}>
       <View style={styles.container}>
-        {Platform.OS === "android" ? (
-          <GeocodingViewManager
-            style={styles.androidStyle}
-            theme={StyleConstants?.MOBILE_DAY}
-            ref={ref}
-          />
-        ) : (
-          <MapViewManager
-            style={styles.iosStyle}
-            ref={ref}
-            onMapLoaded={onMapLoaded}
-            onTapGesture={onTapGesture}
-            tag={iosMapViewTag}
-          />
-        )}
+        <TrimbleMapsMap
+          style={styles.mapStyle}
+          styleURL={TrimbleMapsMapViewConstants.MOBILE_DAY}
+          onMapLoaded={onMapLoaded}
+          onTapGesture={onTapGesture}
+        />
       </View>
     </View>
   );
-  return loadedRequiredModules() ? defaultView : errorView;
 };

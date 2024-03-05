@@ -1,170 +1,122 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import {
-  Dimensions,
   NativeModules,
   NativeEventEmitter,
-  PixelRatio,
   StyleSheet,
-  UIManager,
   View,
-  findNodeHandle,
   Button,
-  Text,
   Platform,
 } from "react-native";
 
-import { MapViewManager } from "./MapViewManager";
+import { TrimbleMapsMap } from "./TrimbleMapsMapViewManager";
 
-const CameraPositionModule = NativeModules.CameraPositionModule;
-const LocationComponentModule = NativeModules.LocationComponentModule;
-const LocationEngineModule = NativeModules.LocationEngineModule;
-const LocationEngineRequestModule = NativeModules.LocationEngineRequestModule;
-const MapViewModule = NativeModules.MapViewModule;
-const StyleManagerModule = NativeModules.StyleManagerModule;
+const TrimbleMapsLocationEngine = NativeModules.TrimbleMapsLocationEngineModule;
+const TrimbleMapsLocationEngineConstants = TrimbleMapsLocationEngine?.getConstants();
 
-const MapViewConstants = MapViewModule?.getConstants();
-const StyleConstants = StyleManagerModule?.getConstants();
-const LocationEngineRequestConstants =
-  LocationEngineRequestModule?.getConstants();
-const LocationComponentConstants = LocationComponentModule?.getConstants();
+const TrimbleMapsMapView = NativeModules.TrimbleMapsMapViewModule;
+const TrimbleMapsMapViewConstants = TrimbleMapsMapView.getConstants();
 
 export const TrackingFollowMe = () => {
-  const ref = useRef(null);
-  const mapViewTag = 123; // only for ios
-  var lat = 0;
-  var lon = 0;
+  const [mapLoaded, setMapLoaded] = useState(false);
 
-  const createMapViewFragment = (viewId) =>
-    UIManager.dispatchViewManagerCommand(
-      viewId,
-      UIManager.MapViewManager.Commands.create.toString(),
-      [viewId]
-    );
+  useEffect(() => {
+    if (mapLoaded) {
+      if (Platform.OS === "android") {
+        const eventEmitter = new NativeEventEmitter();
 
-  const drawOnMap = async (viewId) => {
-    await MapViewModule.setMapView(String(viewId));
-    MapViewModule.getMapAsync(() => {
-      MapViewModule.setStyleWithCallback(
-        StyleConstants?.MOBILE_DAY,
-        async (mapViewFragmentTag) => {}
+        let requestLocationUpdatesOnSuccessListener = eventEmitter.addListener(
+          "requestLocationUpdatesOnSuccess",
+          (event) => {}
+        );
+
+        let requestLocationUpdatesOnFailureListener = eventEmitter.addListener(
+          "requestLocationUpdatesOnFailure",
+          (event) => {
+            console.log(event.error);
+          }
+        );
+
+        setupLocationComponent();
+
+        return () => {
+          requestLocationUpdatesOnSuccessListener.remove();
+          requestLocationUpdatesOnFailureListener.remove();
+        };
+      } else if (Platform.OS === "ios") {
+        startTracking();
+      }
+    }
+  }, [mapLoaded]);
+
+  const setupLocationComponent = async () => {
+    TrimbleMapsMapView.initializeLocationComponent(() => {
+      TrimbleMapsMapView.setZoom(15.0);
+      TrimbleMapsMapView.buildCameraPosition();
+      TrimbleMapsMapView.setCameraPosition();
+      TrimbleMapsMapView.activateLocationComponent();
+      TrimbleMapsMapView.setLocationComponentEnabled(true);
+      TrimbleMapsMapView.setCameraMode(
+        TrimbleMapsMapViewConstants.TRACKING_COMPASS
       );
-      setupLocationComponent(viewId);
+      TrimbleMapsMapView.setRenderMode(TrimbleMapsMapViewConstants.COMPASS);
+      TrimbleMapsLocationEngine.getBestLocationEngine();
+      startTracking();
     });
   };
 
-  const loadedRequiredModules = () => {
-    return Platform.OS === "android" ? loadedAndroidModules() : loadedIOSModules();
-  };
-
-  const loadedAndroidModules = () => {
-    if (
-      CameraPositionModule == null ||
-      LocationComponentModule == null ||
-      LocationEngineModule == null ||
-      LocationEngineRequestModule == null ||
-      MapViewModule == null ||
-      StyleManagerModule == null
-    ) {
-      return false;
-    }
-    return true;
-  };
-
-  const loadedIOSModules = () => {
-    if (
-      CameraPositionModule == null ||
-      MapViewModule == null ||
-      StyleManagerModule == null
-    ) {
-      return false;
-    }
-    return true;
-  }
-
-  useEffect(() => {
-    if (!loadedRequiredModules()) {
-      return;
-    }
-    if (Platform.OS === "android") {
-      const viewId = findNodeHandle(ref.current);
-      console.log(String(viewId));
-
-      const eventEmitter = new NativeEventEmitter();
-      let eventListener = eventEmitter.addListener(
-        "MapViewInitialized",
-        (event) => {
-          drawOnMap(viewId);
-        }
-      );
-
-      createMapViewFragment(viewId);
-      return () => {
-        eventListener.remove();
-        StyleManagerModule.removeStyle(String(viewId));
-        MapViewModule.releaseMap();
-      };
-    }
-  }, []);
-
-  const setupLocationComponent = async () => {
-    const viewId = findNodeHandle(ref.current);
-    await LocationComponentModule.initializeLocationComponent(
-      viewId,
-      async () => {
-        await CameraPositionModule.zoom(15.0);
-        await CameraPositionModule.build();
-        await MapViewModule.zoomPosition();
-      }
-    );
-    await LocationComponentModule.activateLocationComponent();
-    await LocationComponentModule.setLocationComponentEnabled(true);
-    await LocationComponentModule.setCameraMode(
-      LocationComponentConstants.TRACKING_COMPASS
-    );
-    await LocationComponentModule.setRenderMode(
-      LocationComponentConstants.COMPASS
-    );
-    await LocationEngineModule.getBestLocationEngine();
-    startTracking();
+  const onMapLoaded = (e) => {
+    setMapLoaded(true);
   };
 
   const startTracking = async () => {
-    await LocationEngineRequestModule.createLocationEngineRequestBuilder(900);
-    await LocationEngineRequestModule.setPriority(
-      LocationEngineRequestConstants.PRIORITY_HIGH_ACCURACY
-    );
-    await LocationEngineRequestModule.setMaxWaitTime(4500);
-    await LocationEngineRequestModule.build();
-
-    await LocationEngineModule.requestLocationUpdates();
-  };
-
-  const recenter = async () => {
-    if (Platform.OS === "android") {
-      await LocationComponentModule.setCameraMode(
-        LocationComponentConstants.TRACKING_COMPASS
+    if (Platform.OS === "ios") {
+      TrimbleMapsMapView.setShowsUserLocation(true);
+      TrimbleMapsMapView.setShowsUserHeadingIndicator(true);
+      TrimbleMapsMapView.setDesiredAccuracy(10);
+      TrimbleMapsMapView.setUserTrackingMode(
+        TrimbleMapsMapViewConstants.USER_TRACKING_FOLLOW
       );
-      await LocationEngineModule.getLastLocation();
-    } else {
-      await MapViewModule.setMapView(mapViewTag);
-      await MapViewModule.setUserTrackingMode(MapViewConstants.USER_TRACKING_FOLLOW);
+      TrimbleMapsMapView.setZoom(14, true);
+    } else if (Platform.OS === "android") {
+      TrimbleMapsLocationEngine.createLocationEngineRequestBuilder(900);
+      TrimbleMapsLocationEngine.setPriority(
+        TrimbleMapsLocationEngineConstants.PRIORITY_HIGH_ACCURACY
+      );
+      TrimbleMapsLocationEngine.setMaxWaitTime(4500);
+      TrimbleMapsLocationEngine.buildLocationEngineRequest();
+      await TrimbleMapsLocationEngine.requestLocationUpdates(() => {});
     }
   };
 
-  const onMapLoaded = async (e) => {
-    console.log(e.nativeEvent);
-    let iosViewId = e.nativeEvent.tag;
-    await MapViewModule.setMapView(iosViewId);
-    await MapViewModule.setShowsUserLocation(true);
-    await MapViewModule.setShowsUserHeadingIndicator(true);
-    await MapViewModule.setUserTrackingMode(MapViewConstants.USER_TRACKING_FOLLOW);
-    await MapViewModule.setDesiredAccuracy(10);
-    await MapViewModule.releaseMap();
+  const recenter = async () => {
+    if (Platform.OS === "ios") {
+      TrimbleMapsMapView.setUserTrackingMode(
+        TrimbleMapsMapViewConstants.USER_TRACKING_FOLLOW
+      );
+    } else if (Platform.OS === "android") {
+      TrimbleMapsMapView.setCameraMode(
+        TrimbleMapsMapViewConstants.TRACKING_COMPASS
+      );
+      TrimbleMapsLocationEngine.getLastLocation((error, lat, lng) => {
+        if (error) {
+          console.log("Last location failure:" + error);
+        } else {
+          TrimbleMapsLocationEngine.createLocationUpdateBuilder();
+          TrimbleMapsLocationEngine.location(lat, lng);
+          TrimbleMapsLocationEngine.animationDuration(400);
+          TrimbleMapsLocationEngine.buildLocationUpdate();
+          TrimbleMapsMapView.forceLocationUpdate();
+        }
+      });
+    }
   };
 
-  const onUpdateUserLocation = async (e) => {
-    lat = e.nativeEvent.lat;
-    lon = e.nativeEvent.lon;
+  const onUpdateUserLocation = (e) => {
+    console.log(e.nativeEvent);
+  };
+
+  const onFailUpdateUserLocation = (e) => {
+    console.log(e.nativeEvent);
   };
 
   const styles = StyleSheet.create({
@@ -175,42 +127,29 @@ export const TrackingFollowMe = () => {
       height: "8%",
       justifyContent: "center",
       alignItems: "center",
+      position: "absolute",
+      zIndex: 2,
+      alignSelf: "center",
     },
-    androidStyle: {
-      // converts dpi to px, provide desired height
-      height: PixelRatio.getPixelSizeForLayoutSize(
-        Dimensions.get("window").height
-      ),
-      // converts dpi to px, provide desired width
-      width: PixelRatio.getPixelSizeForLayoutSize(
-        Dimensions.get("window").width
-      ),
-    },
-    iOSStyle: {
+    mapStyle: {
       flex: 1,
     },
   });
 
-  const errorView = <Text>Missing required modules</Text>;
-  const defaultView = (
+  return (
     <View style={styles.container}>
       <View style={styles.buttonContainer}>
         <Button title="Recenter" onPress={() => recenter()} />
       </View>
       <View style={styles.container}>
-        <MapViewManager
-          style={
-            Platform.OS === "android" ? styles.androidStyle : styles.iOSStyle
-          }
-          theme={StyleConstants?.MOBILE_DEFAULT}
-          ref={ref}
+        <TrimbleMapsMap
+          style={styles.mapStyle}
+          theme={TrimbleMapsMapViewConstants.MOBILE_DAY}
           onMapLoaded={onMapLoaded}
           onUpdateUserLocation={onUpdateUserLocation}
-          tag={mapViewTag}
+          onFailUpdateUserLocation={onFailUpdateUserLocation}
         />
       </View>
     </View>
   );
-
-  return loadedRequiredModules() ? defaultView : errorView;
 };

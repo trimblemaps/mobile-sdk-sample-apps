@@ -3,14 +3,12 @@ package com.mapssampleapp;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.maps.react.TrimbleMapsPackages;
 import com.reactnativecommunity.checkbox.ReactCheckBoxPackage;
 import com.reactnativerestart.RestartPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.rnfs.RNFSPackage;
 import com.reactnativecommunity.slider.ReactSliderPackage;
-import com.maps.react.MapsPackagesHolder;
-import com.trimblemaps.reactnative.TrimbleMapsMapPackages;
-import com.trimblemaps.plugin_reactnative.MapsPluginPackagesHolder;
 import com.swmansion.rnscreens.RNScreensPackage;
 import com.swmansion.gesturehandler.RNGestureHandlerPackage;
 import com.facebook.react.ReactNativeHost;
@@ -41,9 +39,7 @@ public class MainApplication extends Application implements ReactApplication {
         new VectorIconsPackage(),
         new RNFSPackage(),
         new ReactSliderPackage(),
-        new MapsPackagesHolder(),
-        new TrimbleMapsMapPackages(),
-        new MapsPluginPackagesHolder(),
+        new TrimbleMapsPackages(),
         new RNScreensPackage(),
         new RNGestureHandlerPackage(),
         new SafeAreaContextPackage(),

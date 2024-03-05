@@ -3,7 +3,7 @@ import { PermissionsAndroid, Platform } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import SplashScreen from "react-native-splash-screen";
-import TrimbleMapsAccountScreen from "./TrimbleMapsAccountScreen";
+import { TrimbleMapsAccountScreen } from "./TrimbleMapsAccountScreen";
 import { BasicMap } from "./BasicMap";
 import { DataDrivenStyling } from "./DataDrivenStyling";
 import { DotsOnAMap } from "./DotsOnAMap";
@@ -14,14 +14,14 @@ import { Geocoding } from "./Geocoding";
 import { TrackingFollowMe } from "./TrackingFollowMe";
 import { TrimbleLayers } from "./TrimbleLayers";
 import { ReverseGeocoding } from "./ReverseGeocoding";
+import { SymbolsOnAMap } from "./SymbolsOnAMap";
+import { FillPolygonOnAMap } from "./FillPolygonOnAMap";
 
 const App = (props) => {
   const [locationPermission, setLocationPermission] = useState("");
 
   useEffect(() => {
-    if (Platform.OS === "android") {
-      checkLocationPermission();
-    }
+    checkLocationPermission();
     SplashScreen.hide();
   }, []);
 
@@ -105,6 +105,16 @@ const App = (props) => {
           name="ReverseGeocoding"
           component={ReverseGeocoding}
           options={{ title: "Reverse Geocoding" }}
+        />
+        <Stack.Screen
+          name="SymbolsOnAMap"
+          component={SymbolsOnAMap}
+          options={{ title: "Symbols On A Map" }}
+        />
+        <Stack.Screen
+          name="FillPolygonOnAMap"
+          component={FillPolygonOnAMap}
+          options={{ title: "Fill Polygon On A Map" }}
         />
       </Stack.Navigator>
     </NavigationContainer>

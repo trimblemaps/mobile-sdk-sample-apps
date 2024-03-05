@@ -1,196 +1,106 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import {
-  Dimensions,
   NativeModules,
-  NativeEventEmitter,
-  PixelRatio,
   StyleSheet,
-  UIManager,
   View,
-  findNodeHandle,
-  Text,
   Platform,
+  Button,
 } from "react-native";
 
-import { MapViewManager } from "./MapViewManager";
+import { TrimbleMapsMap } from "./TrimbleMapsMapViewManager";
 
-const CameraPositionModule = NativeModules.CameraPositionModule;
-const MapViewModule = NativeModules.MapViewModule;
-const StyleManagerModule = NativeModules.StyleManagerModule;
-const GeoJsonSourceModule = NativeModules.GeoJsonSourceModule;
-const CircleLayerModule = NativeModules.CircleLayerModule;
+const TrimbleMapsMapView = NativeModules.TrimbleMapsMapViewModule;
 
-const StyleConstants = StyleManagerModule?.getConstants();
-const CircleConstants = CircleLayerModule?.getConstants();
+const TrimbleMapsMapViewConstants = TrimbleMapsMapView.getConstants();
 
 export const DotsOnAMap = () => {
-  const ref = useRef(null);
-  const mapViewTag = 1234; // tag for ios view
-
-  const createMapViewFragment = (viewId) => {
-    UIManager.dispatchViewManagerCommand(
-      viewId,
-      UIManager.MapViewManager.Commands.create.toString(),
-      [viewId]
-    );
-  }
-
+  const [mapLoaded, setMapLoaded] = useState(false);
   let circleLayerId = "CircleLayerId";
   let circleLayer = "CircleLayer";
-  var iosViewId = null;
 
-  const createAndAddCircleLayer = async (viewId) => {
-    await StyleManagerModule.addStyle(viewId);
-    if (Platform.OS === "android") {
-      await GeoJsonSourceModule.createGeoJsonSourceFromUri(
-        circleLayer,
-        "asset://tristate.json"
-      );
-    } else {
-      await GeoJsonSourceModule.createGeoJsonSourceFromFile(
-        circleLayer,
-        "tristate"
-      );
+  useEffect(() => {
+    if (mapLoaded) {
+      createAndAddCircleLayer();
+      moveCamera();
+      return () => {
+        cleanUp();
+      };
     }
-    await StyleManagerModule.addSourceToStyle(viewId, circleLayer);
+  }, [mapLoaded]);
+
+  const cleanUp = async () => {
+    await TrimbleMapsMapView.removeGeoJsonSource(circleLayer);
+    await TrimbleMapsMapView.removeCircleLayer(circleLayerId);
+  };
+
+  const createAndAddCircleLayer = async () => {
+    try {
+      await createCircleLayer();
+      await TrimbleMapsMapView.addLayerToStyle(
+        circleLayerId,
+        TrimbleMapsMapViewConstants.CIRCLE_LAYER
+      );
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const createCircleLayer = async () => {
+    let geojson = require('./assets/tristate.json');
+    let geojsonStr = JSON.stringify(geojson);
+
+    await TrimbleMapsMapView.createGeoJsonSource(circleLayer, geojsonStr);
+    await TrimbleMapsMapView.addSourceToStyle(circleLayer);
 
     let circleProperties = {};
-    circleProperties[CircleConstants.RADIUS] = 4;
-    circleProperties[CircleConstants.COLOR] = "#FFFFFF";
-    circleProperties[CircleConstants.STROKE_COLOR] = "#000000";
-    circleProperties[CircleConstants.STROKE_WIDTH] = 5.0;
-    await CircleLayerModule.createCircleLayerWithProperties(
+    circleProperties[TrimbleMapsMapViewConstants.RADIUS] = 4;
+    circleProperties[TrimbleMapsMapViewConstants.COLOR] = "#FFFFFF";
+    circleProperties[TrimbleMapsMapViewConstants.STROKE_COLOR] = "#000000";
+    circleProperties[TrimbleMapsMapViewConstants.STROKE_WIDTH] = 5.0;
+
+    await TrimbleMapsMapView.createCircleLayerWithProperties(
       circleLayerId,
       circleLayer,
       circleProperties
     );
-    await StyleManagerModule.addLayerToStyle(
-      viewId,
-      circleLayerId,
-      StyleConstants?.CIRCLE_LAYER
-    );
   };
 
-  const drawOnMap = async (viewId) => {
-    await MapViewModule.setMapView(String(viewId));
-    MapViewModule.getMapAsync(() => {
-      MapViewModule.setStyleWithCallback(
-        StyleConstants.MOBILE_NIGHT,
-        async (mapViewFragmentTag) => {
-          createAndAddCircleLayer(String(viewId));
-
-          await CameraPositionModule.latLng(
-            41.36290180612575,
-            -74.6946761628674
-          );
-          await CameraPositionModule.target();
-          await CameraPositionModule.zoom(13.0);
-          await CameraPositionModule.build();
-          await MapViewModule.zoomPosition();
-        }
-      );
-    });
-  };
-
-  useEffect(() => {
-    if (!loadedRequiredModules()) {
-      return;
-    }
-    const viewId = findNodeHandle(ref.current);
+  const moveCamera = async () => {
     if (Platform.OS === "android") {
-      const eventEmitter = new NativeEventEmitter();
-      let eventListener = eventEmitter.addListener(
-        "MapViewInitialized",
-        (event) => {
-          drawOnMap(viewId);
-        }
-      );
-
-      createMapViewFragment(viewId);
-      return () => {
-        eventListener.remove();
-        MapViewModule.releaseMap();
-        StyleManagerModule.removeStyle(String(viewId));
-        CircleLayerModule.removeCircleLayer(circleLayerId);
-        GeoJsonSourceModule.removeGeoJsonSource(circleLayer);
-      };
+      TrimbleMapsMapView.setZoom(13.0);
+      TrimbleMapsMapView.setTarget(41.362901, -74.694676);
+      TrimbleMapsMapView.buildCameraPosition();
+      TrimbleMapsMapView.moveCamera();
     } else {
-      return () => {
-        MapViewModule.releaseMap();
-        StyleManagerModule.removeStyle(iosViewId);
-        CircleLayerModule.removeCircleLayer(circleLayerId);
-        GeoJsonSourceModule.removeGeoJsonSource(circleLayer);
-      };
+      await TrimbleMapsMapView.setCenterCoordinateAndZoom(
+        41.362901,
+        -74.694676,
+        13,
+        true
+      );
     }
-  }, []);
+  };
 
-  const loadedRequiredModules = () => {
-    if (
-      CameraPositionModule == null ||
-      MapViewModule == null ||
-      StyleManagerModule == null ||
-      GeoJsonSourceModule == null ||
-      CircleLayerModule == null
-    ) {
-      return false;
-    }
-    return true;
+  const onMapLoaded = (e) => {
+    setMapLoaded(true);
   };
 
   const styles = StyleSheet.create({
     container: {
       flex: 1,
     },
-    androidStyle: {
-      // converts dpi to px, provide desired height
-      height: PixelRatio.getPixelSizeForLayoutSize(
-        Dimensions.get("window").height
-      ),
-      // converts dpi to px, provide desired width
-      width: PixelRatio.getPixelSizeForLayoutSize(
-        Dimensions.get("window").width
-      ),
-    },
-    iOSStyle: { flex: 1 },
+    mapStyle: { flex: 1 },
   });
 
-  const onMapLoaded = async (e) => {
-    // ios on map loaded callback
-    iosViewId = e.nativeEvent.tag;
-    await MapViewModule.setMapView(iosViewId);
-    await createAndAddCircleLayer(iosViewId);
-
-    await CameraPositionModule.latLng(41.36290180612575, -74.6946761628674);
-    await CameraPositionModule.target();
-    await CameraPositionModule.altitude(1e4);
-    await CameraPositionModule.build();
-    await MapViewModule.zoomPosition();
-  };
-
-  const onMapStyleLoaded = (e) => {
-    // ios on mapstyle loaded callback
-    console.log("map finished loading style");
-  };
-
-  const errorView = <Text>Missing required modules</Text>;
-  const defaultView = (
+  return (
     <View style={styles.container}>
       <View style={styles.container}>
-        <MapViewManager
-          // ios map view style property
+        <TrimbleMapsMap
+          style={styles.mapStyle}
+          styleURL={TrimbleMapsMapViewConstants.MOBILE_DAY}
           onMapLoaded={onMapLoaded}
-          onMapStyleLoaded={onMapStyleLoaded}
-          ref={ref}
-          style={
-            Platform.OS === "android" ? styles.androidStyle : styles.iOSStyle
-          }
-          styleURL={StyleConstants?.MOBILE_NIGHT}
-          // unique int tag for ios view
-          tag={mapViewTag}
         />
       </View>
     </View>
   );
-
-  return loadedRequiredModules() ? defaultView : errorView;
 };

@@ -2,9 +2,6 @@ package com.trimblemaps.mapssdkexampleskotlin
 
 import android.app.Activity
 import android.os.Bundle
-import com.trimblemaps.account.LicensedFeature
-import com.trimblemaps.account.TrimbleMapsAccountManager
-import com.trimblemaps.account.models.TrimbleMapsAccount
 import com.trimblemaps.mapsdk.TrimbleMaps
 import com.trimblemaps.mapsdk.maps.MapView
 import com.trimblemaps.mapsdk.maps.OnMapReadyCallback

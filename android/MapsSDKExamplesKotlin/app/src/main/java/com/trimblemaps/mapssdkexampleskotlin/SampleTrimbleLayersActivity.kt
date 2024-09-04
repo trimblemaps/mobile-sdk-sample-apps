@@ -4,9 +4,6 @@ import android.app.Activity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import com.trimblemaps.account.LicensedFeature
-import com.trimblemaps.account.TrimbleMapsAccountManager
-import com.trimblemaps.account.models.TrimbleMapsAccount
 import com.trimblemaps.mapsdk.TrimbleMaps
 import com.trimblemaps.mapsdk.camera.CameraPosition
 import com.trimblemaps.mapsdk.geometry.LatLng

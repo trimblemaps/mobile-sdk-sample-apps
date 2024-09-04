@@ -6,9 +6,6 @@ import android.location.Location
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import com.trimblemaps.account.LicensedFeature
-import com.trimblemaps.account.TrimbleMapsAccountManager
-import com.trimblemaps.account.models.TrimbleMapsAccount
 import com.trimblemaps.android.core.location.*
 import com.trimblemaps.android.gestures.MoveGestureDetector
 import com.trimblemaps.mapsdk.TrimbleMaps

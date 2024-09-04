@@ -5,9 +5,6 @@ import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import com.trimblemaps.account.LicensedFeature
-import com.trimblemaps.account.TrimbleMapsAccountManager
-import com.trimblemaps.account.models.TrimbleMapsAccount
 import com.trimblemaps.api.directions.v1.TrimbleMapsDirections
 import com.trimblemaps.api.directions.v1.models.DirectionsResponse
 import com.trimblemaps.api.directions.v1.models.RouteOptions

@@ -12,8 +12,6 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import com.trimblemaps.mapssdkexampleskotlin.shared.Constants
-import com.trimblemaps.navigation.core.TrimbleMapsNavigationProvider
-import com.trimblemaps.navigation.core.TrimbleMapsTripProvider
 import com.trimblemaps.mapssdkexampleskotlin.databinding.ActivityMainBinding
 
 class MainActivity : Activity() {
@@ -50,8 +48,6 @@ class MainActivity : Activity() {
     private val itemClickListener = object : AdapterView.OnItemClickListener {
         override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
             this@MainActivity.run {
-                TrimbleMapsNavigationProvider.destroy()
-                TrimbleMapsTripProvider.destroy()
                 val example = ActivityList[position]
                 startActivity(Intent(this, ActivityList[position].activityToLaunch))
             }

@@ -2,11 +2,11 @@ package com.trimblemaps.mapssdkexampleskotlin
 
 import android.Manifest
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.view.Gravity
-import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import com.trimblemaps.account.LicensedFeature
 import com.trimblemaps.account.TrimbleMapsAccountManager
@@ -90,14 +90,13 @@ class SplashActivity : Activity() {
                 val account = TrimbleMapsAccount.builder()
                     .apiKey(getString(R.string.API_KEY))
                     .region(EnvironmentCriteria.Region.WORLDWIDE)
-                    .addLicensedFeature(LicensedFeature.NAVIGATION_SDK)
                     .addLicensedFeature(LicensedFeature.MAPS_SDK)
                     .build()
 
                 TrimbleMapsAccountManager.initialize(account)
                 TrimbleMapsAccountManager.awaitInitialization()
 
-                if (!TrimbleMapsAccountManager.isLicensedForMaps() || !TrimbleMapsAccountManager.isLicensedForNavigation()) {
+                if (!TrimbleMapsAccountManager.isLicensedForMaps()) {
                     launch(Dispatchers.Main) {
                         showLicensingAlert()
                     }

@@ -28,7 +28,8 @@ class MainActivity : Activity() {
         Example(Constants.SIMPLE_ROUTING, R.drawable.general_splash, SampleRoutingActivity::class.java),
         Example(Constants.FOLLOW_ME, R.drawable.van_nav_splash, SampleFollowMeActivity::class.java),
         Example(Constants.LAYERS, R.drawable.general_splash, SampleTrimbleLayersActivity::class.java),
-        Example(Constants.MAP_STYLES, R.drawable.general_splash, SampleChangeStylesActivity::class.java)
+        Example(Constants.MAP_STYLES, R.drawable.general_splash, SampleChangeStylesActivity::class.java),
+        Example(Constants.HIGHLIGHT_BUILDINGS, R.drawable.general_splash, SampleHighlightBuildingActivity::class.java)
     )
 
     private lateinit var binding: ActivityMainBinding

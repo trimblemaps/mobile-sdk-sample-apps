@@ -46,6 +46,9 @@
             android:name=".SampleChangeStylesActivity"
             android:exported="false" />
         <activity
+            android:name=".SampleHighlightBuildingActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false"
             android:label="MainActivity" />

@@ -1,4 +1,4 @@
-package com.trimblemaps.mapssdkexampleskotlin
+package com.trimblemaps.kotlinsamples.samples
 
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
@@ -31,14 +31,14 @@ class SampleHighlightBuildingActivity : AppCompatActivity() {
 
         // Authorize the api key for the session.
         // .apiKey() requires your Trimble Maps API key
-//        val trimbleMapsAccount = TrimbleMapsAccount.builder()
-//            .apiKey("Your-API-key-here")
-//            .addLicensedFeature(LicensedFeature.MAPS_SDK)
-//            .build()
-//
-//        // Initialize the session
-//        TrimbleMapsAccountManager.initialize(trimbleMapsAccount)
-//        TrimbleMapsAccountManager.awaitInitialization()
+        val trimbleMapsAccount = TrimbleMapsAccount.builder()
+            .apiKey("Your-API-key-here")
+            .addLicensedFeature(LicensedFeature.MAPS_SDK)
+            .build()
+
+        // Initialize the session
+        TrimbleMapsAccountManager.initialize(trimbleMapsAccount)
+        TrimbleMapsAccountManager.awaitInitialization()
 
         // Get an instance of the map, done before the layout is set.
         TrimbleMaps.getInstance(this)
@@ -65,7 +65,7 @@ class SampleHighlightBuildingActivity : AppCompatActivity() {
                     lineColor(Color.YELLOW),
                     lineOpacity(.8f)
                 ))
-                )
+            )
 
             map?.cameraPosition = CameraPosition.Builder()
                 .target(LatLng(39.96012475826224, -75.16184676002608))

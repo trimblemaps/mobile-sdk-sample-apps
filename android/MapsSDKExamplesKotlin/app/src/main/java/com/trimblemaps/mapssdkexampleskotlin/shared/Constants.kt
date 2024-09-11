@@ -13,5 +13,6 @@ object Constants {
     const val FOLLOW_ME = "Tracking / Follow Me"
     const val LAYERS = "Trimble Layers"
     const val MAP_STYLES = "Map Styles"
+    const val HIGHLIGHT_BUILDINGS = "Highlight Buildings"
 }
 

@@ -1,30 +1,22 @@
 package com.trimblemaps.mapssdkexampleskotlin
 
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import com.trimblemaps.account.LicensedFeature
 import com.trimblemaps.account.TrimbleMapsAccountManager
 import com.trimblemaps.account.models.TrimbleMapsAccount
-import com.trimblemaps.geojson.Feature
-import com.trimblemaps.geojson.FeatureCollection
 import com.trimblemaps.mapsdk.TrimbleMaps
 import com.trimblemaps.mapsdk.camera.CameraPosition
 import com.trimblemaps.mapsdk.geometry.LatLng
+import com.trimblemaps.mapsdk.geometry.LatLngBounds
 import com.trimblemaps.mapsdk.maps.MapView
 import com.trimblemaps.mapsdk.maps.Style
 import com.trimblemaps.mapsdk.maps.TrimbleMapsMap
-import com.trimblemaps.mapsdk.style.layers.LineLayer
-import com.trimblemaps.mapsdk.style.layers.PropertyFactory.lineColor
-import com.trimblemaps.mapsdk.style.layers.PropertyFactory.lineOpacity
-import com.trimblemaps.mapsdk.style.layers.PropertyFactory.lineWidth
-import com.trimblemaps.mapsdk.style.sources.GeoJsonSource
 
-class SampleHighlightBuildingActivity : AppCompatActivity() {
+class SampleRestrictUserInteractionActivity : AppCompatActivity() {
     private var mapView: MapView? = null
     private var map: TrimbleMapsMap? = null
-    private var highlights : List<Feature> = listOf()
-    private var highlightsSrcLayer = "highlighted_buildings"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,48 +35,45 @@ class SampleHighlightBuildingActivity : AppCompatActivity() {
         // Get an instance of the map, done before the layout is set.
         TrimbleMaps.getInstance(this)
 
-        setContentView(R.layout.activity_sample_highlight_building)
+        setContentView(R.layout.activity_sample_restrict_user_interaction)
 
+        // When the button is clicked, toggle the 3D building feature
+        findViewById<Button>(R.id.btn_toggleAllowGestures).setOnClickListener {
+
+            // Toggle gestures on the map
+            // When this is false, the user will not be able to interact with the map
+            // no panning, pinch to zoom etc.
+            val gesturesEnabled = map?.uiSettings?.areAllGesturesEnabled()
+            map?.uiSettings?.setAllGesturesEnabled(!gesturesEnabled!!)
+        }
 
         // Set up the MapView from the layout
         mapView = findViewById(R.id.mapView)
         // the onMapReadyCallback is fired when the map is ready to be worked with
         mapView?.getMapAsync { trimbleMapsMap ->
             map = trimbleMapsMap
-
             // The TrimbleMapsMap object is created, now a style can be applied to render a map.
-            // Adding the source and layer for the buildings highlighted. Building outlines will be
-            // displayed in yellow
+            trimbleMapsMap.setStyle(Style.MOBILE_DAY)
 
-            trimbleMapsMap.setStyle(Style
-                .Builder()
-                .fromUri(Style.MOBILE_NIGHT)
-                .withSource(GeoJsonSource(highlightsSrcLayer, FeatureCollection.fromFeatures(highlights)))
-                .withLayer(LineLayer(highlightsSrcLayer, highlightsSrcLayer).withProperties(
-                    lineWidth(4f),
-                    lineColor(Color.YELLOW),
-                    lineOpacity(.8f)
-                ))
-            )
-
-            map?.cameraPosition = CameraPosition.Builder()
-                .target(LatLng(39.96012475826224, -75.16184676002608))
-                .zoom(17.0)
+            val cameraPosition  = CameraPosition.Builder()
+                .target(LatLng(40.35406213631131, -74.66366338445839)) // Princeton NJ
+                .zoom(13.0)
                 .build()
 
-            map?.addOnMapClickListener {clickedLatLng ->
-                // Convert our LatLng to a pixel
-                val pixel = map?.projection?.toScreenLocation(clickedLatLng)
+            // Set the initial position of the camera.
+            map?.cameraPosition = cameraPosition
 
-                // Find any features from the "building_2d" layer that our point intersects
-                val features = map?.queryRenderedFeatures(pixel!!, "building_2d")
-
-                // Update/Replace the source of data with these new found features
-                map?.style?.getSourceAs<GeoJsonSource>(highlightsSrcLayer)?.setGeoJson(
-                    FeatureCollection.fromFeatures(features!!))
-
-                return@addOnMapClickListener true
-            }
+            // Restrict map panning to the bounds of Princeton NJ USA, done using NW and SE coordinates to
+            // create a bounding box
+            val northWesternLatLng = LatLng(40.35707083424728, -74.67911290722856)
+            val southEasternLatLng = LatLng(40.34621272718235, -74.62400960934826)
+            // Build the bounds
+            val boundsArea = LatLngBounds.Builder()
+                .include(northWesternLatLng)
+                .include(southEasternLatLng)
+                .build()
+            map?.setLatLngBoundsForCameraTarget(boundsArea)
+            map?.setMinZoomPreference(9.0)
         }
     }
 

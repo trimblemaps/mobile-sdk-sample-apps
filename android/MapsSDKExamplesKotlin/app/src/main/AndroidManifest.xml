@@ -49,6 +49,27 @@
             android:name=".SampleHighlightBuildingActivity"
             android:exported="false" />
         <activity
+            android:name=".Sample3DBuildingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SampleAnimateAroundActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SampleAnimatedCameraActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SampleIconsOnMapActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SampleRegionalMapActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SampleHighlightFeaturesAfterPanningActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SampleRestrictUserInteractionActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false"
             android:label="MainActivity" />

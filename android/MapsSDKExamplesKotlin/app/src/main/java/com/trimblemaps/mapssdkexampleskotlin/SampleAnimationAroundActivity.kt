@@ -1,30 +1,31 @@
 package com.trimblemaps.mapssdkexampleskotlin
 
-import android.graphics.Color
+import android.animation.ValueAnimator
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.animation.LinearInterpolator
+import android.widget.Button
 import com.trimblemaps.account.LicensedFeature
 import com.trimblemaps.account.TrimbleMapsAccountManager
 import com.trimblemaps.account.models.TrimbleMapsAccount
-import com.trimblemaps.geojson.Feature
-import com.trimblemaps.geojson.FeatureCollection
 import com.trimblemaps.mapsdk.TrimbleMaps
 import com.trimblemaps.mapsdk.camera.CameraPosition
+import com.trimblemaps.mapsdk.camera.CameraUpdateFactory
 import com.trimblemaps.mapsdk.geometry.LatLng
 import com.trimblemaps.mapsdk.maps.MapView
 import com.trimblemaps.mapsdk.maps.Style
 import com.trimblemaps.mapsdk.maps.TrimbleMapsMap
-import com.trimblemaps.mapsdk.style.layers.LineLayer
-import com.trimblemaps.mapsdk.style.layers.PropertyFactory.lineColor
-import com.trimblemaps.mapsdk.style.layers.PropertyFactory.lineOpacity
-import com.trimblemaps.mapsdk.style.layers.PropertyFactory.lineWidth
-import com.trimblemaps.mapsdk.style.sources.GeoJsonSource
+import kotlin.math.roundToLong
 
-class SampleHighlightBuildingActivity : AppCompatActivity() {
+class SampleAnimateAroundActivity : AppCompatActivity() {
     private var mapView: MapView? = null
     private var map: TrimbleMapsMap? = null
-    private var highlights : List<Feature> = listOf()
-    private var highlightsSrcLayer = "highlighted_buildings"
+    private var shouldAnimate = false
+    private val numberOfSpins = 8f // How many times should it spin
+    private val spinDuration = 16 // how long, in seconds, should a spin take
+
+    // Working with an animator
+    private var animator : ValueAnimator = ValueAnimator.ofFloat(0f, numberOfSpins * 360)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,7 +44,7 @@ class SampleHighlightBuildingActivity : AppCompatActivity() {
         // Get an instance of the map, done before the layout is set.
         TrimbleMaps.getInstance(this)
 
-        setContentView(R.layout.activity_sample_highlight_building)
+        setContentView(R.layout.activity_sample_animate_around)
 
 
         // Set up the MapView from the layout
@@ -56,34 +57,42 @@ class SampleHighlightBuildingActivity : AppCompatActivity() {
             // Adding the source and layer for the buildings highlighted. Building outlines will be
             // displayed in yellow
 
-            trimbleMapsMap.setStyle(Style
-                .Builder()
-                .fromUri(Style.MOBILE_NIGHT)
-                .withSource(GeoJsonSource(highlightsSrcLayer, FeatureCollection.fromFeatures(highlights)))
-                .withLayer(LineLayer(highlightsSrcLayer, highlightsSrcLayer).withProperties(
-                    lineWidth(4f),
-                    lineColor(Color.YELLOW),
-                    lineOpacity(.8f)
-                ))
-            )
+            trimbleMapsMap.setStyle(Style.MOBILE_DAY)
 
             map?.cameraPosition = CameraPosition.Builder()
-                .target(LatLng(39.96012475826224, -75.16184676002608))
-                .zoom(17.0)
+                .target(LatLng(39.90073499962372, -75.16745401827387))
+                .zoom(16.0)
                 .build()
 
-            map?.addOnMapClickListener {clickedLatLng ->
-                // Convert our LatLng to a pixel
-                val pixel = map?.projection?.toScreenLocation(clickedLatLng)
+        }
 
-                // Find any features from the "building_2d" layer that our point intersects
-                val features = map?.queryRenderedFeatures(pixel!!, "building_2d")
+        // Setup the animator
+        animator.duration = (numberOfSpins * spinDuration * 1000).roundToLong()
+        animator.interpolator = LinearInterpolator()
+        animator.startDelay = 1000
 
-                // Update/Replace the source of data with these new found features
-                map?.style?.getSourceAs<GeoJsonSource>(highlightsSrcLayer)?.setGeoJson(
-                    FeatureCollection.fromFeatures(features!!))
-
-                return@addOnMapClickListener true
+        // Create the animation toggles
+        findViewById<Button>(R.id.btn_toggleAnimation).setOnClickListener {
+            shouldAnimate = !shouldAnimate
+            // Should the animation be on? Are we resuming or starting from fresh?
+            if(shouldAnimate) {
+                if(animator.isStarted) {
+                    animator.resume()
+                } else {
+                    animator.addUpdateListener {valueAnimator ->
+                        // Get the bearing from the animator and apply it to the camera position
+                        val bearing = valueAnimator.animatedValue as Float
+                        map?.moveCamera(CameraUpdateFactory.newCameraPosition(
+                            CameraPosition.Builder()
+                                .target(map?.cameraPosition?.target)
+                                .bearing(bearing.toDouble())
+                                .build()
+                        ))
+                    }
+                    animator.start()
+                }
+            } else {
+                animator.pause()
             }
         }
     }
@@ -120,4 +129,5 @@ class SampleHighlightBuildingActivity : AppCompatActivity() {
         super.onDestroy()
         mapView?.onDestroy()
     }
+
 }

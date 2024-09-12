@@ -1,11 +1,13 @@
 package com.trimblemaps.mapssdkexampleskotlin
 
 import android.graphics.Color
+import android.graphics.RectF
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.trimblemaps.account.LicensedFeature
 import com.trimblemaps.account.TrimbleMapsAccountManager
 import com.trimblemaps.account.models.TrimbleMapsAccount
+import com.trimblemaps.android.gestures.MoveGestureDetector
 import com.trimblemaps.geojson.Feature
 import com.trimblemaps.geojson.FeatureCollection
 import com.trimblemaps.mapsdk.TrimbleMaps
@@ -14,17 +16,17 @@ import com.trimblemaps.mapsdk.geometry.LatLng
 import com.trimblemaps.mapsdk.maps.MapView
 import com.trimblemaps.mapsdk.maps.Style
 import com.trimblemaps.mapsdk.maps.TrimbleMapsMap
+import com.trimblemaps.mapsdk.maps.TrimbleMapsMap.OnMoveListener
 import com.trimblemaps.mapsdk.style.layers.LineLayer
-import com.trimblemaps.mapsdk.style.layers.PropertyFactory.lineColor
-import com.trimblemaps.mapsdk.style.layers.PropertyFactory.lineOpacity
-import com.trimblemaps.mapsdk.style.layers.PropertyFactory.lineWidth
+import com.trimblemaps.mapsdk.style.layers.PropertyFactory
 import com.trimblemaps.mapsdk.style.sources.GeoJsonSource
 
-class SampleHighlightBuildingActivity : AppCompatActivity() {
+class SampleHighlightFeaturesAfterPanningActivity : AppCompatActivity() {
     private var mapView: MapView? = null
     private var map: TrimbleMapsMap? = null
+
     private var highlights : List<Feature> = listOf()
-    private var highlightsSrcLayer = "highlighted_buildings"
+    private var highlightsSrcLayer = "highlighted_places"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,7 +45,7 @@ class SampleHighlightBuildingActivity : AppCompatActivity() {
         // Get an instance of the map, done before the layout is set.
         TrimbleMaps.getInstance(this)
 
-        setContentView(R.layout.activity_sample_highlight_building)
+        setContentView(R.layout.activity_sample_highlight_features)
 
 
         // Set up the MapView from the layout
@@ -53,40 +55,53 @@ class SampleHighlightBuildingActivity : AppCompatActivity() {
             map = trimbleMapsMap
 
             // The TrimbleMapsMap object is created, now a style can be applied to render a map.
-            // Adding the source and layer for the buildings highlighted. Building outlines will be
+            // Adding the source and layer for the Places highlighted. Site outlines will be
             // displayed in yellow
 
-            trimbleMapsMap.setStyle(Style
+            trimbleMapsMap.setStyle(
+                Style
                 .Builder()
                 .fromUri(Style.MOBILE_NIGHT)
                 .withSource(GeoJsonSource(highlightsSrcLayer, FeatureCollection.fromFeatures(highlights)))
-                .withLayer(LineLayer(highlightsSrcLayer, highlightsSrcLayer).withProperties(
-                    lineWidth(4f),
-                    lineColor(Color.YELLOW),
-                    lineOpacity(.8f)
+                .withLayer(
+                    LineLayer(highlightsSrcLayer, highlightsSrcLayer).withProperties(
+                        PropertyFactory.lineWidth(4f),
+                        PropertyFactory.lineColor(Color.YELLOW),
+                        PropertyFactory.lineOpacity(.8f)
                 ))
             )
 
             map?.cameraPosition = CameraPosition.Builder()
-                .target(LatLng(39.96012475826224, -75.16184676002608))
-                .zoom(17.0)
+                .target(LatLng( 40.570247273677154, -74.2586578116128))
+                .zoom(15.0)
                 .build()
 
-            map?.addOnMapClickListener {clickedLatLng ->
-                // Convert our LatLng to a pixel
-                val pixel = map?.projection?.toScreenLocation(clickedLatLng)
+            map?.addOnMoveListener(object : OnMoveListener {
+                override fun onMoveBegin(moveGestureDetector: MoveGestureDetector) {
 
-                // Find any features from the "building_2d" layer that our point intersects
-                val features = map?.queryRenderedFeatures(pixel!!, "building_2d")
+                }
 
-                // Update/Replace the source of data with these new found features
-                map?.style?.getSourceAs<GeoJsonSource>(highlightsSrcLayer)?.setGeoJson(
-                    FeatureCollection.fromFeatures(features!!))
+                override fun onMove(moveGestureDetector: MoveGestureDetector) {
 
-                return@addOnMapClickListener true
-            }
+                }
+
+                override fun onMoveEnd(moveGestureDetector: MoveGestureDetector) {
+                    // We only care about when movement stops
+                    // get all features in the user's current view
+                    val view = RectF(mapView?.left!!.toFloat(), mapView?.top!!.toFloat(), mapView?.right!!.toFloat(), mapView?.bottom!!.toFloat())
+
+                    // Find any features from the "places_sites" layer that our point intersects
+                    val features = map?.queryRenderedFeatures(view, "places_sites")
+
+                    // Update/Replace the source of data with these new found features
+                    map?.style?.getSourceAs<GeoJsonSource>(highlightsSrcLayer)?.setGeoJson(
+                        FeatureCollection.fromFeatures(features!!))
+                }
+
+            })
         }
     }
+
 
     /**
      * Activity Overrides

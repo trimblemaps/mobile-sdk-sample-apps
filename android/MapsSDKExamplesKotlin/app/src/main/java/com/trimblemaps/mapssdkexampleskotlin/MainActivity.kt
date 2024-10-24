@@ -28,15 +28,16 @@ class MainActivity : Activity() {
         Example(Constants.SIMPLE_ROUTING, R.drawable.general_splash, SampleRoutingActivity::class.java),
         Example(Constants.FOLLOW_ME, R.drawable.van_nav_splash, SampleFollowMeActivity::class.java),
         Example(Constants.LAYERS, R.drawable.general_splash, SampleTrimbleLayersActivity::class.java),
-        Example(Constants.MAP_STYLES, R.drawable.general_splash, SampleChangeStylesActivity::class.java),
-        Example(Constants.HIGHLIGHT_BUILDINGS, R.drawable.general_splash, SampleHighlightBuildingActivity::class.java)
-        Example(Constants.3D_BUILDINGS, R.drawable.general_splash, Sample3DBuildingsActivity::class.java)
-        Example(Constants.ANIMATION_AROUND, R.drawable.general_splash, SampleAnimateAroundActivity::class.java)
-        Example(Constants.ANIMATED_CAMERA, R.drawable.general_splash, SampleAnimatedCameraActivity::class.java)
-        Example(Constants.ICONS_ON_THE_MAP, R.drawable.general_splash, SampleIconsOnMapActivity::class.java)
-        Example(Constants.REGIONAL_MAP, R.drawable.general_splash, SampleRegionalMapActivity::class.java)
-        Example(Constants.HIGHLIGHT_FEATURES, R.drawable.general_splash, SampleHighlightFeaturesAfterPanningActivity::class.java)
-        Example(Constants.RESTRICT_INTERACTION, R.drawable.general_splash, SampleRestrictUserInteractionActivity::class.java)
+        Example(Constants.MAP_STYLES, R.drawable.van_nav_splash, SampleChangeStylesActivity::class.java),
+        Example(Constants.HIGHLIGHT_BUILDINGS, R.drawable.general_splash, SampleHighlightBuildingActivity::class.java),
+        Example(Constants.BUILDINGS_3D, R.drawable.van_nav_splash, Sample3DBuildingsActivity::class.java),
+        Example(Constants.ANIMATION_AROUND, R.drawable.general_splash, SampleAnimateAroundActivity::class.java),
+        Example(Constants.ANIMATED_CAMERA, R.drawable.van_nav_splash, SampleAnimatedCameraActivity::class.java),
+        Example(Constants.ICONS_ON_THE_MAP, R.drawable.general_splash, SampleIconsOnMapActivity::class.java),
+        Example(Constants.REGIONAL_MAP, R.drawable.van_nav_splash, SampleRegionalMapActivity::class.java),
+        Example(Constants.HIGHLIGHT_FEATURES, R.drawable.general_splash,
+            SampleHighlightFeaturesAfterPanningActivity::class.java),
+        Example(Constants.RESTRICT_INTERACTION, R.drawable.van_nav_splash, SampleRestrictUserInteractionActivity::class.java)
     )
 
     private lateinit var binding: ActivityMainBinding

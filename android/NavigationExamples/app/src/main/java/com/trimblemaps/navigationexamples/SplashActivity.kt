@@ -85,7 +85,7 @@ class SplashActivity : AppCompatActivity() {
             withContext(dispatcher) {
                 val account = TrimbleMapsAccount.builder()
                     .apiKey("")
-                    .region(EnvironmentCriteria.Region.EUROPE)
+                    .region(EnvironmentCriteria.Region.WORLDWIDE)
                     .addLicensedFeature(LicensedFeature.NAVIGATION_SDK)
                     .addLicensedFeature(LicensedFeature.MAPS_SDK)
                     .build()

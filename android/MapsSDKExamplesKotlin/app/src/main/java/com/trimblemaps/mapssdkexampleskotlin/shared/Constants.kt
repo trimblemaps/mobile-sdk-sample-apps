@@ -14,7 +14,7 @@ object Constants {
     const val LAYERS = "Trimble Layers"
     const val MAP_STYLES = "Map Styles"
     const val HIGHLIGHT_BUILDINGS = "Highlight Buildings"
-    const val 3D_BUILDINGS = "3D Buildings"
+    const val BUILDINGS_3D = "3D Buildings"
     const val ANIMATION_AROUND = "Animation Around"
     const val ANIMATED_CAMERA = "Animated Camera"
     const val ICONS_ON_THE_MAP = "Icons on the Map"

@@ -152,6 +152,10 @@ class NavigationActivity : AppCompatActivity() {
         override fun onFinalDestinationArrival(routeProgress: RouteProgress) {
         }
 
+        override fun onIntermediateArrival(routeLegProgress: RouteLegProgress) {
+            TODO("Not yet implemented")
+        }
+
         override fun onNextRouteLegStart(routeLegProgress: RouteLegProgress) {
         }
 

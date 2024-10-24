@@ -152,6 +152,9 @@ class NavigationActivity : AppCompatActivity() {
         override fun onFinalDestinationArrival(routeProgress: RouteProgress) {
         }
 
+        override fun onIntermediateArrival(routeLegProgress: RouteLegProgress) {
+        }
+
         override fun onNextRouteLegStart(routeLegProgress: RouteLegProgress) {
         }
 

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- App Information -->
+    <key>CFBundleDisplayName</key>
+    <string>iOS SDK Sample</string>
+    <key>CFBundleName</key>
+    <string>iOS SDK Sample</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.example.iOS-SDK-Sample</string>
+    <key>CFBundleVersion</key>
+    <string>1.0</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0</string>
+    <key>CFBundleDevelopmentRegion</key>
+    <string>en</string>
+    <key>CFBundleExecutable</key>
+    <string>$(EXECUTABLE_NAME)</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>LSRequiresIPhoneOS</key>
+    <true/>
+    
+    <!-- Device Capabilities -->
+    <key>UIDeviceFamily</key>
+    <array>
+        <integer>1</integer>
+        <integer>2</integer>
+    </array>
+    
+    <!-- Location Permissions -->
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Your precise location is used to show your location on the map.</string>
+    <key>NSLocationTemporaryUsageDescriptionDictionary</key>
+    <dict>
+        <key>LocationAccuracyAuthorizationDescription</key>
+        <string>Please enable precise location to show your location on the map.</string>
+    </dict>
+    <key>NSLocationTemporaryUsageDescriptionDictionary</key>
+        <dict>
+                <key>TMGLAccuracyAuthorizationDescription</key>
+                <string>Please enable precise location. Turn-by-turn directions only work when precise location data is available.</string>
+        </dict>
+        <key>UIApplicationSceneManifest</key>
+        <dict>
+                <key>UIApplicationSupportsMultipleScenes</key>
+                <true/>
+        </dict>
+        <key>UIApplicationSupportsIndirectInputEvents</key>
+        <true/>
+        <key>UIBackgroundModes</key>
+        <array>
+                <string>audio</string>
+                <string>location</string>
+        </array>
+        <key>UILaunchScreen</key>
+        <dict/>
+        <key>UIRequiredDeviceCapabilities</key>
+        <array>
+                <string>armv7</string>
+        </array>
+        <key>UISupportedInterfaceOrientations</key>
+        <array>
+                <string>UIInterfaceOrientationPortrait</string>
+                <string>UIInterfaceOrientationLandscapeLeft</string>
+                <string>UIInterfaceOrientationLandscapeRight</string>
+        </array>
+</dict>
+</plist>

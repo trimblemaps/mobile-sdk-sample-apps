@@ -1,0 +1,1 @@
+Visit https://developer.trimblemaps.com/navigation-sdk/ios-sdk/getting-started/project-setup/ for setup instructions

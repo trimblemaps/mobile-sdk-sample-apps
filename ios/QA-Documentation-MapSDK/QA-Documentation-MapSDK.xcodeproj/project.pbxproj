@@ -1,0 +1,518 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6C11060A2CA2FEA20048E285 /* TrimbleMapsMultiplatformUI.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C1106092CA2FEA20048E285 /* TrimbleMapsMultiplatformUI.xcframework */; };
+		6C11060B2CA2FEA20048E285 /* TrimbleMapsMultiplatformUI.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C1106092CA2FEA20048E285 /* TrimbleMapsMultiplatformUI.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BB02C9772B6D52B50042ED35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02C9762B6D52B50042ED35 /* AppDelegate.swift */; };
+		BB02C9792B6D52B50042ED35 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02C9782B6D52B50042ED35 /* SceneDelegate.swift */; };
+		BB02C97B2B6D52B50042ED35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02C97A2B6D52B50042ED35 /* ViewController.swift */; };
+		BB02C97E2B6D52B50042ED35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB02C97C2B6D52B50042ED35 /* Main.storyboard */; };
+		BB02C9802B6D52B70042ED35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB02C97F2B6D52B70042ED35 /* Assets.xcassets */; };
+		BB02C9832B6D52B70042ED35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB02C9812B6D52B70042ED35 /* LaunchScreen.storyboard */; };
+		BB02C9A82B6D6DF40042ED35 /* BasicMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02C9A72B6D6DF40042ED35 /* BasicMapViewController.swift */; };
+		BB02C9AA2B6D6E9E0042ED35 /* GeocodingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02C9A92B6D6E9E0042ED35 /* GeocodingViewController.swift */; };
+		BB02C9AC2B6D81610042ED35 /* MapStylesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02C9AB2B6D81610042ED35 /* MapStylesViewController.swift */; };
+		BB02C9AE2B6D8F3C0042ED35 /* SimpleRoutingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02C9AD2B6D8F3C0042ED35 /* SimpleRoutingViewController.swift */; };
+		BB02C9B02B6D902B0042ED35 /* TrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02C9AF2B6D902B0042ED35 /* TrackingViewController.swift */; };
+		BB02C9B22B6D90F60042ED35 /* TrimbleLayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02C9B12B6D90F60042ED35 /* TrimbleLayersViewController.swift */; };
+		BB02C9B42B6D92330042ED35 /* tristate.json in Resources */ = {isa = PBXBuildFile; fileRef = BB02C9B32B6D92330042ED35 /* tristate.json */; };
+		BB02C9B62B6D92510042ED35 /* DataDrivenStylingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02C9B52B6D92510042ED35 /* DataDrivenStylingViewController.swift */; };
+		BB02C9B82B6D932A0042ED35 /* DotsOnAMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02C9B72B6D932A0042ED35 /* DotsOnAMapViewController.swift */; };
+		BB02C9BA2B6D94080042ED35 /* lines.json in Resources */ = {isa = PBXBuildFile; fileRef = BB02C9B92B6D94080042ED35 /* lines.json */; };
+		BB02C9BC2B6D94290042ED35 /* LinesOnAMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02C9BB2B6D94290042ED35 /* LinesOnAMapViewController.swift */; };
+		BBD571342B890B11006FB1C0 /* Solar.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD5712B2B890B0F006FB1C0 /* Solar.xcframework */; };
+		BBD571352B890B11006FB1C0 /* Solar.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BBD5712B2B890B0F006FB1C0 /* Solar.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BBD571362B890B11006FB1C0 /* Turf.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD5712C2B890B10006FB1C0 /* Turf.xcframework */; };
+		BBD571372B890B11006FB1C0 /* Turf.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BBD5712C2B890B10006FB1C0 /* Turf.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BBD571382B890B11006FB1C0 /* RoutingProfilesPlugin.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD5712D2B890B10006FB1C0 /* RoutingProfilesPlugin.xcframework */; };
+		BBD571392B890B11006FB1C0 /* RoutingProfilesPlugin.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BBD5712D2B890B10006FB1C0 /* RoutingProfilesPlugin.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BBD5713A2B890B11006FB1C0 /* Polyline.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD5712E2B890B10006FB1C0 /* Polyline.xcframework */; };
+		BBD5713B2B890B11006FB1C0 /* Polyline.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BBD5712E2B890B10006FB1C0 /* Polyline.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BBD5713C2B890B11006FB1C0 /* RoutePlugin.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD5712F2B890B10006FB1C0 /* RoutePlugin.xcframework */; };
+		BBD5713D2B890B11006FB1C0 /* RoutePlugin.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BBD5712F2B890B10006FB1C0 /* RoutePlugin.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BBD5713E2B890B11006FB1C0 /* TrimbleMapsWebservicesClient.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD571302B890B10006FB1C0 /* TrimbleMapsWebservicesClient.xcframework */; };
+		BBD5713F2B890B11006FB1C0 /* TrimbleMapsWebservicesClient.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BBD571302B890B10006FB1C0 /* TrimbleMapsWebservicesClient.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BBD571402B890B11006FB1C0 /* TrimbleMaps.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD571312B890B10006FB1C0 /* TrimbleMaps.xcframework */; };
+		BBD571412B890B11006FB1C0 /* TrimbleMaps.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BBD571312B890B10006FB1C0 /* TrimbleMaps.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BBD571422B890B11006FB1C0 /* TrimbleMapsAccounts.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD571322B890B11006FB1C0 /* TrimbleMapsAccounts.xcframework */; };
+		BBD571432B890B11006FB1C0 /* TrimbleMapsAccounts.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BBD571322B890B11006FB1C0 /* TrimbleMapsAccounts.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BBD571442B890B11006FB1C0 /* TrimbleMapsMobileEvents.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD571332B890B11006FB1C0 /* TrimbleMapsMobileEvents.xcframework */; };
+		BBD571452B890B11006FB1C0 /* TrimbleMapsMobileEvents.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BBD571332B890B11006FB1C0 /* TrimbleMapsMobileEvents.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BBD571462B890B11006FB1C0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BBD571392B890B11006FB1C0 /* RoutingProfilesPlugin.xcframework in Embed Frameworks */,
+				6C11060B2CA2FEA20048E285 /* TrimbleMapsMultiplatformUI.xcframework in Embed Frameworks */,
+				BBD571372B890B11006FB1C0 /* Turf.xcframework in Embed Frameworks */,
+				BBD571452B890B11006FB1C0 /* TrimbleMapsMobileEvents.xcframework in Embed Frameworks */,
+				BBD5713F2B890B11006FB1C0 /* TrimbleMapsWebservicesClient.xcframework in Embed Frameworks */,
+				BBD571352B890B11006FB1C0 /* Solar.xcframework in Embed Frameworks */,
+				BBD5713D2B890B11006FB1C0 /* RoutePlugin.xcframework in Embed Frameworks */,
+				BBD5713B2B890B11006FB1C0 /* Polyline.xcframework in Embed Frameworks */,
+				BBD571432B890B11006FB1C0 /* TrimbleMapsAccounts.xcframework in Embed Frameworks */,
+				BBD571412B890B11006FB1C0 /* TrimbleMaps.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		6C1106092CA2FEA20048E285 /* TrimbleMapsMultiplatformUI.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMapsMultiplatformUI.xcframework; path = ../Carthage/Build/TrimbleMapsMultiplatformUI.xcframework; sourceTree = "<group>"; };
+		BB02C9732B6D52B50042ED35 /* QA-Documentation-MapSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QA-Documentation-MapSDK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB02C9762B6D52B50042ED35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BB02C9782B6D52B50042ED35 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		BB02C97A2B6D52B50042ED35 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BB02C97D2B6D52B50042ED35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BB02C97F2B6D52B70042ED35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BB02C9822B6D52B70042ED35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BB02C9842B6D52B70042ED35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB02C98B2B6D55890042ED35 /* TrimbleMapsWebservicesClient.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMapsWebservicesClient.xcframework; path = Carthage/Build/TrimbleMapsWebservicesClient.xcframework; sourceTree = "<group>"; };
+		BB02C98C2B6D55890042ED35 /* TrimbleMaps.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMaps.xcframework; path = Carthage/Build/TrimbleMaps.xcframework; sourceTree = "<group>"; };
+		BB02C98D2B6D55890042ED35 /* TrimbleMapsMobileEvents.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMapsMobileEvents.xcframework; path = Carthage/Build/TrimbleMapsMobileEvents.xcframework; sourceTree = "<group>"; };
+		BB02C98E2B6D55890042ED35 /* TrimbleMapsAccounts.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMapsAccounts.xcframework; path = Carthage/Build/TrimbleMapsAccounts.xcframework; sourceTree = "<group>"; };
+		BB02C98F2B6D55890042ED35 /* RoutingProfilesPlugin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RoutingProfilesPlugin.xcframework; path = Carthage/Build/RoutingProfilesPlugin.xcframework; sourceTree = "<group>"; };
+		BB02C9902B6D55890042ED35 /* Solar.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Solar.xcframework; path = Carthage/Build/Solar.xcframework; sourceTree = "<group>"; };
+		BB02C9912B6D55890042ED35 /* Polyline.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Polyline.xcframework; path = Carthage/Build/Polyline.xcframework; sourceTree = "<group>"; };
+		BB02C9922B6D55890042ED35 /* Turf.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Turf.xcframework; path = Carthage/Build/Turf.xcframework; sourceTree = "<group>"; };
+		BB02C9932B6D55890042ED35 /* RoutePlugin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RoutePlugin.xcframework; path = Carthage/Build/RoutePlugin.xcframework; sourceTree = "<group>"; };
+		BB02C9A72B6D6DF40042ED35 /* BasicMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicMapViewController.swift; sourceTree = "<group>"; };
+		BB02C9A92B6D6E9E0042ED35 /* GeocodingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingViewController.swift; sourceTree = "<group>"; };
+		BB02C9AB2B6D81610042ED35 /* MapStylesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapStylesViewController.swift; sourceTree = "<group>"; };
+		BB02C9AD2B6D8F3C0042ED35 /* SimpleRoutingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleRoutingViewController.swift; sourceTree = "<group>"; };
+		BB02C9AF2B6D902B0042ED35 /* TrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingViewController.swift; sourceTree = "<group>"; };
+		BB02C9B12B6D90F60042ED35 /* TrimbleLayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrimbleLayersViewController.swift; sourceTree = "<group>"; };
+		BB02C9B32B6D92330042ED35 /* tristate.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tristate.json; sourceTree = "<group>"; };
+		BB02C9B52B6D92510042ED35 /* DataDrivenStylingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDrivenStylingViewController.swift; sourceTree = "<group>"; };
+		BB02C9B72B6D932A0042ED35 /* DotsOnAMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotsOnAMapViewController.swift; sourceTree = "<group>"; };
+		BB02C9B92B6D94080042ED35 /* lines.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = lines.json; sourceTree = "<group>"; };
+		BB02C9BB2B6D94290042ED35 /* LinesOnAMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinesOnAMapViewController.swift; sourceTree = "<group>"; };
+		BBD5712B2B890B0F006FB1C0 /* Solar.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Solar.xcframework; path = ../Carthage/Build/Solar.xcframework; sourceTree = "<group>"; };
+		BBD5712C2B890B10006FB1C0 /* Turf.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Turf.xcframework; path = ../Carthage/Build/Turf.xcframework; sourceTree = "<group>"; };
+		BBD5712D2B890B10006FB1C0 /* RoutingProfilesPlugin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RoutingProfilesPlugin.xcframework; path = ../Carthage/Build/RoutingProfilesPlugin.xcframework; sourceTree = "<group>"; };
+		BBD5712E2B890B10006FB1C0 /* Polyline.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Polyline.xcframework; path = ../Carthage/Build/Polyline.xcframework; sourceTree = "<group>"; };
+		BBD5712F2B890B10006FB1C0 /* RoutePlugin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RoutePlugin.xcframework; path = ../Carthage/Build/RoutePlugin.xcframework; sourceTree = "<group>"; };
+		BBD571302B890B10006FB1C0 /* TrimbleMapsWebservicesClient.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMapsWebservicesClient.xcframework; path = ../Carthage/Build/TrimbleMapsWebservicesClient.xcframework; sourceTree = "<group>"; };
+		BBD571312B890B10006FB1C0 /* TrimbleMaps.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMaps.xcframework; path = ../Carthage/Build/TrimbleMaps.xcframework; sourceTree = "<group>"; };
+		BBD571322B890B11006FB1C0 /* TrimbleMapsAccounts.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMapsAccounts.xcframework; path = ../Carthage/Build/TrimbleMapsAccounts.xcframework; sourceTree = "<group>"; };
+		BBD571332B890B11006FB1C0 /* TrimbleMapsMobileEvents.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMapsMobileEvents.xcframework; path = ../Carthage/Build/TrimbleMapsMobileEvents.xcframework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BB02C9702B6D52B50042ED35 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBD571382B890B11006FB1C0 /* RoutingProfilesPlugin.xcframework in Frameworks */,
+				6C11060A2CA2FEA20048E285 /* TrimbleMapsMultiplatformUI.xcframework in Frameworks */,
+				BBD571362B890B11006FB1C0 /* Turf.xcframework in Frameworks */,
+				BBD571442B890B11006FB1C0 /* TrimbleMapsMobileEvents.xcframework in Frameworks */,
+				BBD5713E2B890B11006FB1C0 /* TrimbleMapsWebservicesClient.xcframework in Frameworks */,
+				BBD571342B890B11006FB1C0 /* Solar.xcframework in Frameworks */,
+				BBD5713C2B890B11006FB1C0 /* RoutePlugin.xcframework in Frameworks */,
+				BBD5713A2B890B11006FB1C0 /* Polyline.xcframework in Frameworks */,
+				BBD571422B890B11006FB1C0 /* TrimbleMapsAccounts.xcframework in Frameworks */,
+				BBD571402B890B11006FB1C0 /* TrimbleMaps.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BB02C96A2B6D52B50042ED35 = {
+			isa = PBXGroup;
+			children = (
+				BB02C9752B6D52B50042ED35 /* QA-Documentation-MapSDK */,
+				BB02C9742B6D52B50042ED35 /* Products */,
+				BB02C98A2B6D55890042ED35 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BB02C9742B6D52B50042ED35 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BB02C9732B6D52B50042ED35 /* QA-Documentation-MapSDK.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BB02C9752B6D52B50042ED35 /* QA-Documentation-MapSDK */ = {
+			isa = PBXGroup;
+			children = (
+				BB02C9762B6D52B50042ED35 /* AppDelegate.swift */,
+				BB02C9782B6D52B50042ED35 /* SceneDelegate.swift */,
+				BB02C97A2B6D52B50042ED35 /* ViewController.swift */,
+				BB02C97C2B6D52B50042ED35 /* Main.storyboard */,
+				BB02C97F2B6D52B70042ED35 /* Assets.xcassets */,
+				BB02C9812B6D52B70042ED35 /* LaunchScreen.storyboard */,
+				BB02C9842B6D52B70042ED35 /* Info.plist */,
+				BB02C9A72B6D6DF40042ED35 /* BasicMapViewController.swift */,
+				BB02C9A92B6D6E9E0042ED35 /* GeocodingViewController.swift */,
+				BB02C9AB2B6D81610042ED35 /* MapStylesViewController.swift */,
+				BB02C9AD2B6D8F3C0042ED35 /* SimpleRoutingViewController.swift */,
+				BB02C9AF2B6D902B0042ED35 /* TrackingViewController.swift */,
+				BB02C9B12B6D90F60042ED35 /* TrimbleLayersViewController.swift */,
+				BB02C9B32B6D92330042ED35 /* tristate.json */,
+				BB02C9B52B6D92510042ED35 /* DataDrivenStylingViewController.swift */,
+				BB02C9B72B6D932A0042ED35 /* DotsOnAMapViewController.swift */,
+				BB02C9B92B6D94080042ED35 /* lines.json */,
+				BB02C9BB2B6D94290042ED35 /* LinesOnAMapViewController.swift */,
+			);
+			path = "QA-Documentation-MapSDK";
+			sourceTree = "<group>";
+		};
+		BB02C98A2B6D55890042ED35 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6C1106092CA2FEA20048E285 /* TrimbleMapsMultiplatformUI.xcframework */,
+				BBD5712E2B890B10006FB1C0 /* Polyline.xcframework */,
+				BBD5712F2B890B10006FB1C0 /* RoutePlugin.xcframework */,
+				BBD5712D2B890B10006FB1C0 /* RoutingProfilesPlugin.xcframework */,
+				BBD5712B2B890B0F006FB1C0 /* Solar.xcframework */,
+				BBD571312B890B10006FB1C0 /* TrimbleMaps.xcframework */,
+				BBD571322B890B11006FB1C0 /* TrimbleMapsAccounts.xcframework */,
+				BBD571332B890B11006FB1C0 /* TrimbleMapsMobileEvents.xcframework */,
+				BBD571302B890B10006FB1C0 /* TrimbleMapsWebservicesClient.xcframework */,
+				BBD5712C2B890B10006FB1C0 /* Turf.xcframework */,
+				BB02C9912B6D55890042ED35 /* Polyline.xcframework */,
+				BB02C9932B6D55890042ED35 /* RoutePlugin.xcframework */,
+				BB02C98F2B6D55890042ED35 /* RoutingProfilesPlugin.xcframework */,
+				BB02C9902B6D55890042ED35 /* Solar.xcframework */,
+				BB02C98C2B6D55890042ED35 /* TrimbleMaps.xcframework */,
+				BB02C98E2B6D55890042ED35 /* TrimbleMapsAccounts.xcframework */,
+				BB02C98D2B6D55890042ED35 /* TrimbleMapsMobileEvents.xcframework */,
+				BB02C98B2B6D55890042ED35 /* TrimbleMapsWebservicesClient.xcframework */,
+				BB02C9922B6D55890042ED35 /* Turf.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BB02C9722B6D52B50042ED35 /* QA-Documentation-MapSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB02C9872B6D52B70042ED35 /* Build configuration list for PBXNativeTarget "QA-Documentation-MapSDK" */;
+			buildPhases = (
+				BB02C96F2B6D52B50042ED35 /* Sources */,
+				BB02C9702B6D52B50042ED35 /* Frameworks */,
+				BB02C9712B6D52B50042ED35 /* Resources */,
+				BBD571462B890B11006FB1C0 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "QA-Documentation-MapSDK";
+			productName = "QA-Documentation-MapSDK";
+			productReference = BB02C9732B6D52B50042ED35 /* QA-Documentation-MapSDK.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BB02C96B2B6D52B50042ED35 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					BB02C9722B6D52B50042ED35 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = BB02C96E2B6D52B50042ED35 /* Build configuration list for PBXProject "QA-Documentation-MapSDK" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BB02C96A2B6D52B50042ED35;
+			productRefGroup = BB02C9742B6D52B50042ED35 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BB02C9722B6D52B50042ED35 /* QA-Documentation-MapSDK */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BB02C9712B6D52B50042ED35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB02C9BA2B6D94080042ED35 /* lines.json in Resources */,
+				BB02C9832B6D52B70042ED35 /* LaunchScreen.storyboard in Resources */,
+				BB02C9B42B6D92330042ED35 /* tristate.json in Resources */,
+				BB02C9802B6D52B70042ED35 /* Assets.xcassets in Resources */,
+				BB02C97E2B6D52B50042ED35 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BB02C96F2B6D52B50042ED35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB02C97B2B6D52B50042ED35 /* ViewController.swift in Sources */,
+				BB02C9B02B6D902B0042ED35 /* TrackingViewController.swift in Sources */,
+				BB02C9772B6D52B50042ED35 /* AppDelegate.swift in Sources */,
+				BB02C9AA2B6D6E9E0042ED35 /* GeocodingViewController.swift in Sources */,
+				BB02C9BC2B6D94290042ED35 /* LinesOnAMapViewController.swift in Sources */,
+				BB02C9AC2B6D81610042ED35 /* MapStylesViewController.swift in Sources */,
+				BB02C9A82B6D6DF40042ED35 /* BasicMapViewController.swift in Sources */,
+				BB02C9AE2B6D8F3C0042ED35 /* SimpleRoutingViewController.swift in Sources */,
+				BB02C9B62B6D92510042ED35 /* DataDrivenStylingViewController.swift in Sources */,
+				BB02C9B82B6D932A0042ED35 /* DotsOnAMapViewController.swift in Sources */,
+				BB02C9792B6D52B50042ED35 /* SceneDelegate.swift in Sources */,
+				BB02C9B22B6D90F60042ED35 /* TrimbleLayersViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BB02C97C2B6D52B50042ED35 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB02C97D2B6D52B50042ED35 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BB02C9812B6D52B70042ED35 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB02C9822B6D52B70042ED35 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BB02C9852B6D52B70042ED35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BB02C9862B6D52B70042ED35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BB02C9882B6D52B70042ED35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V9LS4QVT63;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "QA-Documentation-MapSDK/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.trimblemaps.mio.demo.qa-documentation-sample";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BB02C9892B6D52B70042ED35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V9LS4QVT63;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "QA-Documentation-MapSDK/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.trimblemaps.mio.demo.qa-documentation-sample";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BB02C96E2B6D52B50042ED35 /* Build configuration list for PBXProject "QA-Documentation-MapSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB02C9852B6D52B70042ED35 /* Debug */,
+				BB02C9862B6D52B70042ED35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB02C9872B6D52B70042ED35 /* Build configuration list for PBXNativeTarget "QA-Documentation-MapSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB02C9882B6D52B70042ED35 /* Debug */,
+				BB02C9892B6D52B70042ED35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BB02C96B2B6D52B50042ED35 /* Project object */;
+}

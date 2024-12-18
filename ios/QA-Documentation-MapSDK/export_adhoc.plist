@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+        <key>signingStyle</key>
+        <string>manual</string>
+        <key>signingCertificate</key>
+        <string>Apple Distribution: Trimble Maps Ltd.</string>
+        <key>method</key>
+        <string>ad-hoc</string>
+        <key>provisioningProfiles</key>
+        <dict>
+                <key>com.trimblemaps.demo.qa-documentation-sample</key>
+                <string>trimblemaps_adhoc</string>
+        </dict>
+</dict>
+</plist>

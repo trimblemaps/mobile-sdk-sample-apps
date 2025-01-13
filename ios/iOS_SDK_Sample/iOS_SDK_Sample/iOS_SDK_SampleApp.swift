@@ -42,8 +42,8 @@ struct iOS_SDK_SampleApp: App {
                     }
                 }
             } else {
-            // Handle the case where the account is not licensed for Navigation SDK
-            print("Account is not licensed for Navigation SDK")
+				// Handle the case where the account is not licensed for Navigation SDK
+				print("Account is not licensed for Navigation SDK")
             }
         }
     }

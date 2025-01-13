@@ -35,11 +35,15 @@ struct iOS_SDK_SampleApp: App {
         @Published var initialized = false
 
         func stateChanged(newStatus: AccountManagerState) {
-            
-            if newStatus == .loaded {
-                DispatchQueue.main.async {
-                    self.initialized = true
+            if AccountManager.default.isLicensed(licensedFeature: .navigationSdk) {
+                if newStatus == .loaded {
+                    DispatchQueue.main.async {
+                        self.initialized = true
+                    }
                 }
+            } else {
+            // Handle the case where the account is not licensed for Navigation SDK
+            print("Account is not licensed for Navigation SDK")
             }
         }
     }

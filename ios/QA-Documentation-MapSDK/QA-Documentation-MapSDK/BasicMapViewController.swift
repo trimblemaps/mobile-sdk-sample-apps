@@ -16,25 +16,29 @@ class BasicMapViewController: UIViewController, AccountManagerDelegate {
     }
 
     func stateChanged(newStatus: AccountManagerState) {
-        if newStatus == .loaded {
-            DispatchQueue.main.async {
-                // Create a map view
-                self.mapView = TMGLMapView(frame: self.view.bounds)
+        if AccountManager.default.isLicensed(licensedFeature: .mapsSdk) {
+            if newStatus == .loaded {
+                DispatchQueue.main.async {
+                    // Create a map view
+                    self.mapView = TMGLMapView(frame: self.view.bounds)
 
-                let centerCoordinate = CLLocationCoordinate2D(
-                latitude: 40.7128, longitude: -74.0060)
-                let camera = TMGLMapCamera(
-                                lookingAtCenter:centerCoordinate,
-                                                altitude: 500,
-                                                pitch: 15,
-                                                heading: 180)
-                self.mapView.camera = camera
+                    let centerCoordinate = CLLocationCoordinate2D(
+                    latitude: 40.7128, longitude: -74.0060)
+                    let camera = TMGLMapCamera(
+                                    lookingAtCenter:centerCoordinate,
+                                                    altitude: 500,
+                                                    pitch: 15,
+                                                    heading: 180)
+                    self.mapView.camera = camera
 
-                // Add the map
-                self.view.addSubview(self.mapView)
+                    // Add the map
+                    self.view.addSubview(self.mapView)
+                }
             }
+        } else {
+            // Handle the case where the account is not licensed for Maps SDK
+            print("Account is not licensed for Maps SDK")
         }
     }
-
 }
 

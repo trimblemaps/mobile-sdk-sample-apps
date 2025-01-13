@@ -13,18 +13,23 @@ class MapStylesViewController : UIViewController, AccountManagerDelegate {
         AccountManager.default.delegate = self
     }
     func stateChanged(newStatus: AccountManagerState) {
-        if newStatus == .loaded {
-            DispatchQueue.main.async {
-                // Create a map view
-                self.mapView = TMGLMapView(frame: self.view.bounds)
-                // Set the map location
-                let center = CLLocationCoordinate2D(latitude: 40.7584766, longitude: -73.9840227)
-                self.mapView.setCenter(center, zoomLevel: 13, animated: false)
-                // Add the map
-                self.view.addSubview(self.mapView)
-                // Add the style buttons
-                self.addStyleButtons()
+        if AccountManager.default.isLicensed(licensedFeature: .mapsSdk) {
+            if newStatus == .loaded {
+                DispatchQueue.main.async {
+                    // Create a map view
+                    self.mapView = TMGLMapView(frame: self.view.bounds)
+                    // Set the map location
+                    let center = CLLocationCoordinate2D(latitude: 40.7584766, longitude: -73.9840227)
+                    self.mapView.setCenter(center, zoomLevel: 13, animated: false)
+                    // Add the map
+                    self.view.addSubview(self.mapView)
+                    // Add the style buttons
+                    self.addStyleButtons()
+                }
             }
+        } else {
+            // Handle the case where the account is not licensed for Maps SDK
+            print("Account is not licensed for Maps SDK")
         }
     }
     private func addButton(title: String, action: Selector) -> UIButton {

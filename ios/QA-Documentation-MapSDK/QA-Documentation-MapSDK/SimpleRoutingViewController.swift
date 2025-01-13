@@ -18,19 +18,24 @@ class SimpleRoutingViewController: UIViewController, AccountManagerDelegate, TMG
     }
 
     func stateChanged(newStatus: AccountManagerState) {
-        if newStatus == .loaded {
-            DispatchQueue.main.async {
-                // Create a map view
-                self.mapView = TMGLMapView(frame: self.view.bounds)
-                self.mapView.delegate = self
+        if AccountManager.default.isLicensed(licensedFeature: .mapsSdk) {
+            if newStatus == .loaded {
+                DispatchQueue.main.async {
+                    // Create a map view
+                    self.mapView = TMGLMapView(frame: self.view.bounds)
+                    self.mapView.delegate = self
 
-                // Set the map location
-                let center = CLLocationCoordinate2D(latitude: 40.34330490091359, longitude: -74.62327537264328)
-                self.mapView.setCenter(center, zoomLevel: 11, animated: false)
+                    // Set the map location
+                    let center = CLLocationCoordinate2D(latitude: 40.34330490091359, longitude: -74.62327537264328)
+                    self.mapView.setCenter(center, zoomLevel: 11, animated: false)
 
-                // Add the map
-                self.view.addSubview(self.mapView)
+                    // Add the map
+                    self.view.addSubview(self.mapView)
+                }
             }
+        } else {
+            // Handle the case where the account is not licensed for Maps SDK
+            print("Account is not licensed for Maps SDK")
         }
     }
 

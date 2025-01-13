@@ -21,19 +21,24 @@ class DataDrivenStylingViewController: UIViewController, AccountManagerDelegate,
     }
 
     func stateChanged(newStatus: AccountManagerState) {
-        if newStatus == .loaded {
-            DispatchQueue.main.async {
-                // Create a map view
-                self.mapView = TMGLMapView(frame: self.view.bounds)
-                self.mapView.delegate = self
+        if AccountManager.default.isLicensed(licensedFeature: .mapsSdk) {
+            if newStatus == .loaded {
+                DispatchQueue.main.async {
+                    // Create a map view
+                    self.mapView = TMGLMapView(frame: self.view.bounds)
+                    self.mapView.delegate = self
 
-                // Set the map location
-                let center = CLLocationCoordinate2D(latitude: 41.36290180612575, longitude: -74.6946761628674)
-                self.mapView.setCenter(center, zoomLevel: 13, animated: false)
+                    // Set the map location
+                    let center = CLLocationCoordinate2D(latitude: 41.36290180612575, longitude: -74.6946761628674)
+                    self.mapView.setCenter(center, zoomLevel: 13, animated: false)
 
-                // Add the map
-                self.view.addSubview(self.mapView)
+                    // Add the map
+                    self.view.addSubview(self.mapView)
+                }
             }
+        } else {
+            // Handle the case where the account is not licensed for Maps SDK
+            print("Account is not licensed for Maps SDK")
         }
     }
 

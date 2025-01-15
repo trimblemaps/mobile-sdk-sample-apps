@@ -21,5 +21,6 @@ object Constants {
     const val REGIONAL_MAP = "Regional Map"
     const val HIGHLIGHT_FEATURES = "Highlight Features"
     const val RESTRICT_INTERACTION = "Restrict Interaction"
+    const val FRAME_LOCATIONS = "Frame Locations"
 }
 

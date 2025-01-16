@@ -37,7 +37,9 @@ class MainActivity : Activity() {
         Example(Constants.REGIONAL_MAP, R.drawable.van_nav_splash, SampleRegionalMapActivity::class.java),
         Example(Constants.HIGHLIGHT_FEATURES, R.drawable.general_splash,
             SampleHighlightFeaturesAfterPanningActivity::class.java),
-        Example(Constants.RESTRICT_INTERACTION, R.drawable.van_nav_splash, SampleRestrictUserInteractionActivity::class.java)
+        Example(Constants.RESTRICT_INTERACTION, R.drawable.van_nav_splash, SampleRestrictUserInteractionActivity::class
+            .java),
+        Example(Constants.FRAME_LOCATIONS, R.drawable.general_splash, SampleFramingActivity::class.java)
     )
 
     private lateinit var binding: ActivityMainBinding

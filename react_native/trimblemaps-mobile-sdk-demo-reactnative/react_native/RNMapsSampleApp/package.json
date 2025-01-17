@@ -10,7 +10,7 @@
     "@react-native-community/checkbox": "^0.5.14",
     "@react-native-masked-view/masked-view": "^0.2.5",
     "@react-native-community/slider": "^4.4.2",
-    "@react-navigation/core": "^6.4.8",
+    "@react-navigation/core": "^7.0.0",
     "@react-navigation/drawer": "^6.6.3",
     "@react-navigation/native": "^6.1.7",
     "@react-navigation/native-stack": "^6.9.13",

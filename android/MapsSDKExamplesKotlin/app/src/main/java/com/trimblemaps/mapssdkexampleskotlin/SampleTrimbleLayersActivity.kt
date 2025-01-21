@@ -46,7 +46,9 @@ class SampleTrimbleLayersActivity : Activity() {
             "traffic" -> map!!.toggleTrafficVisibility()
             "3d buildings" -> map!!.toggle3dBuildingVisibility()
             "pois" -> map!!.togglePoiVisibility()
-            "weather" -> map!!.toggleWeatherAlertVisibility()
+            "weather alerts" -> map!!.toggleWeatherAlertVisibility()
+            "weather radar" -> map!!.toggleWeatherRadarVisibility()
+            "road conditions" -> map!!.toggleRoadSurfaceVisibility()
         }
     }
 

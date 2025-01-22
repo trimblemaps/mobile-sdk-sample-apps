@@ -63,13 +63,21 @@ class TrimbleLayersViewController: UIViewController, AccountManagerDelegate {
         let trafficButton = addLayerButton(title: "Traffic", action: #selector(trafficButtonPressed))
         let buildingsButton = addLayerButton(title: "3D Buildings", action: #selector(buildingsButtonPressed))
         let poisButton = addLayerButton(title: "POIs", action: #selector(poisButtonPressed))
-        let weatherButton = addLayerButton(title: "Weather", action: #selector(weatherButtonPressed))
+        let weatherAlertsButton = addLayerButton(title: "Weather Alerts", action: #selector(weatherAlertsButtonPressed))
+        let weatherRadarButton = addLayerButton(title: "Weather Radar", action: #selector(weatherRadarButtonPressed))
+        let roadConditionsButton = addLayerButton(title: "Road Conditions", action: #selector(roadConditionsButtonPressed))
 
         NSLayoutConstraint.activate([
-            weatherButton.bottomAnchor.constraint(equalTo: mapView.bottomAnchor, constant: -10),
-            weatherButton.trailingAnchor.constraint(equalTo: mapView.trailingAnchor, constant: -10),
-            weatherButton.leadingAnchor.constraint(equalTo: buildingsButton.leadingAnchor, constant: 0),
-            poisButton.bottomAnchor.constraint(equalTo: weatherButton.topAnchor, constant: -5),
+            roadConditionsButton.bottomAnchor.constraint(equalTo: mapView.bottomAnchor, constant: -10),
+            roadConditionsButton.trailingAnchor.constraint(equalTo: mapView.trailingAnchor, constant: -10),
+            roadConditionsButton.leadingAnchor.constraint(equalTo: buildingsButton.leadingAnchor, constant: 0),
+            weatherRadarButton.bottomAnchor.constraint(equalTo: roadConditionsButton.topAnchor, constant: -5),
+            weatherRadarButton.trailingAnchor.constraint(equalTo: mapView.trailingAnchor, constant: -10),
+            weatherRadarButton.leadingAnchor.constraint(equalTo: buildingsButton.leadingAnchor, constant: 0),
+            weatherAlertsButton.bottomAnchor.constraint(equalTo: weatherRadarButton.topAnchor, constant: -5),
+            weatherAlertsButton.trailingAnchor.constraint(equalTo: mapView.trailingAnchor, constant: -10),
+            weatherAlertsButton.leadingAnchor.constraint(equalTo: buildingsButton.leadingAnchor, constant: 0),
+            poisButton.bottomAnchor.constraint(equalTo: weatherAlertsButton.topAnchor, constant: -5),
             poisButton.trailingAnchor.constraint(equalTo: mapView.trailingAnchor, constant: -10),
             poisButton.leadingAnchor.constraint(equalTo: buildingsButton.leadingAnchor, constant: 0),
             buildingsButton.bottomAnchor.constraint(equalTo: poisButton.topAnchor, constant: -5),
@@ -94,8 +102,16 @@ class TrimbleLayersViewController: UIViewController, AccountManagerDelegate {
         mapView.style?.togglePoiVisibility()
     }
 
-    @objc func weatherButtonPressed() {
+    @objc func weatherAlertsButtonPressed() {
         mapView.style?.toggleWeatherAlertVisibility()
+    }
+    
+    @objc func weatherRadarButtonPressed() {
+        mapView.style?.toggleWeatherRadarVisibility()
+    }
+    
+    @objc func roadConditionsButtonPressed() {
+        mapView.style?.toggleRoadSurfaceVisibility()
     }
 }
 

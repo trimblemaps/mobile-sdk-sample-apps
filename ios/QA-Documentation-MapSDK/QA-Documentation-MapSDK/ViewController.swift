@@ -25,14 +25,15 @@ class ViewController: UIViewController {
 
         let buttons = [
             addButton(image: "van_nav_splash", title: "Basic Map", action: #selector(basicMapButtonTapped)),
-            addButton(image: "van_nav_splash", title: "Map Styles", action: #selector(mapStylesButtonTapped)),
-            addButton(image: "general_splash", title: "Geocoding", action: #selector(geocodingButtonTapped)),
+            addButton(image: "general_splash", title: "Map Styles", action: #selector(mapStylesButtonTapped)),
+            addButton(image: "van_nav_splash", title: "Geocoding", action: #selector(geocodingButtonTapped)),
             addButton(image: "general_splash", title: "Simple Route", action: #selector(simpleRoutingButtonTapped)),
             addButton(image: "van_nav_splash", title: "Tracking", action: #selector(trackingButtonTapped)),
-            addButton(image: "van_nav_splash", title: "Trimble Layers", action: #selector(trimbleLayersButtonTapped)),
-            addButton(image: "general_splash", title: "Data Driven Styling", action: #selector(dataDrivenStylingButtonTapped)),
+            addButton(image: "general_splash", title: "Trimble Layers", action: #selector(trimbleLayersButtonTapped)),
+            addButton(image: "van_nav_splash", title: "Data Driven Styling", action: #selector(dataDrivenStylingButtonTapped)),
             addButton(image: "general_splash", title: "Dots On a Map", action: #selector(dotsOnAMapButtonTapped)),
-            addButton(image: "general_splash", title: "Lines On a Map", action: #selector(linesOnAMapButtonTapped))
+            addButton(image: "van_nav_splash", title: "Lines On a Map", action: #selector(linesOnAMapButtonTapped)),
+            addButton(image: "general_splash", title: "Sample Framing", action: #selector(sampleFramingButtonTapped))
         ]
 
         for button in buttons {
@@ -42,7 +43,7 @@ class ViewController: UIViewController {
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: view.frame.width * 0.05), // 5% of the screen width from the leading edge
-            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -view.frame.width * 0.05), // 5% of the screen width from the trailing edge 
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -view.frame.width * 0.05), // 5% of the screen width from the trailing edge
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
             stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20),
@@ -131,6 +132,13 @@ class ViewController: UIViewController {
     @objc func linesOnAMapButtonTapped(_ sender: UIButton) {
         let linesOnAMapButtonViewController = LinesOnAMapViewController()
         let navigationController = UINavigationController(rootViewController: linesOnAMapButtonViewController)
+        navigationController.modalPresentationStyle = .fullScreen
+        present(navigationController, animated: true, completion: nil)
+    }
+    
+    @objc func sampleFramingButtonTapped(_ sender: UIButton) {
+        let sampleFramingButtonViewController = SampleFramingViewController()
+        let navigationController = UINavigationController(rootViewController: sampleFramingButtonViewController)
         navigationController.modalPresentationStyle = .fullScreen
         present(navigationController, animated: true, completion: nil)
     }

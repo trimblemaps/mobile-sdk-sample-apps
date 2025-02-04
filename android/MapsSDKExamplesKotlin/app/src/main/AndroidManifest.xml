@@ -73,6 +73,9 @@
             android:name=".SampleFramingActivity"
             android:exported="false" />
         <activity
+            android:name=".SampleClickablePointsActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false"
             android:label="MainActivity" />

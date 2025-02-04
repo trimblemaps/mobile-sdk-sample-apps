@@ -22,5 +22,6 @@ object Constants {
     const val HIGHLIGHT_FEATURES = "Highlight Features"
     const val RESTRICT_INTERACTION = "Restrict Interaction"
     const val FRAME_LOCATIONS = "Frame Locations"
+    const val CLICKABLE_POINTS = "Clickable Points"
 }
 

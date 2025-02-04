@@ -39,7 +39,8 @@ class MainActivity : Activity() {
             SampleHighlightFeaturesAfterPanningActivity::class.java),
         Example(Constants.RESTRICT_INTERACTION, R.drawable.van_nav_splash, SampleRestrictUserInteractionActivity::class
             .java),
-        Example(Constants.FRAME_LOCATIONS, R.drawable.general_splash, SampleFramingActivity::class.java)
+        Example(Constants.FRAME_LOCATIONS, R.drawable.general_splash, SampleFramingActivity::class.java),
+        Example(Constants.CLICKABLE_POINTS, R.drawable.van_nav_splash, SampleClickablePointsActivity::class.java)
     )
 
     private lateinit var binding: ActivityMainBinding

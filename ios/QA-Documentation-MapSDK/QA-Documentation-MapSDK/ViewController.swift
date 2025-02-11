@@ -25,14 +25,16 @@ class ViewController: UIViewController {
 
         let buttons = [
             addButton(image: "van_nav_splash", title: "Basic Map", action: #selector(basicMapButtonTapped)),
-            addButton(image: "van_nav_splash", title: "Map Styles", action: #selector(mapStylesButtonTapped)),
-            addButton(image: "general_splash", title: "Geocoding", action: #selector(geocodingButtonTapped)),
+            addButton(image: "general_splash", title: "Map Styles", action: #selector(mapStylesButtonTapped)),
+            addButton(image: "van_nav_splash", title: "Geocoding", action: #selector(geocodingButtonTapped)),
             addButton(image: "general_splash", title: "Simple Route", action: #selector(simpleRoutingButtonTapped)),
             addButton(image: "van_nav_splash", title: "Tracking", action: #selector(trackingButtonTapped)),
-            addButton(image: "van_nav_splash", title: "Trimble Layers", action: #selector(trimbleLayersButtonTapped)),
-            addButton(image: "general_splash", title: "Data Driven Styling", action: #selector(dataDrivenStylingButtonTapped)),
+            addButton(image: "general_splash", title: "Trimble Layers", action: #selector(trimbleLayersButtonTapped)),
+            addButton(image: "van_nav_splash", title: "Data Driven Styling", action: #selector(dataDrivenStylingButtonTapped)),
             addButton(image: "general_splash", title: "Dots On a Map", action: #selector(dotsOnAMapButtonTapped)),
-            addButton(image: "general_splash", title: "Lines On a Map", action: #selector(linesOnAMapButtonTapped))
+            addButton(image: "van_nav_splash", title: "Lines On a Map", action: #selector(linesOnAMapButtonTapped)),
+            addButton(image: "general_splash", title: "Sample Framing", action: #selector(sampleFramingButtonTapped)),
+            addButton(image: "van_nav_splash", title: "Clickable Points", action: #selector(clickablePointsButtonTapped))
         ]
 
         for button in buttons {
@@ -131,6 +133,20 @@ class ViewController: UIViewController {
     @objc func linesOnAMapButtonTapped(_ sender: UIButton) {
         let linesOnAMapButtonViewController = LinesOnAMapViewController()
         let navigationController = UINavigationController(rootViewController: linesOnAMapButtonViewController)
+        navigationController.modalPresentationStyle = .fullScreen
+        present(navigationController, animated: true, completion: nil)
+    }
+    
+    @objc func sampleFramingButtonTapped(_ sender: UIButton) {
+        let sampleFramingButtonViewController = SampleFramingViewController()
+        let navigationController = UINavigationController(rootViewController: sampleFramingButtonViewController)
+        navigationController.modalPresentationStyle = .fullScreen
+        present(navigationController, animated: true, completion: nil)
+    }
+    
+    @objc func clickablePointsButtonTapped(_ sender: UIButton) {
+        let clickablePointsButtonViewController = ClickablePointsViewController()
+        let navigationController = UINavigationController(rootViewController: clickablePointsButtonViewController)
         navigationController.modalPresentationStyle = .fullScreen
         present(navigationController, animated: true, completion: nil)
     }

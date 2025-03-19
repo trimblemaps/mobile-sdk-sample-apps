@@ -1,0 +1,40 @@
+{
+  "version": 2,
+  "dgSpecHash": "1Mok3M6q0Eg=",
+  "success": false,
+  "projectFilePath": "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\MapSDK.Sample\\MapSDK.Sample.Forms.iOS\\MapSDK.Sample.Forms.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gramana\\.nuget\\packages\\microsoft.extensions.configuration\\8.0.0\\microsoft.extensions.configuration.8.0.0.nupkg.sha512",
+    "C:\\Users\\gramana\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\gramana\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.1\\microsoft.extensions.dependencyinjection.8.0.1.nupkg.sha512",
+    "C:\\Users\\gramana\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.2\\microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512",
+    "C:\\Users\\gramana\\.nuget\\packages\\microsoft.extensions.logging\\8.0.1\\microsoft.extensions.logging.8.0.1.nupkg.sha512",
+    "C:\\Users\\gramana\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.2\\microsoft.extensions.logging.abstractions.8.0.2.nupkg.sha512",
+    "C:\\Users\\gramana\\.nuget\\packages\\microsoft.extensions.options\\8.0.2\\microsoft.extensions.options.8.0.2.nupkg.sha512",
+    "C:\\Users\\gramana\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "C:\\Users\\gramana\\.nuget\\packages\\microsoft.maui.controls\\8.0.100\\microsoft.maui.controls.8.0.100.nupkg.sha512",
+    "C:\\Users\\gramana\\.nuget\\packages\\microsoft.maui.controls.build.tasks\\8.0.100\\microsoft.maui.controls.build.tasks.8.0.100.nupkg.sha512",
+    "C:\\Users\\gramana\\.nuget\\packages\\microsoft.maui.controls.compatibility\\8.0.100\\microsoft.maui.controls.compatibility.8.0.100.nupkg.sha512",
+    "C:\\Users\\gramana\\.nuget\\packages\\microsoft.maui.controls.core\\8.0.100\\microsoft.maui.controls.core.8.0.100.nupkg.sha512",
+    "C:\\Users\\gramana\\.nuget\\packages\\microsoft.maui.controls.xaml\\8.0.100\\microsoft.maui.controls.xaml.8.0.100.nupkg.sha512",
+    "C:\\Users\\gramana\\.nuget\\packages\\microsoft.maui.core\\8.0.100\\microsoft.maui.core.8.0.100.nupkg.sha512",
+    "C:\\Users\\gramana\\.nuget\\packages\\microsoft.maui.essentials\\8.0.100\\microsoft.maui.essentials.8.0.100.nupkg.sha512",
+    "C:\\Users\\gramana\\.nuget\\packages\\microsoft.maui.graphics\\8.0.100\\microsoft.maui.graphics.8.0.100.nupkg.sha512",
+    "C:\\Users\\gramana\\.nuget\\packages\\microsoft.maui.resizetizer\\8.0.100\\microsoft.maui.resizetizer.8.0.100.nupkg.sha512",
+    "C:\\Users\\gramana\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.11\\microsoft.net.illink.tasks.8.0.11.nupkg.sha512",
+    "C:\\Users\\gramana\\.nuget\\packages\\microsoft.ios.ref.net8.0_18.0\\18.0.8319\\microsoft.ios.ref.net8.0_18.0.18.0.8319.nupkg.sha512",
+    "C:\\Users\\gramana\\.nuget\\packages\\microsoft.ios.runtime.iossimulator-x64.net8.0_18.0\\18.0.8319\\microsoft.ios.runtime.iossimulator-x64.net8.0_18.0.18.0.8319.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\MapSDK.Sample\\MapSDK.Sample.Forms\\MapSDK.Sample.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\MapSDK.Sample\\MapSDK.Sample.Forms\\MapSDK.Sample.csproj",
+      "targetGraphs": [
+        "net8.0-ios18.0",
+        "net8.0-ios18.0/iossimulator-x64"
+      ]
+    }
+  ]
+}

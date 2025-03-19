@@ -1,0 +1,1 @@
+<resources><dimen name="trimblemaps_defaultMultiTapMovementThreshold">5dp</dimen><dimen name="trimblemaps_defaultScaleSpanSinceStartThreshold">7dp</dimen><dimen name="trimblemaps_defaultShovePixelThreshold">16dp</dimen><dimen name="trimblemaps_internalMinSpan23">10mm</dimen><dimen name="trimblemaps_internalMinSpan24">6mm</dimen></resources>

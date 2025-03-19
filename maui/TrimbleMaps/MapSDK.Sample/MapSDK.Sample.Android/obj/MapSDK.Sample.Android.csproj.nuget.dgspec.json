@@ -1,0 +1,631 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\MapSDK.Sample\\MapSDK.Sample.Android\\MapSDK.Sample.Android.csproj": {}
+  },
+  "projects": {
+    "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\MapSDK.Sample\\MapSDK.Sample.Android\\MapSDK.Sample.Android.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\MapSDK.Sample\\MapSDK.Sample.Android\\MapSDK.Sample.Android.csproj",
+        "projectName": "MapSDK.Sample.Android",
+        "projectPath": "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\MapSDK.Sample\\MapSDK.Sample.Android\\MapSDK.Sample.Android.csproj",
+        "packagesPath": "C:\\Users\\gramana\\.nuget\\packages\\",
+        "outputPath": "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\MapSDK.Sample\\MapSDK.Sample.Android\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\NuGet.Config",
+          "C:\\Users\\gramana\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-android"
+        ],
+        "sources": {
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://trimblemaps.jfrog.io/artifactory/api/nuget/v3/maui": {}
+        },
+        "frameworks": {
+          "net8.0-android34.0": {
+            "targetAlias": "net8.0-android",
+            "projectReferences": {
+              "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\MapSDK.Sample\\MapSDK.Sample\\MapSDK.Sample.csproj": {
+                "projectPath": "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\MapSDK.Sample\\MapSDK.Sample\\MapSDK.Sample.csproj"
+              },
+              "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\MapSDK\\Platform.Droid\\TrimbleMaps.MapsSDK.Platform.Droid.csproj": {
+                "projectPath": "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\MapSDK\\Platform.Droid\\TrimbleMaps.MapsSDK.Platform.Droid.csproj"
+              }
+            }
+          }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net8.0-android34.0": {
+          "targetAlias": "net8.0-android",
+          "dependencies": {
+            "Microsoft.Maui.Controls": {
+              "target": "Package",
+              "version": "(, )"
+            },
+            "Microsoft.Maui.Controls.Compatibility": {
+              "target": "Package",
+              "version": "(, )"
+            },
+            "Microsoft.NET.ILLink.Tasks": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.11, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.Android.Ref.34",
+              "version": "[34.0.148, 34.0.148]"
+            },
+            {
+              "name": "Microsoft.Android.Runtime.34.android-arm",
+              "version": "[34.0.148, 34.0.148]"
+            },
+            {
+              "name": "Microsoft.Android.Runtime.34.android-arm64",
+              "version": "[34.0.148, 34.0.148]"
+            },
+            {
+              "name": "Microsoft.Android.Runtime.34.android-x64",
+              "version": "[34.0.148, 34.0.148]"
+            },
+            {
+              "name": "Microsoft.Android.Runtime.34.android-x86",
+              "version": "[34.0.148, 34.0.148]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.Android": {
+              "privateAssets": "all"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "android-arm": {
+          "#import": []
+        },
+        "android-arm64": {
+          "#import": []
+        },
+        "android-x64": {
+          "#import": []
+        },
+        "android-x86": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\MapSDK.Sample\\MapSDK.Sample\\MapSDK.Sample.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\MapSDK.Sample\\MapSDK.Sample\\MapSDK.Sample.csproj",
+        "projectName": "MapSDK.Sample",
+        "projectPath": "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\MapSDK.Sample\\MapSDK.Sample\\MapSDK.Sample.csproj",
+        "packagesPath": "C:\\Users\\gramana\\.nuget\\packages\\",
+        "outputPath": "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\MapSDK.Sample\\MapSDK.Sample\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\NuGet.Config",
+          "C:\\Users\\gramana\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-android"
+        ],
+        "sources": {
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://trimblemaps.jfrog.io/artifactory/api/nuget/v3/maui": {}
+        },
+        "frameworks": {
+          "net8.0-android34.0": {
+            "targetAlias": "net8.0-android",
+            "projectReferences": {
+              "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\MapSDK\\Platform.Droid\\TrimbleMaps.MapsSDK.Platform.Droid.csproj": {
+                "projectPath": "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\MapSDK\\Platform.Droid\\TrimbleMaps.MapsSDK.Platform.Droid.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "noWarn": [
+            "NU1603",
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net8.0-android34.0": {
+          "targetAlias": "net8.0-android",
+          "dependencies": {
+            "CommunityToolkit.Maui": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.Maui.Controls": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Maui.Controls.Compatibility": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.Android.Ref.34",
+              "version": "[34.0.148, 34.0.148]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.Android": {
+              "privateAssets": "all"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\MapSDK\\Platform.Droid\\TrimbleMaps.MapsSDK.Platform.Droid.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\MapSDK\\Platform.Droid\\TrimbleMaps.MapsSDK.Platform.Droid.csproj",
+        "projectName": "TrimbleMaps.MapsSDK.Platform.Droid",
+        "projectPath": "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\MapSDK\\Platform.Droid\\TrimbleMaps.MapsSDK.Platform.Droid.csproj",
+        "packagesPath": "C:\\Users\\gramana\\.nuget\\packages\\",
+        "outputPath": "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\MapSDK\\Platform.Droid\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\NuGet.Config",
+          "C:\\Users\\gramana\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-android"
+        ],
+        "sources": {
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://trimblemaps.jfrog.io/artifactory/api/nuget/v3/maui": {}
+        },
+        "frameworks": {
+          "net8.0-android34.0": {
+            "targetAlias": "net8.0-android",
+            "projectReferences": {
+              "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\MapSDK\\TrimbleMaps.MapsSDK\\TrimbleMaps.MapsSDK.csproj": {
+                "projectPath": "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\MapSDK\\TrimbleMaps.MapsSDK\\TrimbleMaps.MapsSDK.csproj"
+              }
+            }
+          }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net8.0-android34.0": {
+          "targetAlias": "net8.0-android",
+          "dependencies": {
+            "GeoJSON.Net": {
+              "target": "Package",
+              "version": "[1.4.1, )"
+            },
+            "GoogleGson": {
+              "target": "Package",
+              "version": "[2.11.0.4, )"
+            },
+            "Microsoft.Maui.Controls": {
+              "target": "Package",
+              "version": "[8.0.93, )"
+            },
+            "Microsoft.Maui.Controls.Compatibility": {
+              "target": "Package",
+              "version": "[8.0.93, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "SkiaSharp": {
+              "target": "Package",
+              "version": "[2.88.9, )"
+            },
+            "SkiaSharp.Extended": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
+            "SkiaSharp.Svg": {
+              "target": "Package",
+              "version": "[1.60.0, )"
+            },
+            "Square.Retrofit2": {
+              "target": "Package",
+              "version": "[2.9.0, )"
+            },
+            "Square.Retrofit2.ConverterGson": {
+              "target": "Package",
+              "version": "[2.9.0, )"
+            },
+            "TrimbleMaps.MapsSDK.Account.Droid": {
+              "target": "Package",
+              "version": "[1.3.0, )"
+            },
+            "TrimbleMaps.MapsSDK.Droid": {
+              "target": "Package",
+              "version": "[1.3.0, )"
+            },
+            "TrimbleMaps.MapsSDK.GLCore.Droid": {
+              "target": "Package",
+              "version": "[1.0.17, )"
+            },
+            "TrimbleMaps.MapsSDK.Geojson.Droid": {
+              "target": "Package",
+              "version": "[1.3.0, )"
+            },
+            "TrimbleMaps.MapsSDK.Gestures.Droid": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "TrimbleMaps.MapsSDK.MapCore.Droid": {
+              "target": "Package",
+              "version": "[1.1.0-9, )"
+            },
+            "TrimbleMaps.MapsSDK.MapSdkCore.Droid": {
+              "target": "Package",
+              "version": "[1.3.0, )"
+            },
+            "TrimbleMaps.MapsSDK.Plugins.Annotation.Droid": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "TrimbleMaps.MapsSDK.Services.Authorization.Droid": {
+              "target": "Package",
+              "version": "[1.3.0, )"
+            },
+            "TrimbleMaps.MapsSDK.Telemetry.Droid": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            },
+            "TrimbleMaps.MapsSDK.Turf.Droid": {
+              "target": "Package",
+              "version": "[1.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.Android.Ref.34",
+              "version": "[34.0.148, 34.0.148]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.Android": {
+              "privateAssets": "all"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\MapSDK\\TrimbleMaps.MapsSDK\\TrimbleMaps.MapsSDK.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\MapSDK\\TrimbleMaps.MapsSDK\\TrimbleMaps.MapsSDK.csproj",
+        "projectName": "TrimbleMaps.MapsSDK",
+        "projectPath": "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\MapSDK\\TrimbleMaps.MapsSDK\\TrimbleMaps.MapsSDK.csproj",
+        "packagesPath": "C:\\Users\\gramana\\.nuget\\packages\\",
+        "outputPath": "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\MapSDK\\TrimbleMaps.MapsSDK\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\NuGet.Config",
+          "C:\\Users\\gramana\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0",
+          "net8.0-android",
+          "net8.0-ios",
+          "net8.0-windows10.0.19041.0"
+        ],
+        "sources": {
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://trimblemaps.jfrog.io/artifactory/api/nuget/v3/maui": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          },
+          "net8.0-android34.0": {
+            "targetAlias": "net8.0-android",
+            "projectReferences": {}
+          },
+          "net8.0-ios18.0": {
+            "targetAlias": "net8.0-ios",
+            "projectReferences": {}
+          },
+          "net8.0-windows10.0.19041": {
+            "targetAlias": "net8.0-windows10.0.19041.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "GeoJSON.Net": {
+              "target": "Package",
+              "version": "[1.4.1, )"
+            },
+            "Microsoft.Maui.Controls": {
+              "target": "Package",
+              "version": "[8.0.100, )"
+            },
+            "Microsoft.Maui.Controls.Compatibility": {
+              "target": "Package",
+              "version": "[8.0.100, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        },
+        "net8.0-android34.0": {
+          "targetAlias": "net8.0-android",
+          "dependencies": {
+            "GeoJSON.Net": {
+              "target": "Package",
+              "version": "[1.4.1, )"
+            },
+            "Microsoft.Maui.Controls": {
+              "target": "Package",
+              "version": "[8.0.100, )"
+            },
+            "Microsoft.Maui.Controls.Compatibility": {
+              "target": "Package",
+              "version": "[8.0.100, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.Android.Ref.34",
+              "version": "[34.0.148, 34.0.148]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.Android": {
+              "privateAssets": "all"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        },
+        "net8.0-ios18.0": {
+          "targetAlias": "net8.0-ios",
+          "dependencies": {
+            "GeoJSON.Net": {
+              "target": "Package",
+              "version": "[1.4.1, )"
+            },
+            "Microsoft.Maui.Controls": {
+              "target": "Package",
+              "version": "[8.0.100, )"
+            },
+            "Microsoft.Maui.Controls.Compatibility": {
+              "target": "Package",
+              "version": "[8.0.100, )"
+            },
+            "Microsoft.NET.ILLink.Tasks": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.11, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.iOS.Ref.net8.0_18.0",
+              "version": "[18.0.8319, 18.0.8319]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.iOS": {
+              "privateAssets": "all"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        },
+        "net8.0-windows10.0.19041": {
+          "targetAlias": "net8.0-windows10.0.19041.0",
+          "dependencies": {
+            "GeoJSON.Net": {
+              "target": "Package",
+              "version": "[1.4.1, )"
+            },
+            "Microsoft.Maui.Controls": {
+              "target": "Package",
+              "version": "[8.0.100, )"
+            },
+            "Microsoft.Maui.Controls.Compatibility": {
+              "target": "Package",
+              "version": "[8.0.100, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.Windows.SDK.NET.Ref",
+              "version": "[10.0.19041.54, 10.0.19041.54]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.Windows.SDK.NET.Ref.Windows": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

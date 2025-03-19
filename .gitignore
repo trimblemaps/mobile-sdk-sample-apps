@@ -1,0 +1,40 @@
+# Generated or per-user extensions
+*.user
+*.suo
+*.sdf
+*.psess
+*.vspx
+*.rb.yaml
+*.DS_Store
+*.editorconfig
+*.nupkg
+
+# Generated or per-user files
+Thumbs.db
+FodyWeavers.xsd
+Resource.designer.cs
+
+# Generated folders
+maui/TrimbleMaps/.vs/
+maui/TrimbleMaps/PrecompiledWeb/
+maui/TrimbleMaps/Bin/
+maui/TrimbleMaps/bin/
+maui/TrimbleMaps/Obj/
+maui/TrimbleMaps/obj/
+maui/TrimbleMaps/packages/
+maui/TrimbleMaps/node_modules/
+maui/TrimbleMaps/vs2017/
+maui/TrimbleMaps/vs2017.*/
+maui/TrimbleMaps/vs2019/
+maui/TrimbleMaps/vs2019.*/
+maui/TrimbleMaps/vs_android/
+maui/TrimbleMaps/gen/
+maui/TrimbleMaps/ipch/
+maui/TrimbleMaps/temp/
+maui/TrimbleMaps/nuget_packages/
+
+
+**/*.Droid/**/[Rr]esource.[Dd]esigner.cs
+**/*.Android/**/[Rr]esource.[Dd]esigner.cs
+**/Android/**/[Rr]esource.[Dd]esigner.cs
+**/Droid/**/[Rr]esource.[Dd]esigner.cs

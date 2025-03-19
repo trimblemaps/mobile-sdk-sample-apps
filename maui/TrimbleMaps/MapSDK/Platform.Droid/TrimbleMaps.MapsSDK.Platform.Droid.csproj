@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<UseMaui>true</UseMaui>
+		<TargetFrameworks>net8.0-android</TargetFrameworks>
+		<OutputType>Library</OutputType>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<SingleProject>true</SingleProject>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0|AnyCPU'">
+		<WarningsAsErrors />
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0|AnyCPU'">
+		<WarningsAsErrors />
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-android|AnyCPU'">
+		<WarningsAsErrors />
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-android|AnyCPU'">
+		<WarningsAsErrors />
+	</PropertyGroup>
+	<ItemGroup>
+		<AndroidResource Remove="Properties\**" />
+		<Compile Remove="Properties\**" />
+		<EmbeddedResource Remove="Properties\**" />
+		<MauiCss Remove="Properties\**" />
+		<MauiXaml Remove="Properties\**" />
+		<None Remove="Properties\**" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.93" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.93" />
+		<PackageReference Include="GeoJSON.Net" Version="1.4.1" />
+		<PackageReference Include="GoogleGson" Version="2.11.0.4" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="SkiaSharp" Version="2.88.9" />
+		<PackageReference Include="SkiaSharp.Extended" Version="2.0.0" />
+		<PackageReference Include="SkiaSharp.Svg" Version="1.60.0" />
+		<PackageReference Include="Square.Retrofit2" Version="2.9.0" />
+		<PackageReference Include="Square.Retrofit2.ConverterGson" Version="2.9.0" />
+		<PackageReference Include="TrimbleMaps.MapsSDK.Account.Droid" Version="1.3.0" />
+		<PackageReference Include="TrimbleMaps.MapsSDK.Droid" Version="1.3.0" />
+		<PackageReference Include="TrimbleMaps.MapsSDK.Geojson.Droid" Version="1.3.0" />
+		<PackageReference Include="TrimbleMaps.MapsSDK.Gestures.Droid" Version="1.0.0" />
+		<PackageReference Include="TrimbleMaps.MapsSDK.GLCore.Droid" Version="1.0.17" />
+		<PackageReference Include="TrimbleMaps.MapsSDK.MapCore.Droid" Version="1.1.0-9" />
+		<PackageReference Include="TrimbleMaps.MapsSDK.MapSdkCore.Droid" Version="1.3.0" />
+		<PackageReference Include="TrimbleMaps.MapsSDK.Plugins.Annotation.Droid" Version="1.1.0" />
+		<PackageReference Include="TrimbleMaps.MapsSDK.Services.Authorization.Droid" Version="1.3.0" />
+		<PackageReference Include="TrimbleMaps.MapsSDK.Telemetry.Droid" Version="1.0.1" />
+		<PackageReference Include="TrimbleMaps.MapsSDK.Turf.Droid" Version="1.3.0" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\TrimbleMaps.MapsSDK\TrimbleMaps.MapsSDK.csproj" />
+	</ItemGroup>
+</Project>

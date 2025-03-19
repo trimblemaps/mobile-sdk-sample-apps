@@ -1,0 +1,116 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\MapSDK.Sample\\MapSDK.Sample.Forms.iOS\\MapSDK.Sample.Forms.iOS.csproj": {}
+  },
+  "projects": {
+    "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\MapSDK.Sample\\MapSDK.Sample.Forms.iOS\\MapSDK.Sample.Forms.iOS.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\MapSDK.Sample\\MapSDK.Sample.Forms.iOS\\MapSDK.Sample.Forms.iOS.csproj",
+        "projectName": "MapSDK.Sample.Forms.iOS",
+        "projectPath": "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\MapSDK.Sample\\MapSDK.Sample.Forms.iOS\\MapSDK.Sample.Forms.iOS.csproj",
+        "packagesPath": "C:\\Users\\gramana\\.nuget\\packages\\",
+        "outputPath": "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\MapSDK.Sample\\MapSDK.Sample.Forms.iOS\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\NuGet.Config",
+          "C:\\Users\\gramana\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-ios"
+        ],
+        "sources": {
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://trimblemaps.jfrog.io/artifactory/api/nuget/v3/maui": {}
+        },
+        "frameworks": {
+          "net8.0-ios18.0": {
+            "targetAlias": "net8.0-ios",
+            "projectReferences": {
+              "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\MapSDK.Sample\\MapSDK.Sample.Forms\\MapSDK.Sample.csproj": {
+                "projectPath": "C:\\devel\\modern\\public-maui\\mobile-sdk-sample-apps\\maui\\TrimbleMaps\\MapSDK.Sample\\MapSDK.Sample.Forms\\MapSDK.Sample.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net8.0-ios18.0": {
+          "targetAlias": "net8.0-ios",
+          "dependencies": {
+            "Microsoft.Maui.Controls": {
+              "target": "Package",
+              "version": "[8.0.100, )"
+            },
+            "Microsoft.Maui.Controls.Compatibility": {
+              "target": "Package",
+              "version": "[8.0.100, )"
+            },
+            "Microsoft.NET.ILLink.Tasks": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.11, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.iOS.Ref.net8.0_18.0",
+              "version": "[18.0.8319, 18.0.8319]"
+            },
+            {
+              "name": "Microsoft.iOS.Runtime.iossimulator-x64.net8.0_18.0",
+              "version": "[18.0.8319, 18.0.8319]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.iOS": {
+              "privateAssets": "all"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "iossimulator-x64": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

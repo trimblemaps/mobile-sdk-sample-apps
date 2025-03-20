@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SelectedDevice>a7_lite_API_33</SelectedDevice>
+    <SelectedPlatformGroup>Emulator</SelectedPlatformGroup>
+    <ActiveDebugProfile>Motorola_G8_power_API_33</ActiveDebugProfile>
+    <DefaultDevice>Motorola_G8_power_API_33</DefaultDevice>
+    <AndroidDesignerPreferredTheme>Maui.SplashTheme</AndroidDesignerPreferredTheme>
+    <ActiveDebugFramework>net8.0-android</ActiveDebugFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-android|AnyCPU'">
+    <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrimbleMaps.MapSDK.Sample.BaseLayer"
+             Title="BaseLayer" xmlns:TrimbleMaps="clr-namespace:TrimbleMaps.Controls.Forms;assembly=TrimbleMaps.MapsSDK" >
+    <ContentPage.Content>
+        <TrimbleMaps:MapView
+            x:Name="Map"
+            ShowUserLocation="true"
+            UserLocationTracking="None"
+            ZoomMaxLevel="21"
+            CompassEnabled="True"
+            CompassFadeFacingNorth="False"
+            >
+        </TrimbleMaps:MapView>
+    </ContentPage.Content>
+</ContentPage>

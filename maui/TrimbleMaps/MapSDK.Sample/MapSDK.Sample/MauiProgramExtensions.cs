@@ -2,6 +2,7 @@ using Android.App;
 using Android.Runtime;
 using CommunityToolkit.Maui;
 using Microsoft.Maui.Controls.Compatibility.Platform.Android;
+using Microsoft.Maui.Handlers;
 using TrimbleMaps.Controls.Forms;
 using TrimbleMaps.Controls.MapsSDK.Platform.Droid;
 using TrimbleMaps.MapSDK.Sample;
@@ -20,7 +21,9 @@ public static class MauiProgramExtensions
             {
                 handlers.AddHandler(typeof(MapView), typeof(MapViewRenderer));
                 handlers.AddHandler(typeof(StreamImageSource), typeof(StreamImagesourceHandler));
+                handlers.AddHandler(typeof(Image), typeof(ImageHandler));
             });
+
 
         return builder.Build();
     }

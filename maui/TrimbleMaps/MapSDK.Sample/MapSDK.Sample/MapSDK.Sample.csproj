@@ -64,6 +64,12 @@
 
 
 	<ItemGroup>
+		<MauiImage Include="Resources\AppIcon\appicon.svg" />
+
+	</ItemGroup>
+
+
+	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Maui" Version="3.0.0" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.0" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.0" />
@@ -73,8 +79,7 @@
 	</ItemGroup>
 	<ItemGroup>
 		<MauiSplashScreen Include="Resources\Images\splashnewlogo.png" Color="white" />
-		<MauiSplashScreen Include="Resources\Splash\splashnewlogo.png" Color="white">
-			<Color>white</Color>
-		</MauiSplashScreen>
+		<MauiSplashScreen Include="Resources\Splash\splashnewlogo.png" Color="white" />
+
 	</ItemGroup>
 </Project>

@@ -38,10 +38,7 @@ namespace TrimbleMaps.MapSDK.Sample.Droid
 
         private void InitializeTrimbleMaps()
         {
-            var apiKey = "162721262FEB254592E40679F185B222";
-            //var proxyAddress = InetAddress.GetByName("gk-http.usps.gov");
-            //var proxySocket = new InetSocketAddress(proxyAddress, 8080);
-            //var proxy = new Proxy(Proxy.Type.Http, proxySocket);
+            var apiKey = "<API-KEY HERE>";
 
             var accountInitOptions = AccountInitializationOptions.InvokeBuilder()
                 .Callback(_onAccountLoaded)

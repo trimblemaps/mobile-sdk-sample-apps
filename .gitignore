@@ -33,8 +33,32 @@ ipch/
 temp/
 nuget_packages/
 
+.vs/
+PrecompiledWeb/
+Bin/
+bin/
+Obj/
+obj/
+packages/
+node_modules/
+vs2017/
+vs2017.*/
+vs2019/
+vs2019.*/
+vs_android/
+gen/
+ipch/
+temp/
+nuget_packages/
 
 **/*.Droid/**/[Rr]esource.[Dd]esigner.cs
 **/*.Android/**/[Rr]esource.[Dd]esigner.cs
 **/Android/**/[Rr]esource.[Dd]esigner.cs
 **/Droid/**/[Rr]esource.[Dd]esigner.cs
+/.vs
+/maui/TrimbleMaps/MapSDK/Platform.Droid/obj/
+/maui/TrimbleMaps/MapSDK/Platform.iOS/obj/
+/maui/TrimbleMaps/MapSDK.Sample/MapSDK.Sample/obj/
+/maui/TrimbleMaps/MapSDK.Sample/MapSDK.Sample.Forms.iOS/obj/
+/maui/TrimbleMaps/MapSDK/TrimbleMaps.MapsSDK/obj/
+

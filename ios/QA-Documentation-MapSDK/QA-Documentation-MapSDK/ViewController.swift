@@ -44,7 +44,7 @@ class ViewController: UIViewController {
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: view.frame.width * 0.05), // 5% of the screen width from the leading edge
-            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -view.frame.width * 0.05), // 5% of the screen width from the trailing edge 
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -view.frame.width * 0.05), // 5% of the screen width from the trailing edge
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
             stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20),
@@ -143,13 +143,14 @@ class ViewController: UIViewController {
         navigationController.modalPresentationStyle = .fullScreen
         present(navigationController, animated: true, completion: nil)
     }
-    
+
     @objc func clickablePointsButtonTapped(_ sender: UIButton) {
         let clickablePointsButtonViewController = ClickablePointsViewController()
         let navigationController = UINavigationController(rootViewController: clickablePointsButtonViewController)
         navigationController.modalPresentationStyle = .fullScreen
         present(navigationController, animated: true, completion: nil)
     }
+
 }
 
 

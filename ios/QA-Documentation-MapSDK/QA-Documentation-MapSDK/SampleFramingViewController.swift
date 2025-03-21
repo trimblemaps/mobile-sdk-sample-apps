@@ -14,6 +14,7 @@ class SampleFramingViewController: UIViewController, AccountManagerDelegate, TMG
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         let apiKey =  "Your-API-key-here"
         let account = Account(apiKey: apiKey, region: Region.northAmerica)
         AccountManager.default.account = account

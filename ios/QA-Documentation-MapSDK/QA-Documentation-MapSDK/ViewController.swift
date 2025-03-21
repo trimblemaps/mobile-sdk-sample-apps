@@ -33,7 +33,8 @@ class ViewController: UIViewController {
             addButton(image: "van_nav_splash", title: "Data Driven Styling", action: #selector(dataDrivenStylingButtonTapped)),
             addButton(image: "general_splash", title: "Dots On a Map", action: #selector(dotsOnAMapButtonTapped)),
             addButton(image: "van_nav_splash", title: "Lines On a Map", action: #selector(linesOnAMapButtonTapped)),
-            addButton(image: "general_splash", title: "Sample Framing", action: #selector(sampleFramingButtonTapped))
+            addButton(image: "general_splash", title: "Sample Framing", action: #selector(sampleFramingButtonTapped)),
+            addButton(image: "van_nav_splash", title: "Clickable Points", action: #selector(clickablePointsButtonTapped))
         ]
 
         for button in buttons {
@@ -142,6 +143,14 @@ class ViewController: UIViewController {
         navigationController.modalPresentationStyle = .fullScreen
         present(navigationController, animated: true, completion: nil)
     }
+
+    @objc func clickablePointsButtonTapped(_ sender: UIButton) {
+        let clickablePointsButtonViewController = ClickablePointsViewController()
+        let navigationController = UINavigationController(rootViewController: clickablePointsButtonViewController)
+        navigationController.modalPresentationStyle = .fullScreen
+        present(navigationController, animated: true, completion: nil)
+    }
+
 }
 
 

@@ -7,8 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6C11060A2CA2FEA20048E285 /* TrimbleMapsMultiplatformUI.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C1106092CA2FEA20048E285 /* TrimbleMapsMultiplatformUI.xcframework */; };
-		6C11060B2CA2FEA20048E285 /* TrimbleMapsMultiplatformUI.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C1106092CA2FEA20048E285 /* TrimbleMapsMultiplatformUI.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		55361E702D5B5B10005EEC15 /* RoutingProfilesPlugin.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55361E622D5B5B10005EEC15 /* RoutingProfilesPlugin.xcframework */; };
+		55361E712D5B5B10005EEC15 /* RoutingProfilesPlugin.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55361E622D5B5B10005EEC15 /* RoutingProfilesPlugin.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		55361E722D5B5B10005EEC15 /* TrimbleMapsAccounts.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55361E632D5B5B10005EEC15 /* TrimbleMapsAccounts.xcframework */; };
+		55361E732D5B5B10005EEC15 /* TrimbleMapsAccounts.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55361E632D5B5B10005EEC15 /* TrimbleMapsAccounts.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		55361E742D5B5B10005EEC15 /* TrimbleMaps.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55361E642D5B5B10005EEC15 /* TrimbleMaps.xcframework */; };
+		55361E752D5B5B10005EEC15 /* TrimbleMaps.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55361E642D5B5B10005EEC15 /* TrimbleMaps.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		55361E762D5B5B10005EEC15 /* TrimbleMapsCoreNavigation.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55361E652D5B5B10005EEC15 /* TrimbleMapsCoreNavigation.xcframework */; };
+		55361E772D5B5B10005EEC15 /* TrimbleMapsCoreNavigation.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55361E652D5B5B10005EEC15 /* TrimbleMapsCoreNavigation.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		55361E782D5B5B10005EEC15 /* RoutePlugin.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55361E662D5B5B10005EEC15 /* RoutePlugin.xcframework */; };
+		55361E792D5B5B10005EEC15 /* RoutePlugin.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55361E662D5B5B10005EEC15 /* RoutePlugin.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		55361E7A2D5B5B10005EEC15 /* SearchUIPlugin.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55361E672D5B5B10005EEC15 /* SearchUIPlugin.xcframework */; };
+		55361E7B2D5B5B10005EEC15 /* SearchUIPlugin.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55361E672D5B5B10005EEC15 /* SearchUIPlugin.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		55361E7C2D5B5B10005EEC15 /* TrimbleMapsNavigation.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55361E682D5B5B10005EEC15 /* TrimbleMapsNavigation.xcframework */; };
+		55361E7D2D5B5B10005EEC15 /* TrimbleMapsNavigation.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55361E682D5B5B10005EEC15 /* TrimbleMapsNavigation.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		55361E7E2D5B5B10005EEC15 /* TrimbleMapsWebservicesClient.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55361E692D5B5B10005EEC15 /* TrimbleMapsWebservicesClient.xcframework */; };
+		55361E7F2D5B5B10005EEC15 /* TrimbleMapsWebservicesClient.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55361E692D5B5B10005EEC15 /* TrimbleMapsWebservicesClient.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		55361E802D5B5B10005EEC15 /* TrimbleMapsMobileEvents.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55361E6A2D5B5B10005EEC15 /* TrimbleMapsMobileEvents.xcframework */; };
+		55361E812D5B5B10005EEC15 /* TrimbleMapsMobileEvents.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55361E6A2D5B5B10005EEC15 /* TrimbleMapsMobileEvents.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		55361E822D5B5B10005EEC15 /* Solar.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55361E6B2D5B5B10005EEC15 /* Solar.xcframework */; };
+		55361E832D5B5B10005EEC15 /* Solar.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55361E6B2D5B5B10005EEC15 /* Solar.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		55361E842D5B5B10005EEC15 /* TrimbleMapsNavigationNative.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55361E6C2D5B5B10005EEC15 /* TrimbleMapsNavigationNative.xcframework */; };
+		55361E862D5B5B10005EEC15 /* JWTDecode.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55361E6D2D5B5B10005EEC15 /* JWTDecode.xcframework */; };
+		55361E872D5B5B10005EEC15 /* JWTDecode.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55361E6D2D5B5B10005EEC15 /* JWTDecode.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		55361E882D5B5B10005EEC15 /* Polyline.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55361E6E2D5B5B10005EEC15 /* Polyline.xcframework */; };
+		55361E892D5B5B10005EEC15 /* Polyline.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55361E6E2D5B5B10005EEC15 /* Polyline.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		55361E8A2D5B5B10005EEC15 /* Turf.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55361E6F2D5B5B10005EEC15 /* Turf.xcframework */; };
+		55361E8B2D5B5B10005EEC15 /* Turf.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55361E6F2D5B5B10005EEC15 /* Turf.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		55361E922D5B6219005EEC15 /* ClickablePointsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55361E912D5B6219005EEC15 /* ClickablePointsViewController.swift */; };
+		55361E942D5B626F005EEC15 /* SampleFramingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55361E932D5B626F005EEC15 /* SampleFramingViewController.swift */; };
 		BB02C9772B6D52B50042ED35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02C9762B6D52B50042ED35 /* AppDelegate.swift */; };
 		BB02C9792B6D52B50042ED35 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02C9782B6D52B50042ED35 /* SceneDelegate.swift */; };
 		BB02C97B2B6D52B50042ED35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02C97A2B6D52B50042ED35 /* ViewController.swift */; };
@@ -26,43 +53,28 @@
 		BB02C9B82B6D932A0042ED35 /* DotsOnAMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02C9B72B6D932A0042ED35 /* DotsOnAMapViewController.swift */; };
 		BB02C9BA2B6D94080042ED35 /* lines.json in Resources */ = {isa = PBXBuildFile; fileRef = BB02C9B92B6D94080042ED35 /* lines.json */; };
 		BB02C9BC2B6D94290042ED35 /* LinesOnAMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02C9BB2B6D94290042ED35 /* LinesOnAMapViewController.swift */; };
-		BBD571342B890B11006FB1C0 /* Solar.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD5712B2B890B0F006FB1C0 /* Solar.xcframework */; };
-		BBD571352B890B11006FB1C0 /* Solar.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BBD5712B2B890B0F006FB1C0 /* Solar.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BBD571362B890B11006FB1C0 /* Turf.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD5712C2B890B10006FB1C0 /* Turf.xcframework */; };
-		BBD571372B890B11006FB1C0 /* Turf.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BBD5712C2B890B10006FB1C0 /* Turf.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BBD571382B890B11006FB1C0 /* RoutingProfilesPlugin.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD5712D2B890B10006FB1C0 /* RoutingProfilesPlugin.xcframework */; };
-		BBD571392B890B11006FB1C0 /* RoutingProfilesPlugin.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BBD5712D2B890B10006FB1C0 /* RoutingProfilesPlugin.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BBD5713A2B890B11006FB1C0 /* Polyline.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD5712E2B890B10006FB1C0 /* Polyline.xcframework */; };
-		BBD5713B2B890B11006FB1C0 /* Polyline.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BBD5712E2B890B10006FB1C0 /* Polyline.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BBD5713C2B890B11006FB1C0 /* RoutePlugin.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD5712F2B890B10006FB1C0 /* RoutePlugin.xcframework */; };
-		BBD5713D2B890B11006FB1C0 /* RoutePlugin.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BBD5712F2B890B10006FB1C0 /* RoutePlugin.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BBD5713E2B890B11006FB1C0 /* TrimbleMapsWebservicesClient.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD571302B890B10006FB1C0 /* TrimbleMapsWebservicesClient.xcframework */; };
-		BBD5713F2B890B11006FB1C0 /* TrimbleMapsWebservicesClient.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BBD571302B890B10006FB1C0 /* TrimbleMapsWebservicesClient.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BBD571402B890B11006FB1C0 /* TrimbleMaps.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD571312B890B10006FB1C0 /* TrimbleMaps.xcframework */; };
-		BBD571412B890B11006FB1C0 /* TrimbleMaps.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BBD571312B890B10006FB1C0 /* TrimbleMaps.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BBD571422B890B11006FB1C0 /* TrimbleMapsAccounts.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD571322B890B11006FB1C0 /* TrimbleMapsAccounts.xcframework */; };
-		BBD571432B890B11006FB1C0 /* TrimbleMapsAccounts.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BBD571322B890B11006FB1C0 /* TrimbleMapsAccounts.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BBD571442B890B11006FB1C0 /* TrimbleMapsMobileEvents.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD571332B890B11006FB1C0 /* TrimbleMapsMobileEvents.xcframework */; };
-		BBD571452B890B11006FB1C0 /* TrimbleMapsMobileEvents.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BBD571332B890B11006FB1C0 /* TrimbleMapsMobileEvents.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		BBD571462B890B11006FB1C0 /* Embed Frameworks */ = {
+		55361E8C2D5B5B10005EEC15 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BBD571392B890B11006FB1C0 /* RoutingProfilesPlugin.xcframework in Embed Frameworks */,
-				6C11060B2CA2FEA20048E285 /* TrimbleMapsMultiplatformUI.xcframework in Embed Frameworks */,
-				BBD571372B890B11006FB1C0 /* Turf.xcframework in Embed Frameworks */,
-				BBD571452B890B11006FB1C0 /* TrimbleMapsMobileEvents.xcframework in Embed Frameworks */,
-				BBD5713F2B890B11006FB1C0 /* TrimbleMapsWebservicesClient.xcframework in Embed Frameworks */,
-				BBD571352B890B11006FB1C0 /* Solar.xcframework in Embed Frameworks */,
-				BBD5713D2B890B11006FB1C0 /* RoutePlugin.xcframework in Embed Frameworks */,
-				BBD5713B2B890B11006FB1C0 /* Polyline.xcframework in Embed Frameworks */,
-				BBD571432B890B11006FB1C0 /* TrimbleMapsAccounts.xcframework in Embed Frameworks */,
-				BBD571412B890B11006FB1C0 /* TrimbleMaps.xcframework in Embed Frameworks */,
+				55361E7F2D5B5B10005EEC15 /* TrimbleMapsWebservicesClient.xcframework in Embed Frameworks */,
+				55361E872D5B5B10005EEC15 /* JWTDecode.xcframework in Embed Frameworks */,
+				55361E7B2D5B5B10005EEC15 /* SearchUIPlugin.xcframework in Embed Frameworks */,
+				55361E812D5B5B10005EEC15 /* TrimbleMapsMobileEvents.xcframework in Embed Frameworks */,
+				55361E732D5B5B10005EEC15 /* TrimbleMapsAccounts.xcframework in Embed Frameworks */,
+				55361E7D2D5B5B10005EEC15 /* TrimbleMapsNavigation.xcframework in Embed Frameworks */,
+				55361E892D5B5B10005EEC15 /* Polyline.xcframework in Embed Frameworks */,
+				55361E772D5B5B10005EEC15 /* TrimbleMapsCoreNavigation.xcframework in Embed Frameworks */,
+				55361E752D5B5B10005EEC15 /* TrimbleMaps.xcframework in Embed Frameworks */,
+				55361E8B2D5B5B10005EEC15 /* Turf.xcframework in Embed Frameworks */,
+				55361E792D5B5B10005EEC15 /* RoutePlugin.xcframework in Embed Frameworks */,
+				55361E712D5B5B10005EEC15 /* RoutingProfilesPlugin.xcframework in Embed Frameworks */,
+				55361E832D5B5B10005EEC15 /* Solar.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,7 +82,22 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6C1106092CA2FEA20048E285 /* TrimbleMapsMultiplatformUI.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMapsMultiplatformUI.xcframework; path = ../Carthage/Build/TrimbleMapsMultiplatformUI.xcframework; sourceTree = "<group>"; };
+		55361E622D5B5B10005EEC15 /* RoutingProfilesPlugin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RoutingProfilesPlugin.xcframework; path = ../Carthage/Build/RoutingProfilesPlugin.xcframework; sourceTree = "<group>"; };
+		55361E632D5B5B10005EEC15 /* TrimbleMapsAccounts.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMapsAccounts.xcframework; path = ../Carthage/Build/TrimbleMapsAccounts.xcframework; sourceTree = "<group>"; };
+		55361E642D5B5B10005EEC15 /* TrimbleMaps.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMaps.xcframework; path = ../Carthage/Build/TrimbleMaps.xcframework; sourceTree = "<group>"; };
+		55361E652D5B5B10005EEC15 /* TrimbleMapsCoreNavigation.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMapsCoreNavigation.xcframework; path = ../Carthage/Build/TrimbleMapsCoreNavigation.xcframework; sourceTree = "<group>"; };
+		55361E662D5B5B10005EEC15 /* RoutePlugin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RoutePlugin.xcframework; path = ../Carthage/Build/RoutePlugin.xcframework; sourceTree = "<group>"; };
+		55361E672D5B5B10005EEC15 /* SearchUIPlugin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SearchUIPlugin.xcframework; path = ../Carthage/Build/SearchUIPlugin.xcframework; sourceTree = "<group>"; };
+		55361E682D5B5B10005EEC15 /* TrimbleMapsNavigation.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMapsNavigation.xcframework; path = ../Carthage/Build/TrimbleMapsNavigation.xcframework; sourceTree = "<group>"; };
+		55361E692D5B5B10005EEC15 /* TrimbleMapsWebservicesClient.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMapsWebservicesClient.xcframework; path = ../Carthage/Build/TrimbleMapsWebservicesClient.xcframework; sourceTree = "<group>"; };
+		55361E6A2D5B5B10005EEC15 /* TrimbleMapsMobileEvents.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMapsMobileEvents.xcframework; path = ../Carthage/Build/TrimbleMapsMobileEvents.xcframework; sourceTree = "<group>"; };
+		55361E6B2D5B5B10005EEC15 /* Solar.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Solar.xcframework; path = ../Carthage/Build/Solar.xcframework; sourceTree = "<group>"; };
+		55361E6C2D5B5B10005EEC15 /* TrimbleMapsNavigationNative.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMapsNavigationNative.xcframework; path = ../Carthage/Build/TrimbleMapsNavigationNative.xcframework; sourceTree = "<group>"; };
+		55361E6D2D5B5B10005EEC15 /* JWTDecode.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = JWTDecode.xcframework; path = ../Carthage/Build/JWTDecode.xcframework; sourceTree = "<group>"; };
+		55361E6E2D5B5B10005EEC15 /* Polyline.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Polyline.xcframework; path = ../Carthage/Build/Polyline.xcframework; sourceTree = "<group>"; };
+		55361E6F2D5B5B10005EEC15 /* Turf.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Turf.xcframework; path = ../Carthage/Build/Turf.xcframework; sourceTree = "<group>"; };
+		55361E912D5B6219005EEC15 /* ClickablePointsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickablePointsViewController.swift; sourceTree = "<group>"; };
+		55361E932D5B626F005EEC15 /* SampleFramingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleFramingViewController.swift; sourceTree = "<group>"; };
 		BB02C9732B6D52B50042ED35 /* QA-Documentation-MapSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QA-Documentation-MapSDK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB02C9762B6D52B50042ED35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB02C9782B6D52B50042ED35 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,15 +106,6 @@
 		BB02C97F2B6D52B70042ED35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB02C9822B6D52B70042ED35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB02C9842B6D52B70042ED35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BB02C98B2B6D55890042ED35 /* TrimbleMapsWebservicesClient.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMapsWebservicesClient.xcframework; path = Carthage/Build/TrimbleMapsWebservicesClient.xcframework; sourceTree = "<group>"; };
-		BB02C98C2B6D55890042ED35 /* TrimbleMaps.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMaps.xcframework; path = Carthage/Build/TrimbleMaps.xcframework; sourceTree = "<group>"; };
-		BB02C98D2B6D55890042ED35 /* TrimbleMapsMobileEvents.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMapsMobileEvents.xcframework; path = Carthage/Build/TrimbleMapsMobileEvents.xcframework; sourceTree = "<group>"; };
-		BB02C98E2B6D55890042ED35 /* TrimbleMapsAccounts.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMapsAccounts.xcframework; path = Carthage/Build/TrimbleMapsAccounts.xcframework; sourceTree = "<group>"; };
-		BB02C98F2B6D55890042ED35 /* RoutingProfilesPlugin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RoutingProfilesPlugin.xcframework; path = Carthage/Build/RoutingProfilesPlugin.xcframework; sourceTree = "<group>"; };
-		BB02C9902B6D55890042ED35 /* Solar.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Solar.xcframework; path = Carthage/Build/Solar.xcframework; sourceTree = "<group>"; };
-		BB02C9912B6D55890042ED35 /* Polyline.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Polyline.xcframework; path = Carthage/Build/Polyline.xcframework; sourceTree = "<group>"; };
-		BB02C9922B6D55890042ED35 /* Turf.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Turf.xcframework; path = Carthage/Build/Turf.xcframework; sourceTree = "<group>"; };
-		BB02C9932B6D55890042ED35 /* RoutePlugin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RoutePlugin.xcframework; path = Carthage/Build/RoutePlugin.xcframework; sourceTree = "<group>"; };
 		BB02C9A72B6D6DF40042ED35 /* BasicMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicMapViewController.swift; sourceTree = "<group>"; };
 		BB02C9A92B6D6E9E0042ED35 /* GeocodingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingViewController.swift; sourceTree = "<group>"; };
 		BB02C9AB2B6D81610042ED35 /* MapStylesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapStylesViewController.swift; sourceTree = "<group>"; };
@@ -99,15 +117,6 @@
 		BB02C9B72B6D932A0042ED35 /* DotsOnAMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotsOnAMapViewController.swift; sourceTree = "<group>"; };
 		BB02C9B92B6D94080042ED35 /* lines.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = lines.json; sourceTree = "<group>"; };
 		BB02C9BB2B6D94290042ED35 /* LinesOnAMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinesOnAMapViewController.swift; sourceTree = "<group>"; };
-		BBD5712B2B890B0F006FB1C0 /* Solar.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Solar.xcframework; path = ../Carthage/Build/Solar.xcframework; sourceTree = "<group>"; };
-		BBD5712C2B890B10006FB1C0 /* Turf.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Turf.xcframework; path = ../Carthage/Build/Turf.xcframework; sourceTree = "<group>"; };
-		BBD5712D2B890B10006FB1C0 /* RoutingProfilesPlugin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RoutingProfilesPlugin.xcframework; path = ../Carthage/Build/RoutingProfilesPlugin.xcframework; sourceTree = "<group>"; };
-		BBD5712E2B890B10006FB1C0 /* Polyline.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Polyline.xcframework; path = ../Carthage/Build/Polyline.xcframework; sourceTree = "<group>"; };
-		BBD5712F2B890B10006FB1C0 /* RoutePlugin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RoutePlugin.xcframework; path = ../Carthage/Build/RoutePlugin.xcframework; sourceTree = "<group>"; };
-		BBD571302B890B10006FB1C0 /* TrimbleMapsWebservicesClient.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMapsWebservicesClient.xcframework; path = ../Carthage/Build/TrimbleMapsWebservicesClient.xcframework; sourceTree = "<group>"; };
-		BBD571312B890B10006FB1C0 /* TrimbleMaps.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMaps.xcframework; path = ../Carthage/Build/TrimbleMaps.xcframework; sourceTree = "<group>"; };
-		BBD571322B890B11006FB1C0 /* TrimbleMapsAccounts.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMapsAccounts.xcframework; path = ../Carthage/Build/TrimbleMapsAccounts.xcframework; sourceTree = "<group>"; };
-		BBD571332B890B11006FB1C0 /* TrimbleMapsMobileEvents.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMapsMobileEvents.xcframework; path = ../Carthage/Build/TrimbleMapsMobileEvents.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,16 +124,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBD571382B890B11006FB1C0 /* RoutingProfilesPlugin.xcframework in Frameworks */,
-				6C11060A2CA2FEA20048E285 /* TrimbleMapsMultiplatformUI.xcframework in Frameworks */,
-				BBD571362B890B11006FB1C0 /* Turf.xcframework in Frameworks */,
-				BBD571442B890B11006FB1C0 /* TrimbleMapsMobileEvents.xcframework in Frameworks */,
-				BBD5713E2B890B11006FB1C0 /* TrimbleMapsWebservicesClient.xcframework in Frameworks */,
-				BBD571342B890B11006FB1C0 /* Solar.xcframework in Frameworks */,
-				BBD5713C2B890B11006FB1C0 /* RoutePlugin.xcframework in Frameworks */,
-				BBD5713A2B890B11006FB1C0 /* Polyline.xcframework in Frameworks */,
-				BBD571422B890B11006FB1C0 /* TrimbleMapsAccounts.xcframework in Frameworks */,
-				BBD571402B890B11006FB1C0 /* TrimbleMaps.xcframework in Frameworks */,
+				55361E7E2D5B5B10005EEC15 /* TrimbleMapsWebservicesClient.xcframework in Frameworks */,
+				55361E862D5B5B10005EEC15 /* JWTDecode.xcframework in Frameworks */,
+				55361E7A2D5B5B10005EEC15 /* SearchUIPlugin.xcframework in Frameworks */,
+				55361E802D5B5B10005EEC15 /* TrimbleMapsMobileEvents.xcframework in Frameworks */,
+				55361E722D5B5B10005EEC15 /* TrimbleMapsAccounts.xcframework in Frameworks */,
+				55361E7C2D5B5B10005EEC15 /* TrimbleMapsNavigation.xcframework in Frameworks */,
+				55361E882D5B5B10005EEC15 /* Polyline.xcframework in Frameworks */,
+				55361E762D5B5B10005EEC15 /* TrimbleMapsCoreNavigation.xcframework in Frameworks */,
+				55361E842D5B5B10005EEC15 /* TrimbleMapsNavigationNative.xcframework in Frameworks */,
+				55361E742D5B5B10005EEC15 /* TrimbleMaps.xcframework in Frameworks */,
+				55361E8A2D5B5B10005EEC15 /* Turf.xcframework in Frameworks */,
+				55361E782D5B5B10005EEC15 /* RoutePlugin.xcframework in Frameworks */,
+				55361E702D5B5B10005EEC15 /* RoutingProfilesPlugin.xcframework in Frameworks */,
+				55361E822D5B5B10005EEC15 /* Solar.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +182,8 @@
 				BB02C9B72B6D932A0042ED35 /* DotsOnAMapViewController.swift */,
 				BB02C9B92B6D94080042ED35 /* lines.json */,
 				BB02C9BB2B6D94290042ED35 /* LinesOnAMapViewController.swift */,
+				55361E912D5B6219005EEC15 /* ClickablePointsViewController.swift */,
+				55361E932D5B626F005EEC15 /* SampleFramingViewController.swift */,
 			);
 			path = "QA-Documentation-MapSDK";
 			sourceTree = "<group>";
@@ -176,25 +191,20 @@
 		BB02C98A2B6D55890042ED35 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6C1106092CA2FEA20048E285 /* TrimbleMapsMultiplatformUI.xcframework */,
-				BBD5712E2B890B10006FB1C0 /* Polyline.xcframework */,
-				BBD5712F2B890B10006FB1C0 /* RoutePlugin.xcframework */,
-				BBD5712D2B890B10006FB1C0 /* RoutingProfilesPlugin.xcframework */,
-				BBD5712B2B890B0F006FB1C0 /* Solar.xcframework */,
-				BBD571312B890B10006FB1C0 /* TrimbleMaps.xcframework */,
-				BBD571322B890B11006FB1C0 /* TrimbleMapsAccounts.xcframework */,
-				BBD571332B890B11006FB1C0 /* TrimbleMapsMobileEvents.xcframework */,
-				BBD571302B890B10006FB1C0 /* TrimbleMapsWebservicesClient.xcframework */,
-				BBD5712C2B890B10006FB1C0 /* Turf.xcframework */,
-				BB02C9912B6D55890042ED35 /* Polyline.xcframework */,
-				BB02C9932B6D55890042ED35 /* RoutePlugin.xcframework */,
-				BB02C98F2B6D55890042ED35 /* RoutingProfilesPlugin.xcframework */,
-				BB02C9902B6D55890042ED35 /* Solar.xcframework */,
-				BB02C98C2B6D55890042ED35 /* TrimbleMaps.xcframework */,
-				BB02C98E2B6D55890042ED35 /* TrimbleMapsAccounts.xcframework */,
-				BB02C98D2B6D55890042ED35 /* TrimbleMapsMobileEvents.xcframework */,
-				BB02C98B2B6D55890042ED35 /* TrimbleMapsWebservicesClient.xcframework */,
-				BB02C9922B6D55890042ED35 /* Turf.xcframework */,
+				55361E6D2D5B5B10005EEC15 /* JWTDecode.xcframework */,
+				55361E6E2D5B5B10005EEC15 /* Polyline.xcframework */,
+				55361E662D5B5B10005EEC15 /* RoutePlugin.xcframework */,
+				55361E622D5B5B10005EEC15 /* RoutingProfilesPlugin.xcframework */,
+				55361E672D5B5B10005EEC15 /* SearchUIPlugin.xcframework */,
+				55361E6B2D5B5B10005EEC15 /* Solar.xcframework */,
+				55361E642D5B5B10005EEC15 /* TrimbleMaps.xcframework */,
+				55361E632D5B5B10005EEC15 /* TrimbleMapsAccounts.xcframework */,
+				55361E652D5B5B10005EEC15 /* TrimbleMapsCoreNavigation.xcframework */,
+				55361E6A2D5B5B10005EEC15 /* TrimbleMapsMobileEvents.xcframework */,
+				55361E682D5B5B10005EEC15 /* TrimbleMapsNavigation.xcframework */,
+				55361E6C2D5B5B10005EEC15 /* TrimbleMapsNavigationNative.xcframework */,
+				55361E692D5B5B10005EEC15 /* TrimbleMapsWebservicesClient.xcframework */,
+				55361E6F2D5B5B10005EEC15 /* Turf.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -209,7 +219,7 @@
 				BB02C96F2B6D52B50042ED35 /* Sources */,
 				BB02C9702B6D52B50042ED35 /* Frameworks */,
 				BB02C9712B6D52B50042ED35 /* Resources */,
-				BBD571462B890B11006FB1C0 /* Embed Frameworks */,
+				55361E8C2D5B5B10005EEC15 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -279,8 +289,10 @@
 				BB02C9AA2B6D6E9E0042ED35 /* GeocodingViewController.swift in Sources */,
 				BB02C9BC2B6D94290042ED35 /* LinesOnAMapViewController.swift in Sources */,
 				BB02C9AC2B6D81610042ED35 /* MapStylesViewController.swift in Sources */,
+				55361E922D5B6219005EEC15 /* ClickablePointsViewController.swift in Sources */,
 				BB02C9A82B6D6DF40042ED35 /* BasicMapViewController.swift in Sources */,
 				BB02C9AE2B6D8F3C0042ED35 /* SimpleRoutingViewController.swift in Sources */,
+				55361E942D5B626F005EEC15 /* SampleFramingViewController.swift in Sources */,
 				BB02C9B62B6D92510042ED35 /* DataDrivenStylingViewController.swift in Sources */,
 				BB02C9B82B6D932A0042ED35 /* DotsOnAMapViewController.swift in Sources */,
 				BB02C9792B6D52B50042ED35 /* SceneDelegate.swift in Sources */,

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrimbleMaps.MapSDK.Sample.MapStyles"
+             Title="MapStyles" xmlns:TrimbleMaps="clr-namespace:TrimbleMaps.Controls.Forms;assembly=TrimbleMaps.MapsSDK">
+    <Grid>
+        <!-- MapView as the background -->
+        <TrimbleMaps:MapView
+            x:Name="Map"
+            ShowUserLocation="true"
+            UserLocationTracking="None"
+            ZoomMaxLevel="21"
+            CompassEnabled="True"
+            CompassFadeFacingNorth="False" />
+
+        <!-- VerticalStackLayout for the button -->
+        <VerticalStackLayout Padding="20" Spacing="10" VerticalOptions="End">
+            <Button Text="MOBILE DAY"
+                    Clicked="OnClickChangeStyle"
+                    BackgroundColor= "#FAF5F5"
+                    TextColor="Black"
+                    CornerRadius="10"
+                    HorizontalOptions="End"
+                    VerticalOptions= "End"
+                    CommandParameter="MOBILE_DAY" />
+            <Button Text="MOBILE NIGHT"
+                    Clicked="OnClickChangeStyle"
+                    BackgroundColor= "#FAF5F5"
+                    TextColor="Black"
+                    CornerRadius="10"
+                    HorizontalOptions="End"
+                    VerticalOptions= "End"
+                    CommandParameter="MOBILE_NIGHT" />
+            <Button Text="SATELLITE"
+                    Clicked="OnClickChangeStyle"
+                    BackgroundColor= "#FAF5F5"
+                    TextColor="Black"
+                    CornerRadius="10"
+                    HorizontalOptions="End"
+                    VerticalOptions= "End"
+                    CommandParameter="MOBILE_SATELLITE" />
+            <Button Text="TERRAIN"
+                    Clicked="OnClickChangeStyle"
+                    BackgroundColor= "#FAF5F5"
+                    TextColor="Black"
+                    CornerRadius="10"
+                    HorizontalOptions="End"
+                    VerticalOptions= "End"
+                    CommandParameter="TERRAIN" />
+            <Button Text="TRANSPORTATION"
+                    Clicked="OnClickChangeStyle"
+                    BackgroundColor= "#FAF5F5"
+                    TextColor="Black"
+                    CornerRadius="10"
+                    HorizontalOptions="End"
+                    VerticalOptions= "End"
+                    CommandParameter="TRANSPORTATION" />
+            <Button Text="BASIC"
+                    Clicked="OnClickChangeStyle"
+                    BackgroundColor= "#FAF5F5"
+                    TextColor="Black"
+                    CornerRadius="10"
+                    HorizontalOptions="End"
+                    VerticalOptions= "End"
+                    CommandParameter="BASIC" />
+            <Button Text="DATADARK"
+                    Clicked="OnClickChangeStyle"
+                    BackgroundColor= "#FAF5F5"
+                    TextColor="Black"
+                    CornerRadius="10"
+                    HorizontalOptions="End"
+                    VerticalOptions= "End"
+                    CommandParameter="DATADARK" />
+            <Button Text="DATALIGHT"
+                    Clicked="OnClickChangeStyle"
+                    BackgroundColor= "#FAF5F5"
+                    TextColor="Black"
+                    CornerRadius="10"
+                    HorizontalOptions="End"
+                    VerticalOptions= "End"
+                    CommandParameter="DATALIGHT" />
+            <Button Text="DEFAULT"
+                    Clicked="OnClickChangeStyle"
+                    BackgroundColor= "#FAF5F5"
+                    TextColor="Black"
+                    CornerRadius="10"
+                    HorizontalOptions="End"
+                    VerticalOptions= "End"
+                    CommandParameter="DEFAULT" />
+            <Button Text="MOBILE DEFAULT"
+                    Clicked="OnClickChangeStyle"
+                    BackgroundColor= "#FAF5F5"
+                    TextColor="Black"
+                    CornerRadius="10"
+                    HorizontalOptions="End"
+                    VerticalOptions= "End"
+                    CommandParameter="MOBILE_DEFAULT" />
+            <Button Text="MOBILE SATELLITE"
+                    Clicked="OnClickChangeStyle"
+                    BackgroundColor= "#FAF5F5"
+                    TextColor="Black"
+                    CornerRadius="10"
+                    HorizontalOptions="End"
+                    VerticalOptions= "End"
+                    CommandParameter="MOBILE_SATELLITE" />
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

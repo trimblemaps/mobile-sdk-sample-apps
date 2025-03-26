@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrimbleMaps.MapSDK.Sample.TrimbleLayers"
+             Title="TrimbleLayers" xmlns:TrimbleMaps="clr-namespace:TrimbleMaps.Controls.Forms;assembly=TrimbleMaps.MapsSDK">
+    <Grid>
+        <TrimbleMaps:MapView
+            x:Name="Map"
+            ShowUserLocation="true"
+            UserLocationTracking="None"
+            ZoomMaxLevel="21"
+            CompassEnabled="True"
+            CompassFadeFacingNorth="False"
+            >
+        </TrimbleMaps:MapView>
+        <!-- VerticalStackLayout for the button -->
+        <VerticalStackLayout Padding="20" Spacing="10" VerticalOptions="End">
+            <Button Text="TRAFFIC"
+                    Clicked="OnClickChangeStyle"
+                    BackgroundColor= "#FAF5F5"
+                    TextColor="Black"
+                    CornerRadius="10"
+                    HorizontalOptions="End"
+                    VerticalOptions= "End"
+                    CommandParameter="traffic" />
+            <Button Text="3D BUILDINGS"
+                    Clicked="OnClickChangeStyle"
+                    BackgroundColor= "#FAF5F5"
+                    TextColor="Black"
+                    CornerRadius="10"
+                    HorizontalOptions="End"
+                    VerticalOptions= "End"
+                    CommandParameter="3d_buildings" />
+            <Button Text="POIS"
+                    Clicked="OnClickChangeStyle"
+                    BackgroundColor= "#FAF5F5"
+                    TextColor="Black"
+                    CornerRadius="10"
+                    HorizontalOptions="End"
+                    VerticalOptions= "End"
+                    CommandParameter="pois" />
+            <Button Text="WEATHER"
+                    Clicked="OnClickChangeStyle"
+                    BackgroundColor= "#FAF5F5"
+                    TextColor="Black"
+                    CornerRadius="10"
+                    HorizontalOptions="End"
+                    VerticalOptions= "End"
+                    CommandParameter="weather" />
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

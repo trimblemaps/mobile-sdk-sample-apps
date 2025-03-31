@@ -16,6 +16,7 @@ import { TrimbleLayers } from "./TrimbleLayers";
 import { ReverseGeocoding } from "./ReverseGeocoding";
 import { SymbolsOnAMap } from "./SymbolsOnAMap";
 import { FillPolygonOnAMap } from "./FillPolygonOnAMap";
+import { MultiStopRouting } from "./MultiStopRouting";
 
 const App = (props) => {
   const [locationPermission, setLocationPermission] = useState("");
@@ -115,6 +116,11 @@ const App = (props) => {
           name="FillPolygonOnAMap"
           component={FillPolygonOnAMap}
           options={{ title: "Fill Polygon On A Map" }}
+        />
+        <Stack.Screen
+          name="MultiStopRouting"
+          component={MultiStopRouting}
+          options={{ title: "Multi-Stop Routing" }}
         />
       </Stack.Navigator>
     </NavigationContainer>

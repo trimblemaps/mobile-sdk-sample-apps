@@ -153,6 +153,12 @@ export const TrimbleMapsAccountScreen = (props) => {
           onPress={() => props.navigation.navigate("FillPolygonOnAMap")}
           fontColor="white"
         />
+        <CardView
+          title="Multi-Stop Routing"
+          imageSource={require("./images/van_nav_splash.png")}
+          onPress={() => props.navigation.navigate("MultiStopRouting")}
+          fontColor="black"
+        />
       </ScrollView>
     </React.Fragment>
   );

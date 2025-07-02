@@ -33,7 +33,7 @@ struct ContentView: View {
         let destination = CLLocationCoordinate2D(latitude: 40.349542, longitude: -74.660237)
         let geocoder = TMGeocoderClient.shared
         let region = AccountManager.default.region.queryValue
-        let options = TMGeocoderParams(region: region, query: "\(destination.latitude), \(destination.longitude)")
+        let options = TMGeocoderParams(query: "\(destination.latitude), \(destination.longitude)")
 
         geocoder.geocode(options) { result, error in
             // sort results by distance

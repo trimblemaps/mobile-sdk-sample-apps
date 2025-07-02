@@ -41,7 +41,7 @@ class GeocodingViewController: UIViewController, AccountManagerDelegate, TMGLMap
 
     func geocode() {
         let geocoder = TMGeocoderClient()
-        let params = TMGeocoderParams(region: "NA", query: "1 Independence Way Princeton NJ 08540")
+        let params = TMGeocoderParams(query: "1 Independence Way Princeton NJ 08540")
 
         geocoder.geocode(params) { result, error in
             guard let result = result, !result.locations.isEmpty, error == nil else {

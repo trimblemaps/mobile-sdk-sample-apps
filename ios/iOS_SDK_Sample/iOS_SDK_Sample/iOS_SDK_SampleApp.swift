@@ -21,12 +21,27 @@ struct iOS_SDK_SampleApp: App {
     
     func initialize() {
         let region: Region = .northAmerica
+        let apiEnvironment: APIEnvironment = .production
         var apiKey: String = "Your-API-Key"
-        
+        var assetId: String = "Your-Asset-ID"
+        var companyId: String = "Your-Company-ID"
+        var externalAccountId: String = "Your-External-Account-ID"
+        var partnerId: String = "Your-Partner-ID"
+        var vehicleId: String = "Your-Vehicle-ID"
+        var driverId: String = "Your-Driver-ID"
+        var deviceId: String = "Your-Device-ID"
         
         AccountManager.default.delegate = delegate
         let account: Account = Account(apiKey: apiKey,
-                                       region: region)
+                                       region: region,
+                                       apiEnvironment: apiEnvironment,
+                                       assetId: assetId,
+                                       companyId: companyId,
+                                       externalAccountId: externalAccountId,
+                                       partnerId: partnerId,
+                                       vehicleId: vehicleId,
+                                       driverId: driverId,
+                                       deviceId: deviceId)
         
         AccountManager.default.account = account
     }

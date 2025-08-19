@@ -131,6 +131,7 @@ struct TrimbleMapsMapView: UIViewRepresentable {
             tripPreviewViewModel.tripPreviewMapModel.navigationMapView.styleURL = currentColorScheme
             routeOrigin = nil
             routeDestination = nil
+            navigationViewController?.clear()
             navigationViewController = nil
             currentStyle = nil
         }
@@ -158,7 +159,8 @@ struct TrimbleMapsMapView: UIViewRepresentable {
                                                                  routeIndex: routeIndex,
                                                                  routeOptions: routeOptions,
                                                                  routeRefreshOptions: routeRefreshOptions,
-                                                                 simulating: simulationMode)
+                                                                 simulating: simulationMode,
+                                                                 enableMapDownload: false)
 
             var speechSynthesizer: SpeechSynthesizing = SystemSpeechSynthesizer()
             speechSynthesizer = BeepingSpeechSynthesizer(speechSynthesizer)

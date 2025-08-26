@@ -1,6 +1,6 @@
 binary "https://trimblemaps.jfrog.io/artifactory/carthage/RoutePlugin.json" == 2.0.0
 binary "https://trimblemaps.jfrog.io/artifactory/carthage/SearchUIPlugin.json" == 2.0.0
-binary "https://trimblemaps.jfrog.io/artifactory/carthage/TrimbleMapsAccounts.json" == 1.2.0
+binary "https://trimblemaps.jfrog.io/artifactory/carthage/TrimbleMapsAccounts.json" == 2.0.0
 binary "https://trimblemaps.jfrog.io/artifactory/carthage/TrimbleMapsMultiplatformUI.json" == 1.2.0
 binary "https://trimblemaps.jfrog.io/artifactory/carthage/TrimbleMaps.json" == 2.0.0
 binary "https://trimblemaps.jfrog.io/artifactory/carthage/TrimbleMapsWebservicesClient.json" == 2.0.0

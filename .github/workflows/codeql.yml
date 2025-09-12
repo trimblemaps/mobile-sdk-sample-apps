@@ -52,7 +52,7 @@ jobs:
         echo "Fetch iOS sample app frameworks"
         /opt/homebrew/bin/carthage bootstrap --project-directory /Users/runner/work/mobile-sdk-sample-apps/mobile-sdk-sample-apps/ios --platform iOS --use-xcframeworks
         echo "Build iOS sample app"
-        /Applications/Xcode_15.4.app/Contents/Developer/usr/bin/xcodebuild build -project /Users/runner/work/mobile-sdk-sample-apps/mobile-sdk-sample-apps/ios/iOS_SDK_Sample/iOS_SDK_Sample.xcodeproj -target iOS_SDK_Sample -sdk iphoneos CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+        /Applications/Xcode_16.4.app/Contents/Developer/usr/bin/xcodebuild build -project /Users/runner/work/mobile-sdk-sample-apps/mobile-sdk-sample-apps/ios/iOS_SDK_Sample/iOS_SDK_Sample.xcodeproj -target iOS_SDK_Sample -sdk iphoneos CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@d3678e237b9c32a6c9bffb3315c335f976f3549f # v3.30.2
       with:

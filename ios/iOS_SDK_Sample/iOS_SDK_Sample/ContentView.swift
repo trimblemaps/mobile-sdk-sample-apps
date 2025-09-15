@@ -127,6 +127,7 @@ struct TrimbleMapsMapView: UIViewRepresentable {
         }
 
         func reset() {
+            tripPreviewViewModel.trip.unregisterTripDelegate(tripPreviewViewModel)
             tripPreviewViewModel = TripPreviewViewModel.create(tripPreviewOptions: tripPreviewViewModel.tripPreviewOptions)
             tripPreviewViewModel.tripPreviewMapModel.navigationMapView.styleURL = currentColorScheme
             routeOrigin = nil

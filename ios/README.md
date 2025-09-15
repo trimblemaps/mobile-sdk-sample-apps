@@ -1,1 +1,1 @@
-Visit https://developer.trimblemaps.com/navigation-sdk/ios-sdk/getting-started/project-setup/ for setup instructions
+Visit https://developer.trimblemaps.com/copilot-native-nav-sdk/ios-sdk/getting-started/project-setup/ for setup instructions

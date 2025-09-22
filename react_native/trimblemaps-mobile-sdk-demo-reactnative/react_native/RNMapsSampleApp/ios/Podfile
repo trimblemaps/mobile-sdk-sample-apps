@@ -34,12 +34,21 @@ setup_permissions([
 #   dependencies: {
 #     ...(process.env.NO_FLIPPER ? { 'react-native-flipper': { platforms: { ios: null } } } : {}),
 # ```
-flipper_config = ENV['NO_FLIPPER'] == "1" ? FlipperConfiguration.disabled : FlipperConfiguration.enabled
 
 linkage = ENV['USE_FRAMEWORKS']
 if linkage != nil
   Pod::UI.puts "Configuring Pod with #{linkage}ally linked Frameworks".green
   use_frameworks! :linkage => linkage.to_sym
+end
+
+pre_install do |installer|
+  installer.pod_targets.each do |pod|
+    if pod.name.eql?('RNReanimated')
+      def pod.build_type;
+      Pod::BuildType.static_library
+      end
+    end
+  end
 end
 
 target 'RNMapsSampleApp' do
@@ -82,6 +91,5 @@ target 'RNMapsSampleApp' do
       config[:reactNativePath],
       :mac_catalyst_enabled => false
     )
-    __apply_Xcode_12_5_M1_post_install_workaround(installer)
   end
 end

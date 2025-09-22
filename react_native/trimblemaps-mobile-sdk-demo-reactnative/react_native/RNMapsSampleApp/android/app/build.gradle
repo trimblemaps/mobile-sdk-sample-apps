@@ -31,6 +31,8 @@ android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
 
+    namespace "com.mapssampleapp"
+
     sourceSets {
         main {
             jniLibs.srcDirs = ['src/jniLibs']

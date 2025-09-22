@@ -8,7 +8,7 @@ buildscript {
         compileSdkVersion = 33
         targetSdkVersion = 33
         ndkVersion = "21.4.7075529"
-        kotlinVersion = "1.8.20"
+        kotlinVersion = "1.8.10"
     }
     repositories {
         mavenLocal()

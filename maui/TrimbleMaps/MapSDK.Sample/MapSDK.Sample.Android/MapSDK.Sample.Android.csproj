@@ -3,7 +3,7 @@
 		<OutputType>Exe</OutputType>
 		<AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
 		<TargetFrameworks>net8.0-android</TargetFrameworks>
-		<SupportedOSPlatformVersion>21.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion>25.0</SupportedOSPlatformVersion>
 		<AssemblyTitle>TrimbleMaps.MapSDK.Sample.Android</AssemblyTitle>
 		<Product>TrimbleMaps.MapSDK.Sample.Android</Product>
 		<Copyright>Copyright ©  2014</Copyright>
@@ -32,7 +32,7 @@
 		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.100" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.100" />
 		<PackageReference Include="TrimbleMaps.MapsSDK" Version="1.0.0" />
-		<PackageReference Include="TrimbleMaps.MapsSDK.Platform.Droid" Version="1.0.0" />
+		<PackageReference Include="TrimbleMaps.MapsSDK.Platform.Droid" Version="1.1.0" />
 	</ItemGroup>
 
 	<ItemGroup>

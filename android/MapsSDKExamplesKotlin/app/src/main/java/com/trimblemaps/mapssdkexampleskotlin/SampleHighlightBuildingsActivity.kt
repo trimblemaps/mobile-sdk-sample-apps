@@ -47,7 +47,7 @@ class SampleHighlightBuildingActivity : AppCompatActivity() {
 
             trimbleMapsMap.setStyle(Style
                 .Builder()
-                .fromUri(Style.MOBILE_NIGHT)
+                .fromUri(Style.TrimbleMobileStyle.MOBILE_NIGHT)
                 .withSource(GeoJsonSource(highlightsSrcLayer, FeatureCollection.fromFeatures(highlights)))
                 .withLayer(LineLayer(highlightsSrcLayer, highlightsSrcLayer).withProperties(
                     lineWidth(4f),

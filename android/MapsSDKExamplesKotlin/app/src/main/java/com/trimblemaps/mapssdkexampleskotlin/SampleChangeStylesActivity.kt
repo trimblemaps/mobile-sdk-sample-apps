@@ -37,7 +37,7 @@ class SampleChangeStylesActivity : Activity(), Style.OnStyleLoaded {
             map!!.cameraPosition = position
 
             // Set the style, the callback is implemented into the class.
-            map!!.setStyle(Style.MOBILE_DAY, this@SampleChangeStylesActivity)
+            map!!.setStyle(Style.TrimbleMobileStyle.MOBILE_DAY, this@SampleChangeStylesActivity)
         }
     }
 
@@ -47,15 +47,15 @@ class SampleChangeStylesActivity : Activity(), Style.OnStyleLoaded {
         when ((view as Button).text.toString()) {
             "Satellite" -> {
                 chosenStyle = "Satellite Style"
-                map?.setStyle(Style.SATELLITE, this)
+                map?.setStyle(Style.TrimbleMobileStyle.MOBILE_SATELLITE, this)
             }
             "Day" -> {
                 chosenStyle = "Day Style"
-                map?.setStyle(Style.MOBILE_DAY, this)
+                map?.setStyle(Style.TrimbleMobileStyle.MOBILE_DAY, this)
             }
             "Night" -> {
                 chosenStyle = "Night Style"
-                map?.setStyle(Style.MOBILE_NIGHT, this)
+                map?.setStyle(Style.TrimbleMobileStyle.MOBILE_NIGHT, this)
             }
         }
     }

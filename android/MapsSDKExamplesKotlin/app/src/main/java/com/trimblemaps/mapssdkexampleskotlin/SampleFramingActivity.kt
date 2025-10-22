@@ -47,7 +47,7 @@ class SampleFramingActivity : Activity(), Style.OnStyleLoaded {
                 .zoom(2.5)
                 .build()
             map?.cameraPosition = position
-            map?.setStyle(Style.MOBILE_DAY, this@SampleFramingActivity)
+            map?.setStyle(Style.TrimbleMobileStyle.MOBILE_DAY, this@SampleFramingActivity)
         }
 
         // When the button is clicked, cycle through the lines using trimbleMapsMap.moveCamera

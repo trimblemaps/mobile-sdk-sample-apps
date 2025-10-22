@@ -46,7 +46,7 @@ class SampleDataDrivenStylingActivity : Activity(), Style.OnStyleLoaded {
 
             // This class implements the onStyleLoaded method, that will be called when
             // the style has been loaded.
-            map!!.setStyle(Style.MOBILE_NIGHT, this@SampleDataDrivenStylingActivity)
+            map!!.setStyle(Style.TrimbleMobileStyle.MOBILE_NIGHT, this@SampleDataDrivenStylingActivity)
         }
     }
 

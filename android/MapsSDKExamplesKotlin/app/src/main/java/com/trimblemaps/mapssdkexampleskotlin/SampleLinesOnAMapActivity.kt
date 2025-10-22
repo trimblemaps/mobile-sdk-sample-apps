@@ -43,7 +43,7 @@ class SampleLinesOnAMapActivity : Activity(), Style.OnStyleLoaded {
 
             // This class implements the onStyleLoaded method, that will be called when
             // the style has been loaded.
-            map!!.setStyle(Style.MOBILE_DAY, this@SampleLinesOnAMapActivity)
+            map!!.setStyle(Style.TrimbleMobileStyle.MOBILE_DAY, this@SampleLinesOnAMapActivity)
         }
     }
 

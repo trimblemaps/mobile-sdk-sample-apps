@@ -32,7 +32,7 @@ class SampleTrimbleLayersActivity : Activity() {
                 .zoom(13.0)
                 .build()
             map!!.cameraPosition = position
-            map!!.setStyle(Style.MOBILE_DEFAULT)
+            map!!.setStyle(Style.TrimbleMobileStyle.MOBILE_DAY)
         }
     }
 

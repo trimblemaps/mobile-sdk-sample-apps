@@ -50,7 +50,7 @@ class SampleFollowMeActivity : Activity(), OnMapReadyCallback,
         // The TrimbleMapsMap object is created, now a style can be applied to render a map.
         map = trimbleMapsMap
         map!!.addOnMoveListener(this)
-        map!!.setStyle(Style.MOBILE_DEFAULT) { // Not setting the start location here, as that will be tracked by the user's
+        map!!.setStyle(Style.TrimbleMobileStyle.MOBILE_DAY) { // Not setting the start location here, as that will be tracked by the user's
             // location. Instead, just defining the initial zoom.
             map!!.cameraPosition = CameraPosition.Builder().zoom(15.0).build()
             setupLocationComponent()

@@ -22,7 +22,7 @@ class SampleBasicMapActivity : Activity() {
         // the onMapReadyCallback is fired when the map is ready to be worked with
         mapView?.getMapAsync(OnMapReadyCallback { trimbleMapsMap ->
             // The TrimbleMapsMap object is created, now a style can be applied to render a map.
-            trimbleMapsMap.setStyle(Style.MOBILE_DAY) {
+            trimbleMapsMap.setStyle(Style.TrimbleMobileStyle.MOBILE_DAY) {
                 // The style is loaded, you can add content to the map, move it etc.
             }
         })

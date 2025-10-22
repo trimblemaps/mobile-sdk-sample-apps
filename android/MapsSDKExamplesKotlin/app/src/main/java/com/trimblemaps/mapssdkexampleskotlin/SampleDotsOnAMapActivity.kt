@@ -43,7 +43,7 @@ class SampleDotsOnAMapActivity : Activity(), Style.OnStyleLoaded {
 
             // This class implements the onStyleLoaded method, that will be called when
             // the style has been loaded.
-            map!!.setStyle(Style.MOBILE_NIGHT, this@SampleDotsOnAMapActivity)
+            map!!.setStyle(Style.TrimbleMobileStyle.MOBILE_NIGHT, this@SampleDotsOnAMapActivity)
         }
     }
 

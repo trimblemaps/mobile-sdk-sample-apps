@@ -87,7 +87,7 @@ class SampleIconsOnMapActivity : AppCompatActivity() {
             trimbleMapsMap.setStyle(
                 Style
                     .Builder()
-                    .fromUri(Style.MOBILE_DAY)
+                    .fromUri(Style.TrimbleMobileStyle.MOBILE_DAY)
                     // Add the image to the map so it can be referenced by our source and layers later
                     .withImage(
                         iconId, BitmapUtils.getBitmapFromDrawable(

@@ -35,7 +35,7 @@ class SampleGeocodingActivity : Activity() {
         mapView!!.getMapAsync { trimbleMapsMap ->
             // The TrimbleMapsMap object is created, now a style can be applied to render a map.
             map = trimbleMapsMap
-            map!!.setStyle(Style.MOBILE_DEFAULT) { // The style is loaded, you can add content to the map, move it etc.
+            map!!.setStyle(Style.TrimbleMobileStyle.MOBILE_DAY) { // The style is loaded, you can add content to the map, move it etc.
                 // Style was loaded, do a geocode.
                 geocode()
             }

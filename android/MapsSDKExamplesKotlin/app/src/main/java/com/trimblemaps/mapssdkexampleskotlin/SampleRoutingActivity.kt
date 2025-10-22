@@ -46,7 +46,7 @@ class SampleRoutingActivity : Activity() {
                 .zoom(11.0)
                 .build()
             map!!.cameraPosition = position
-            map!!.setStyle(Style.MOBILE_DAY) { createSimpleRoute() }
+            map!!.setStyle(Style.TrimbleMobileStyle.MOBILE_DAY) { createSimpleRoute() }
         }
     }
 

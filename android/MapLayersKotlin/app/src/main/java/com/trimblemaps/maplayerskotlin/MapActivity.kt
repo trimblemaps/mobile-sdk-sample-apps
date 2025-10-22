@@ -63,7 +63,7 @@ class MapActivity : AppCompatActivity() {
 
         mapView.getMapAsync { map ->
             map.setStyle(  Style.Builder()
-                .fromUri(Style.MOBILE_DAY)
+                .fromUri(Style.TrimbleMobileStyle.MOBILE_DAY)
                 .withSource(lineSource)
                 .withLayer(LineLayer("1", lineSourceName)
                     .withProperties(lineColor(Color.BLUE), lineWidth(1.0f)))

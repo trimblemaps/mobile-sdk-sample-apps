@@ -46,7 +46,7 @@ class SampleAnimateAroundActivity : AppCompatActivity() {
             // Adding the source and layer for the buildings highlighted. Building outlines will be
             // displayed in yellow
 
-            trimbleMapsMap.setStyle(Style.MOBILE_DAY)
+            trimbleMapsMap.setStyle(Style.TrimbleMobileStyle.MOBILE_DAY)
 
             map?.cameraPosition = CameraPosition.Builder()
                 .target(LatLng(39.90073499962372, -75.16745401827387))

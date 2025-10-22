@@ -44,7 +44,7 @@ class SampleClickablePointsActivity : Activity(), Style.OnStyleLoaded {
                 .zoom(13.0)
                 .build()
             map?.cameraPosition = position
-            map?.setStyle(Style.SATELLITE, this@SampleClickablePointsActivity)
+            map?.setStyle(Style.TrimbleMobileStyle.MOBILE_SATELLITE, this@SampleClickablePointsActivity)
         }
     }
 

@@ -42,7 +42,7 @@ class SampleRestrictUserInteractionActivity : AppCompatActivity() {
         mapView?.getMapAsync { trimbleMapsMap ->
             map = trimbleMapsMap
             // The TrimbleMapsMap object is created, now a style can be applied to render a map.
-            trimbleMapsMap.setStyle(Style.MOBILE_DAY)
+            trimbleMapsMap.setStyle(Style.TrimbleMobileStyle.MOBILE_DAY)
 
             val cameraPosition  = CameraPosition.Builder()
                 .target(LatLng(40.35406213631131, -74.66366338445839)) // Princeton NJ

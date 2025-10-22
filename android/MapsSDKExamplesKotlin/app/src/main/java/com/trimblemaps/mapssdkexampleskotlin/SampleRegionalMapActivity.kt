@@ -30,7 +30,7 @@ class SampleRegionalMapActivity : AppCompatActivity() {
         // the onMapReadyCallback is fired when the map is ready to be worked with
         mapView?.getMapAsync { trimbleMapsMap ->
             map = trimbleMapsMap
-            map?.setStyle(Style.MOBILE_DEFAULT)
+            map?.setStyle(Style.TrimbleMobileStyle.MOBILE_DAY)
 
 
             map?.cameraPosition = CameraPosition.Builder()

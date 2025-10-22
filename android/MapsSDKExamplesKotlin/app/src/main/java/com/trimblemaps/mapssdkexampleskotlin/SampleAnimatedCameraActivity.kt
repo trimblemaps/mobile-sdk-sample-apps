@@ -53,7 +53,7 @@ class SampleAnimatedCameraActivity : AppCompatActivity() {
         mapView?.getMapAsync { trimbleMapsMap ->
             map = trimbleMapsMap
             // The TrimbleMapsMap object is created, now a style can be applied to render a map.
-            trimbleMapsMap.setStyle(Style.MOBILE_DAY)
+            trimbleMapsMap.setStyle(Style.TrimbleMobileStyle.MOBILE_DAY)
 
             // Set the initial position of the camera.
             map?.cameraPosition = CameraPosition.Builder()

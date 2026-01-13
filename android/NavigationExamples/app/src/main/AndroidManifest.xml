@@ -18,6 +18,11 @@
         android:theme="@style/Theme.NavigationExamples"
         tools:targetApi="31">
         <activity
+            android:name=".HeadlessNavActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:exported="false"
+            android:theme="@style/Theme.NavigationExamples" />
+        <activity
             android:name=".NavigationActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:exported="false"
@@ -33,7 +38,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="false"
-            android:label="MainActivit" />
+            android:label="MainActivity" />
         <activity
             android:name=".SplashActivity"
             android:exported="true">

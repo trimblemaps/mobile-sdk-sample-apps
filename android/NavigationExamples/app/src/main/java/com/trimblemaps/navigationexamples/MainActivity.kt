@@ -25,7 +25,9 @@ class MainActivity : AppCompatActivity() {
         Example(Constants.VAN_NAVIGATION, R.drawable.van_nav_splash, NavigationActivity::class.java),
         Example(Constants.MULTI_STOP, R.drawable.general_splash, TripPreviewActivity::class.java),
         Example(Constants.HGV, R.drawable.van_nav_splash, TripPreviewActivity::class.java),
-        Example(Constants.GENERAL, R.drawable.general_splash, AllInOneActivity::class.java)
+        Example(Constants.GENERAL, R.drawable.general_splash, AllInOneActivity::class.java),
+        Example(Constants.HEADLESS_NAV, R.drawable.general_splash, HeadlessNavActivity::class.java
+        )
     )
 
     private lateinit var binding: ActivityMainBinding

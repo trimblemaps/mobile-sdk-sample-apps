@@ -36,4 +36,5 @@ object Constants {
     const val MULTI_STOP = "MULTI STOP"
     const val HGV = "HGV"
     const val GENERAL = "General"
+    const val HEADLESS_NAV = "HEADLESS NAVIGATION"
 }

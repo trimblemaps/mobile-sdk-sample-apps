@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-		<TargetFrameworks>net8.0-android</TargetFrameworks>
+		<TargetFrameworks>net10.0-android</TargetFrameworks>
 		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks)</TargetFrameworks>
 		<UseMaui>True</UseMaui>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
@@ -18,28 +18,28 @@
 		<NoWarn>$(NoWarn);NU1603</NoWarn>
 		<NoWarn>$(NoWarn);NU1605</NoWarn>
 	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-ios|AnyCPU'">
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net10.0-ios|AnyCPU'">
 		<WarningsAsErrors />
 	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-ios|AnyCPU'">
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net10.0-ios|AnyCPU'">
 		<WarningsAsErrors />
 	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-android|AnyCPU'">
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net10.0-android|AnyCPU'">
 		<WarningsAsErrors />
 	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-android|AnyCPU'">
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net10.0-android|AnyCPU'">
 		<WarningsAsErrors />
 	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0|AnyCPU'">
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net10.0|AnyCPU'">
 		<WarningsAsErrors />
 	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0|AnyCPU'">
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net10.0|AnyCPU'">
 		<WarningsAsErrors />
 	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-windows10.0.19041.0|AnyCPU'">
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net10.0-windows10.0.19041.0|AnyCPU'">
 		<WarningsAsErrors />
 	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-windows10.0.19041.0|AnyCPU'">
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net10.0-windows10.0.19041.0|AnyCPU'">
 		<WarningsAsErrors />
 	</PropertyGroup>
 	<ItemGroup>
@@ -70,9 +70,11 @@
 
 
 	<ItemGroup>
-		<PackageReference Include="CommunityToolkit.Maui" Version="3.0.0" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.100" />
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.100" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="10.0.0" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.0" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="10.0.0" />
+		<PackageReference Include="Microsoft.Maui.Core" Version="10.0.0" />
+		<PackageReference Include="Microsoft.Maui.Essentials" Version="10.0.0" />
 		<PackageReference Include="TrimbleMaps.MapsSDK.Platform.Droid" Version="1.1.0" />
 
 	</ItemGroup>

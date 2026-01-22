@@ -2,7 +2,7 @@
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
 		<AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
-		<TargetFrameworks>net8.0-android</TargetFrameworks>
+		<TargetFrameworks>net10.0-android</TargetFrameworks>
 		<SupportedOSPlatformVersion>25.0</SupportedOSPlatformVersion>
 		<AssemblyTitle>TrimbleMaps.MapSDK.Sample.Android</AssemblyTitle>
 		<Product>TrimbleMaps.MapSDK.Sample.Android</Product>
@@ -22,16 +22,16 @@
 	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
 		<AndroidManagedSymbols>true</AndroidManagedSymbols>
 	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-android|AnyCPU'">
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net10.0-android|AnyCPU'">
 		<WarningsAsErrors />
 	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-android|AnyCPU'">
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net10.0-android|AnyCPU'">
 		<WarningsAsErrors />
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.100" />
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.100" />
-		<PackageReference Include="TrimbleMaps.MapsSDK" Version="1.0.0" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.0" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="10.0.0" />
+		<PackageReference Include="TrimbleMaps.MapsSDK" Version="1.1.0" />
 		<PackageReference Include="TrimbleMaps.MapsSDK.Platform.Droid" Version="1.1.0" />
 	</ItemGroup>
 

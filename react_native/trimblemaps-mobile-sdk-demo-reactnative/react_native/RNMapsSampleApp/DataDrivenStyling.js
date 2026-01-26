@@ -13,11 +13,23 @@ const TrimbleMapsMapViewConstants = TrimbleMapsMapView.getConstants();
 
 export const DataDrivenStyling = () => {
   const [mapLoaded, setMapLoaded] = useState(false);
+  const [styleURL, setStyleURL] = useState(null);
   let circleLayerId = "CircleLayerId";
   let circleLayer = "CircleLayer";
   let radiusExpressionKey = "radiusExpression";
   let strokeWidthExpressionKey = "strokeWidthExpression";
   let strokeColorExpressionKey = "strokeColorExpression";
+
+  useEffect(() => {
+    // Load the style URL
+    TrimbleMapsMapView.MobileDay()
+      .then((style) => {
+        setStyleURL(style);
+      })
+      .catch((error) => {
+        console.error("Failed to load style:", error);
+      });
+  }, []);
 
   useEffect(() => {
     if (mapLoaded) {
@@ -122,12 +134,16 @@ export const DataDrivenStyling = () => {
     },
   });
 
+  if (!styleURL) {
+    return <View style={styles.container} />;
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.container}>
         <TrimbleMapsMap
           style={styles.mapStyle}
-          styleURL={TrimbleMapsMapViewConstants.MOBILE_DAY}
+          styleURL={styleURL}
           onMapLoaded={onMapLoaded}
         />
       </View>

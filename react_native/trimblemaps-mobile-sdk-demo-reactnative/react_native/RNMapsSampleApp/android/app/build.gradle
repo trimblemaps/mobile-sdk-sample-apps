@@ -1,15 +1,20 @@
-apply plugin: "com.android.application"
-apply plugin: "com.facebook.react"
+plugins {
+    id 'com.android.application'
+    id 'com.facebook.react'
+}
+
+// Ensure autolinking directories exist before configuration
+def autolinkingDir = file("${buildDir}/generated/autolinking/src/main/java")
+if (!autolinkingDir.exists()) {
+    autolinkingDir.mkdirs()
+}
 
 /**
  * React Native Android app configuration
  * see ref: https://reactnative.dev/docs/react-native-gradle-plugin
  */
 react {
-    // specifies build types that will skip JS bundling. defaults to ["debug"]
-    root = file("../../")
-    entryFile = file("../../index.js")
-    debuggableVariants = []
+    autolinkLibrariesWithApp()
 }
 
 apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
@@ -46,6 +51,13 @@ android {
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
+        externalNativeBuild {
+            cmake {
+                arguments "-DCMAKE_OBJECT_PATH_MAX=512",
+                          "-DCMAKE_VERBOSE_MAKEFILE=ON",
+                          "-DANDROID_STL=c++_shared"
+            }
+        }
     }
     signingConfigs {
         release {
@@ -73,24 +85,13 @@ repositories {
 }
 
 dependencies {
-    implementation project(':react-native-restart')
-    implementation project(':react-native-community-checkbox')
-    implementation project(':react-native-vector-icons')
-    implementation project(':react-native-fs')
-    implementation project(':@react-native-community_slider')
-    implementation project(':react-native-screens')
-    implementation project(':react-native-gesture-handler')
-    implementation project(':react-native-safe-area-context')
-    implementation project(':react-native-splash-screen')
+    implementation "com.facebook.react:react-android"
+    implementation "com.facebook.react:hermes-android"
+
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.appcompat:appcompat:1.1.0-rc01'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.0.0'
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.9.2'
-    implementation 'com.trimblemaps.reactnative:maps-reactnative-sdk:0.2.0'
-    if (hermesEnabled.toBoolean()) {
-        implementation("com.facebook.react:hermes-android")
-    } else {
-        implementation jscFlavor
-    }
+    implementation 'com.trimblemaps.reactnative:maps-reactnative-sdk:0.3.0'
 }

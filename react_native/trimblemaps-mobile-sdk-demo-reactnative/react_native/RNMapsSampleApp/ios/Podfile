@@ -1,3 +1,6 @@
+# Disable New Architecture
+ENV['RCT_NEW_ARCH_ENABLED'] = '0'
+
 # Resolve react_native_pods.rb with node to allow for hoisting
 def node_require(script)
   # Resolve script with node to allow for hoisting
@@ -25,16 +28,6 @@ setup_permissions([
   'LocationWhenInUse'
 ])
 
-# If you are using a `react-native-flipper` your iOS build will fail when `NO_FLIPPER=1` is set.
-# because `react-native-flipper` depends on (FlipperKit,...) that will be excluded
-#
-# To fix this you can also exclude `react-native-flipper` using a `react-native.config.js`
-# ```js
-# module.exports = {
-#   dependencies: {
-#     ...(process.env.NO_FLIPPER ? { 'react-native-flipper': { platforms: { ios: null } } } : {}),
-# ```
-
 linkage = ENV['USE_FRAMEWORKS']
 if linkage != nil
   Pod::UI.puts "Configuring Pod with #{linkage}ally linked Frameworks".green
@@ -53,16 +46,15 @@ end
 
 target 'RNMapsSampleApp' do
   use_frameworks! :linkage => :dynamic
-  config = use_native_modules!
 
   # Flags change depending on the env values.
   flags = get_default_flags()
 
   use_react_native!(
-    :path => config[:reactNativePath],
+    :path => "../node_modules/react-native",
     # Hermes is now enabled by default. Disable by setting this flag to false.
     :hermes_enabled => flags[:hermes_enabled],
-    :fabric_enabled => flags[:fabric_enabled],
+    :fabric_enabled => false,  # Explicitly disable New Architecture for compatibility
     # Enables Flipper.
     #
     # Note that if you have use_frameworks! enabled, Flipper will not work and
@@ -72,12 +64,39 @@ target 'RNMapsSampleApp' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
+  # Manually link native modules
+  pod 'react-native-restart', :path => '../node_modules/react-native-restart'
+  pod 'react-native-safe-area-context', :path => '../node_modules/react-native-safe-area-context'
+  pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
+  pod 'RNFS', :path => '../node_modules/react-native-fs'
+  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
+  pod 'RNPermissions', :path => '../node_modules/react-native-permissions'
+  pod 'RNScreens', :path => '../node_modules/react-native-screens'
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+  pod 'RNCCheckbox', :path => '../node_modules/@react-native-community/checkbox'
+  pod 'RNCMaskedView', :path => '../node_modules/@react-native-masked-view/masked-view'
+
   target 'RNMapsSampleAppTests' do
     inherit! :complete
     # Pods for testing
   end
 
   post_install do |installer|
+    # Fix permissions on Carthage dSYM Info.plist files to avoid permission errors
+    # React Native's post-install hook tries to read these files
+    Dir.glob("#{__dir__}/Carthage/Build/**/dSYMs/**/Info.plist").each do |plist|
+      File.chmod(0644, plist) if File.exist?(plist) && !File.writable?(plist)
+    end
+    
+    # Convert binary plists to XML format to avoid UTF-8 encoding errors
+    # This is necessary for Carthage xcframeworks which may have binary plists
+    # Do this before react_native_post_install to prevent encoding errors
+    Dir.glob("#{__dir__}/Carthage/Build/**/*.framework/Info.plist").each do |plist|
+      if File.exist?(plist) && File.readable?(plist)
+        system("plutil -convert xml1 '#{plist}' 2>/dev/null")
+      end
+      end
+
     #installer.generated_projects.each do |project|
     #      project.targets.each do |target|
     #          target.build_configurations.each do |config|
@@ -88,7 +107,7 @@ target 'RNMapsSampleApp' do
     # https://github.com/facebook/react-native/blob/main/packages/react-native/scripts/react_native_pods.rb#L197-L202
     react_native_post_install(
       installer,
-      config[:reactNativePath],
+      "../node_modules/react-native",
       :mac_catalyst_enabled => false
     )
   end

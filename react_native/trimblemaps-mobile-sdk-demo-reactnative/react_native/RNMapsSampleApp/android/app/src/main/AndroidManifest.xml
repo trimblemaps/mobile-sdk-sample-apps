@@ -1,5 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mapssampleapp">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -12,6 +11,7 @@
       android:icon="@mipmap/trimble_launcher"
       android:roundIcon="@mipmap/trimble_launcher"
       android:allowBackup="false"
+      android:usesCleartextTraffic="true"
       android:theme="@style/AppTheme"
 	  android:requestLegacyExternalStorage="true"
 	  android:preserveLegacyExternalStorage="true">

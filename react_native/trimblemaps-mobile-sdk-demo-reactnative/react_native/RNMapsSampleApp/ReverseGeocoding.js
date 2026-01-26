@@ -16,6 +16,18 @@ const TrimbleMapsMapViewConstants = TrimbleMapsMapView.getConstants();
 
 export const ReverseGeocoding = () => {
   const [mapLoaded, setMapLoaded] = useState(false);
+  const [styleURL, setStyleURL] = useState(null);
+
+  useEffect(() => {
+    // Load the style URL
+    TrimbleMapsMapView.MobileDay()
+      .then((style) => {
+        setStyleURL(style);
+      })
+      .catch((error) => {
+        console.error("Failed to load style:", error);
+      });
+  }, []);
 
   useEffect(() => {
     const reverseTrimbleMapsGeocoding = async (event) => {
@@ -81,12 +93,16 @@ export const ReverseGeocoding = () => {
     },
   });
 
+  if (!styleURL) {
+    return <View style={styles.container} />;
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.container}>
         <TrimbleMapsMap
           style={styles.mapStyle}
-          styleURL={TrimbleMapsMapViewConstants.MOBILE_DAY}
+          styleURL={styleURL}
           onMapLoaded={onMapLoaded}
           onTapGesture={onTapGesture}
         />

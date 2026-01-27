@@ -16,8 +16,6 @@
 		6C1415D72B5876910065B0F0 /* RoutePlugin.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C1415D52B58768F0065B0F0 /* RoutePlugin.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6C145B032B6D3F2F0080D52B /* MapsReactNativeLibrary.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C145B022B6D3F2F0080D52B /* MapsReactNativeLibrary.xcframework */; };
 		6C145B042B6D3F2F0080D52B /* MapsReactNativeLibrary.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C145B022B6D3F2F0080D52B /* MapsReactNativeLibrary.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6C438FC02AC496B9002AE49B /* tristate.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C438FBF2AC496B9002AE49B /* tristate.json */; };
-		6C4F1A862AC2178A00BC3B79 /* lines.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C4F1A852AC2178900BC3B79 /* lines.json */; };
 		6CE5B1162B2264E0005B6AFF /* JWTDecode.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE5B1152B2264C4005B6AFF /* JWTDecode.xcframework */; };
 		6CE5B1172B2264E0005B6AFF /* JWTDecode.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE5B1152B2264C4005B6AFF /* JWTDecode.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6CE5B1182B2264EC005B6AFF /* Polyline.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2689BD2AD9A3580059834F /* Polyline.xcframework */; };
@@ -32,8 +30,6 @@
 		6CE5B1282B2268BA005B6AFF /* Turf.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7F55CE722AEADA8500E1079E /* Turf.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6CE5B12A2B226A5A005B6AFF /* TrimbleMapsMobileEvents.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE5B1292B226A57005B6AFF /* TrimbleMapsMobileEvents.xcframework */; };
 		6CE5B12B2B226A5A005B6AFF /* TrimbleMapsMobileEvents.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE5B1292B226A57005B6AFF /* TrimbleMapsMobileEvents.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6CEBF6712ACB0054001E194C /* polygon.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CEBF6702ACB0054001E194C /* polygon.json */; };
-		6CF0FA7C2AC763F000259702 /* symbolPoints.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CF0FA7B2AC763F000259702 /* symbolPoints.json */; };
 		734E06EE9D79B71AC19292B5 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 605124D0243A8367FC328466 /* PrivacyInfo.xcprivacy */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		81E3EADD94B877FD9D1183B4 /* Pods_RNMapsSampleApp_RNMapsSampleAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 407FB411BC66396B51257B46 /* Pods_RNMapsSampleApp_RNMapsSampleAppTests.framework */; };
@@ -89,14 +85,10 @@
 		6C145B022B6D3F2F0080D52B /* MapsReactNativeLibrary.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = MapsReactNativeLibrary.xcframework; path = Carthage/Build/MapsReactNativeLibrary.xcframework; sourceTree = "<group>"; };
 		6C2689BD2AD9A3580059834F /* Polyline.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Polyline.xcframework; path = Carthage/Build/Polyline.xcframework; sourceTree = "<group>"; };
 		6C2689C72AD9A4EF0059834F /* TrimbleMapsWebservicesClient.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMapsWebservicesClient.xcframework; path = Carthage/Build/TrimbleMapsWebservicesClient.xcframework; sourceTree = "<group>"; };
-		6C438FBF2AC496B9002AE49B /* tristate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = tristate.json; path = RNMapsSampleApp/tristate.json; sourceTree = "<group>"; };
-		6C4F1A852AC2178900BC3B79 /* lines.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = lines.json; path = RNMapsSampleApp/lines.json; sourceTree = "<group>"; };
 		6CE5B1152B2264C4005B6AFF /* JWTDecode.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = JWTDecode.xcframework; path = Carthage/Build/JWTDecode.xcframework; sourceTree = "<group>"; };
 		6CE5B11A2B226510005B6AFF /* TrimbleMapsAccounts.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMapsAccounts.xcframework; path = Carthage/Build/TrimbleMapsAccounts.xcframework; sourceTree = "<group>"; };
 		6CE5B11B2B226518005B6AFF /* TrimbleMaps.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMaps.xcframework; path = Carthage/Build/TrimbleMaps.xcframework; sourceTree = "<group>"; };
 		6CE5B1292B226A57005B6AFF /* TrimbleMapsMobileEvents.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMapsMobileEvents.xcframework; path = Carthage/Build/TrimbleMapsMobileEvents.xcframework; sourceTree = "<group>"; };
-		6CEBF6702ACB0054001E194C /* polygon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = polygon.json; path = RNMapsSampleApp/polygon.json; sourceTree = "<group>"; };
-		6CF0FA7B2AC763F000259702 /* symbolPoints.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = symbolPoints.json; path = RNMapsSampleApp/symbolPoints.json; sourceTree = "<group>"; };
 		72CA15604A680A0211E5B8A9 /* Pods-RNMapsSampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNMapsSampleApp.debug.xcconfig"; path = "Target Support Files/Pods-RNMapsSampleApp/Pods-RNMapsSampleApp.debug.xcconfig"; sourceTree = "<group>"; };
 		7550E73E792540299110EE94 /* Pods-RNMapsSampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNMapsSampleApp.release.xcconfig"; path = "Target Support Files/Pods-RNMapsSampleApp/Pods-RNMapsSampleApp.release.xcconfig"; sourceTree = "<group>"; };
 		7F55CE722AEADA8500E1079E /* Turf.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Turf.xcframework; path = Carthage/Build/Turf.xcframework; sourceTree = "<group>"; };
@@ -154,10 +146,6 @@
 		13B07FAE1A68108700A75B9A /* RNMapsSampleApp */ = {
 			isa = PBXGroup;
 			children = (
-				6CEBF6702ACB0054001E194C /* polygon.json */,
-				6CF0FA7B2AC763F000259702 /* symbolPoints.json */,
-				6C438FBF2AC496B9002AE49B /* tristate.json */,
-				6C4F1A852AC2178900BC3B79 /* lines.json */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -322,12 +310,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C4F1A862AC2178A00BC3B79 /* lines.json in Resources */,
-				6C438FC02AC496B9002AE49B /* tristate.json in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
-				6CF0FA7C2AC763F000259702 /* symbolPoints.json in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				6CEBF6712ACB0054001E194C /* polygon.json in Resources */,
 				734E06EE9D79B71AC19292B5 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

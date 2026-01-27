@@ -46,38 +46,5 @@ allprojects {
             options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
         }
     }
-
-    afterEvaluate { project ->
-        if (project.hasProperty("android")) {
-            project.android {
-                if (project.android.hasProperty("defaultConfig")) {
-                    project.android.defaultConfig {
-                        if (project.android.defaultConfig.hasProperty("externalNativeBuild")) {
-                            externalNativeBuild {
-                                cmake {
-                                    arguments "-DCMAKE_OBJECT_PATH_MAX=1024"
-                                }
-                            }
-                        }
-                    }
-                }
-
-                if (project.android.hasProperty("externalNativeBuild")) {
-                    // Use system temp directory with unique workspace path to avoid permission issues
-                    def tempDir = System.getProperty("java.io.tmpdir")
-                    def workspaceHash = rootProject.projectDir.absolutePath.hashCode().toString().replaceAll("-", "")
-                    def shortBuildDir = new File("${tempDir}/rn-build/${workspaceHash}/${project.name}")
-                    if (!shortBuildDir.exists()) {
-                        shortBuildDir.mkdirs()
-                    }
-                    project.android.externalNativeBuild {
-                        cmake {
-                            buildStagingDirectory = shortBuildDir
-                        }
-                    }
-                }
-            }
-        }
-    }
 }
 

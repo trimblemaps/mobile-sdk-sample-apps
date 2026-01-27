@@ -11,7 +11,6 @@
       android:icon="@mipmap/trimble_launcher"
       android:roundIcon="@mipmap/trimble_launcher"
       android:allowBackup="false"
-      android:usesCleartextTraffic="true"
       android:theme="@style/AppTheme"
 	  android:requestLegacyExternalStorage="true"
 	  android:preserveLegacyExternalStorage="true">

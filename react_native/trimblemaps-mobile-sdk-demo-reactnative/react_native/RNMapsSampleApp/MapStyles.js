@@ -16,6 +16,8 @@ const TrimbleMapsMapViewConstants = TrimbleMapsMapView.getConstants();
 export const MapStyles = () => {
   const [highlightedButtonId, setHighlightedButtonId] = useState(0);
   const [mapLoaded, setMapLoaded] = useState(false);
+  const [styleURL, setStyleURL] = useState(null);
+  const [styles, setStyles] = useState({});
 
   useEffect(() => {
     // Load all style URLs

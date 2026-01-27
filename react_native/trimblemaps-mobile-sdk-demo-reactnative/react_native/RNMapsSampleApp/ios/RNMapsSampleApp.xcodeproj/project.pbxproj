@@ -8,30 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* RNMapsSampleAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* RNMapsSampleAppTests.m */; };
-		0F096BD32E8184C700314445 /* Pods_RNMapsSampleApp_RNMapsSampleAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458D42EB5B708578E4D7060E /* Pods_RNMapsSampleApp_RNMapsSampleAppTests.framework */; };
-		0F096BD82E81957800314445 /* Pods_RNMapsSampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5F9332BC89139CCC35B0ED6 /* Pods_RNMapsSampleApp.framework */; };
-		0F096BDE2E819BB900314445 /* MapsReactNativeLibrary.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C4347222B92273400003507 /* MapsReactNativeLibrary.xcframework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		0F4F0F312E81BC0C0085A7B4 /* MapsReactNativeLibrary.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C4347222B92273400003507 /* MapsReactNativeLibrary.xcframework */; };
+		132987ED6E18A612A864326B /* Pods_RNMapsSampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0485ADEFC9A4FCD98DC8FBE9 /* Pods_RNMapsSampleApp.framework */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		6C18F9112B02B73700B5BBDA /* RoutePlugin.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C18F90D2B02B73600B5BBDA /* RoutePlugin.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6C2689BF2AD9A3580059834F /* Turf.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2689BC2AD9A3580059834F /* Turf.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6C2689C12AD9A3580059834F /* Polyline.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2689BD2AD9A3580059834F /* Polyline.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6C2689C92AD9A4EF0059834F /* TrimbleMapsWebservicesClient.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2689C72AD9A4EF0059834F /* TrimbleMapsWebservicesClient.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6C392AD22AB8C91300B62CA3 /* JWTDecode.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C392AC72AB8AC5400B62CA3 /* JWTDecode.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6C392AD82AB8C91A00B62CA3 /* TrimbleMaps.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C392AC52AB8AC5400B62CA3 /* TrimbleMaps.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6C392ADA2AB8C91D00B62CA3 /* TrimbleMapsAccounts.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C392AC62AB8AC5400B62CA3 /* TrimbleMapsAccounts.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6CCDC42A2B0E70F100303B09 /* JWTDecode.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C392AC72AB8AC5400B62CA3 /* JWTDecode.xcframework */; };
-		6CCDC42B2B0E70F100303B09 /* Polyline.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2689BD2AD9A3580059834F /* Polyline.xcframework */; };
-		6CCDC42E2B0E70F100303B09 /* RoutePlugin.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C18F90D2B02B73600B5BBDA /* RoutePlugin.xcframework */; };
-		6CCDC42F2B0E70F100303B09 /* TrimbleMaps.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C392AC52AB8AC5400B62CA3 /* TrimbleMaps.xcframework */; };
-		6CCDC4302B0E70F100303B09 /* TrimbleMapsAccounts.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C392AC62AB8AC5400B62CA3 /* TrimbleMapsAccounts.xcframework */; };
-		6CCDC4312B0E70F100303B09 /* TrimbleMapsMobileEvents.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C392AC32AB8AC5400B62CA3 /* TrimbleMapsMobileEvents.xcframework */; };
-		6CCDC4322B0E70F100303B09 /* TrimbleMapsWebservicesClient.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2689C72AD9A4EF0059834F /* TrimbleMapsWebservicesClient.xcframework */; };
-		6CCDC4332B0E70F100303B09 /* Turf.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2689BC2AD9A3580059834F /* Turf.xcframework */; };
-		6CF525D62ABB6AEF005ACC71 /* TrimbleMapsMobileEvents.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C392AC32AB8AC5400B62CA3 /* TrimbleMapsMobileEvents.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6C1415D62B5876910065B0F0 /* RoutePlugin.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C1415D52B58768F0065B0F0 /* RoutePlugin.xcframework */; };
+		6C1415D72B5876910065B0F0 /* RoutePlugin.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C1415D52B58768F0065B0F0 /* RoutePlugin.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6C145B032B6D3F2F0080D52B /* MapsReactNativeLibrary.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C145B022B6D3F2F0080D52B /* MapsReactNativeLibrary.xcframework */; };
+		6C145B042B6D3F2F0080D52B /* MapsReactNativeLibrary.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C145B022B6D3F2F0080D52B /* MapsReactNativeLibrary.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6CE5B1162B2264E0005B6AFF /* JWTDecode.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE5B1152B2264C4005B6AFF /* JWTDecode.xcframework */; };
+		6CE5B1172B2264E0005B6AFF /* JWTDecode.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE5B1152B2264C4005B6AFF /* JWTDecode.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6CE5B1182B2264EC005B6AFF /* Polyline.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2689BD2AD9A3580059834F /* Polyline.xcframework */; };
+		6CE5B1192B2264EC005B6AFF /* Polyline.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2689BD2AD9A3580059834F /* Polyline.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6CE5B11C2B22652E005B6AFF /* TrimbleMapsAccounts.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE5B11A2B226510005B6AFF /* TrimbleMapsAccounts.xcframework */; };
+		6CE5B11D2B22652E005B6AFF /* TrimbleMapsAccounts.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE5B11A2B226510005B6AFF /* TrimbleMapsAccounts.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6CE5B11E2B22652E005B6AFF /* TrimbleMaps.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE5B11B2B226518005B6AFF /* TrimbleMaps.xcframework */; };
+		6CE5B11F2B22652E005B6AFF /* TrimbleMaps.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE5B11B2B226518005B6AFF /* TrimbleMaps.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6CE5B1202B22653E005B6AFF /* TrimbleMapsWebservicesClient.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2689C72AD9A4EF0059834F /* TrimbleMapsWebservicesClient.xcframework */; };
+		6CE5B1212B22653E005B6AFF /* TrimbleMapsWebservicesClient.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2689C72AD9A4EF0059834F /* TrimbleMapsWebservicesClient.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6CE5B1272B2268BA005B6AFF /* Turf.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F55CE722AEADA8500E1079E /* Turf.xcframework */; };
+		6CE5B1282B2268BA005B6AFF /* Turf.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7F55CE722AEADA8500E1079E /* Turf.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6CE5B12A2B226A5A005B6AFF /* TrimbleMapsMobileEvents.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE5B1292B226A57005B6AFF /* TrimbleMapsMobileEvents.xcframework */; };
+		6CE5B12B2B226A5A005B6AFF /* TrimbleMapsMobileEvents.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE5B1292B226A57005B6AFF /* TrimbleMapsMobileEvents.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		734E06EE9D79B71AC19292B5 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 605124D0243A8367FC328466 /* PrivacyInfo.xcprivacy */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		81E3EADD94B877FD9D1183B4 /* Pods_RNMapsSampleApp_RNMapsSampleAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 407FB411BC66396B51257B46 /* Pods_RNMapsSampleApp_RNMapsSampleAppTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,15 +52,15 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				6C392ADA2AB8C91D00B62CA3 /* TrimbleMapsAccounts.xcframework in Embed Frameworks */,
-				6C2689C92AD9A4EF0059834F /* TrimbleMapsWebservicesClient.xcframework in Embed Frameworks */,
-				6C392AD82AB8C91A00B62CA3 /* TrimbleMaps.xcframework in Embed Frameworks */,
-				0F096BDE2E819BB900314445 /* MapsReactNativeLibrary.xcframework in Embed Frameworks */,
-				6C18F9112B02B73700B5BBDA /* RoutePlugin.xcframework in Embed Frameworks */,
-				6C2689BF2AD9A3580059834F /* Turf.xcframework in Embed Frameworks */,
-				6CF525D62ABB6AEF005ACC71 /* TrimbleMapsMobileEvents.xcframework in Embed Frameworks */,
-				6C392AD22AB8C91300B62CA3 /* JWTDecode.xcframework in Embed Frameworks */,
-				6C2689C12AD9A3580059834F /* Polyline.xcframework in Embed Frameworks */,
+				6CE5B1282B2268BA005B6AFF /* Turf.xcframework in Embed Frameworks */,
+				6CE5B12B2B226A5A005B6AFF /* TrimbleMapsMobileEvents.xcframework in Embed Frameworks */,
+				6CE5B11F2B22652E005B6AFF /* TrimbleMaps.xcframework in Embed Frameworks */,
+				6C145B042B6D3F2F0080D52B /* MapsReactNativeLibrary.xcframework in Embed Frameworks */,
+				6CE5B1212B22653E005B6AFF /* TrimbleMapsWebservicesClient.xcframework in Embed Frameworks */,
+				6CE5B1172B2264E0005B6AFF /* JWTDecode.xcframework in Embed Frameworks */,
+				6CE5B11D2B22652E005B6AFF /* TrimbleMapsAccounts.xcframework in Embed Frameworks */,
+				6CE5B1192B2264EC005B6AFF /* Polyline.xcframework in Embed Frameworks */,
+				6C1415D72B5876910065B0F0 /* RoutePlugin.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,29 +71,30 @@
 		00E356EE1AD99517003FC87E /* RNMapsSampleAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RNMapsSampleAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* RNMapsSampleAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNMapsSampleAppTests.m; sourceTree = "<group>"; };
+		0485ADEFC9A4FCD98DC8FBE9 /* Pods_RNMapsSampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RNMapsSampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* RNMapsSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RNMapsSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = RNMapsSampleApp/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = RNMapsSampleApp/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = RNMapsSampleApp/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = RNMapsSampleApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = RNMapsSampleApp/main.m; sourceTree = "<group>"; };
-		458D42EB5B708578E4D7060E /* Pods_RNMapsSampleApp_RNMapsSampleAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RNMapsSampleApp_RNMapsSampleAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6C18F90D2B02B73600B5BBDA /* RoutePlugin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RoutePlugin.xcframework; path = Carthage/Build/RoutePlugin.xcframework; sourceTree = "<group>"; };
-		6C2689BC2AD9A3580059834F /* Turf.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Turf.xcframework; path = Carthage/Build/Turf.xcframework; sourceTree = "<group>"; };
+		407FB411BC66396B51257B46 /* Pods_RNMapsSampleApp_RNMapsSampleAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RNMapsSampleApp_RNMapsSampleAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AD1043105CCE3C62955E4BC /* Pods-RNMapsSampleApp-RNMapsSampleAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNMapsSampleApp-RNMapsSampleAppTests.debug.xcconfig"; path = "Target Support Files/Pods-RNMapsSampleApp-RNMapsSampleAppTests/Pods-RNMapsSampleApp-RNMapsSampleAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		605124D0243A8367FC328466 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = RNMapsSampleApp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		6C1415D52B58768F0065B0F0 /* RoutePlugin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RoutePlugin.xcframework; path = Carthage/Build/RoutePlugin.xcframework; sourceTree = "<group>"; };
+		6C145B022B6D3F2F0080D52B /* MapsReactNativeLibrary.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = MapsReactNativeLibrary.xcframework; path = Carthage/Build/MapsReactNativeLibrary.xcframework; sourceTree = "<group>"; };
 		6C2689BD2AD9A3580059834F /* Polyline.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Polyline.xcframework; path = Carthage/Build/Polyline.xcframework; sourceTree = "<group>"; };
 		6C2689C72AD9A4EF0059834F /* TrimbleMapsWebservicesClient.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMapsWebservicesClient.xcframework; path = Carthage/Build/TrimbleMapsWebservicesClient.xcframework; sourceTree = "<group>"; };
-		6C392AC32AB8AC5400B62CA3 /* TrimbleMapsMobileEvents.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMapsMobileEvents.xcframework; path = Carthage/Build/TrimbleMapsMobileEvents.xcframework; sourceTree = "<group>"; };
-		6C392AC52AB8AC5400B62CA3 /* TrimbleMaps.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMaps.xcframework; path = Carthage/Build/TrimbleMaps.xcframework; sourceTree = "<group>"; };
-		6C392AC62AB8AC5400B62CA3 /* TrimbleMapsAccounts.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMapsAccounts.xcframework; path = Carthage/Build/TrimbleMapsAccounts.xcframework; sourceTree = "<group>"; };
-		6C392AC72AB8AC5400B62CA3 /* JWTDecode.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = JWTDecode.xcframework; path = Carthage/Build/JWTDecode.xcframework; sourceTree = "<group>"; };
-		6C4347222B92273400003507 /* MapsReactNativeLibrary.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = MapsReactNativeLibrary.xcframework; path = Carthage/Build/MapsReactNativeLibrary.xcframework; sourceTree = "<group>"; };
-		7D5B3D0885A309B5D1DF0BF5 /* Pods-RNMapsSampleApp-RNMapsSampleAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNMapsSampleApp-RNMapsSampleAppTests.debug.xcconfig"; path = "Target Support Files/Pods-RNMapsSampleApp-RNMapsSampleAppTests/Pods-RNMapsSampleApp-RNMapsSampleAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6CE5B1152B2264C4005B6AFF /* JWTDecode.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = JWTDecode.xcframework; path = Carthage/Build/JWTDecode.xcframework; sourceTree = "<group>"; };
+		6CE5B11A2B226510005B6AFF /* TrimbleMapsAccounts.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMapsAccounts.xcframework; path = Carthage/Build/TrimbleMapsAccounts.xcframework; sourceTree = "<group>"; };
+		6CE5B11B2B226518005B6AFF /* TrimbleMaps.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMaps.xcframework; path = Carthage/Build/TrimbleMaps.xcframework; sourceTree = "<group>"; };
+		6CE5B1292B226A57005B6AFF /* TrimbleMapsMobileEvents.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMapsMobileEvents.xcframework; path = Carthage/Build/TrimbleMapsMobileEvents.xcframework; sourceTree = "<group>"; };
+		72CA15604A680A0211E5B8A9 /* Pods-RNMapsSampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNMapsSampleApp.debug.xcconfig"; path = "Target Support Files/Pods-RNMapsSampleApp/Pods-RNMapsSampleApp.debug.xcconfig"; sourceTree = "<group>"; };
+		7550E73E792540299110EE94 /* Pods-RNMapsSampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNMapsSampleApp.release.xcconfig"; path = "Target Support Files/Pods-RNMapsSampleApp/Pods-RNMapsSampleApp.release.xcconfig"; sourceTree = "<group>"; };
+		7F55CE722AEADA8500E1079E /* Turf.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Turf.xcframework; path = Carthage/Build/Turf.xcframework; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = RNMapsSampleApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		AF6B702652BF08976455B0ED /* Pods-RNMapsSampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNMapsSampleApp.debug.xcconfig"; path = "Target Support Files/Pods-RNMapsSampleApp/Pods-RNMapsSampleApp.debug.xcconfig"; sourceTree = "<group>"; };
-		B7730CE8A781ACB22ECB7DFE /* Pods-RNMapsSampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNMapsSampleApp.release.xcconfig"; path = "Target Support Files/Pods-RNMapsSampleApp/Pods-RNMapsSampleApp.release.xcconfig"; sourceTree = "<group>"; };
-		E93952F0C9A3EBE2D76A0536 /* Pods-RNMapsSampleApp-RNMapsSampleAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNMapsSampleApp-RNMapsSampleAppTests.release.xcconfig"; path = "Target Support Files/Pods-RNMapsSampleApp-RNMapsSampleAppTests/Pods-RNMapsSampleApp-RNMapsSampleAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		E856901DA8241ED6D0F02CC1 /* Pods-RNMapsSampleApp-RNMapsSampleAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNMapsSampleApp-RNMapsSampleAppTests.release.xcconfig"; path = "Target Support Files/Pods-RNMapsSampleApp-RNMapsSampleAppTests/Pods-RNMapsSampleApp-RNMapsSampleAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F5F9332BC89139CCC35B0ED6 /* Pods_RNMapsSampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RNMapsSampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F096BD32E8184C700314445 /* Pods_RNMapsSampleApp_RNMapsSampleAppTests.framework in Frameworks */,
+				81E3EADD94B877FD9D1183B4 /* Pods_RNMapsSampleApp_RNMapsSampleAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,16 +110,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F4F0F312E81BC0C0085A7B4 /* MapsReactNativeLibrary.xcframework in Frameworks */,
-				6CCDC42A2B0E70F100303B09 /* JWTDecode.xcframework in Frameworks */,
-				6CCDC42B2B0E70F100303B09 /* Polyline.xcframework in Frameworks */,
-				6CCDC42E2B0E70F100303B09 /* RoutePlugin.xcframework in Frameworks */,
-				6CCDC42F2B0E70F100303B09 /* TrimbleMaps.xcframework in Frameworks */,
-				6CCDC4302B0E70F100303B09 /* TrimbleMapsAccounts.xcframework in Frameworks */,
-				6CCDC4312B0E70F100303B09 /* TrimbleMapsMobileEvents.xcframework in Frameworks */,
-				6CCDC4322B0E70F100303B09 /* TrimbleMapsWebservicesClient.xcframework in Frameworks */,
-				6CCDC4332B0E70F100303B09 /* Turf.xcframework in Frameworks */,
-				0F096BD82E81957800314445 /* Pods_RNMapsSampleApp.framework in Frameworks */,
+				6CE5B1272B2268BA005B6AFF /* Turf.xcframework in Frameworks */,
+				6CE5B12A2B226A5A005B6AFF /* TrimbleMapsMobileEvents.xcframework in Frameworks */,
+				6CE5B11E2B22652E005B6AFF /* TrimbleMaps.xcframework in Frameworks */,
+				6C145B032B6D3F2F0080D52B /* MapsReactNativeLibrary.xcframework in Frameworks */,
+				6CE5B1202B22653E005B6AFF /* TrimbleMapsWebservicesClient.xcframework in Frameworks */,
+				6CE5B1162B2264E0005B6AFF /* JWTDecode.xcframework in Frameworks */,
+				6CE5B11C2B22652E005B6AFF /* TrimbleMapsAccounts.xcframework in Frameworks */,
+				6CE5B1182B2264EC005B6AFF /* Polyline.xcframework in Frameworks */,
+				6C1415D62B5876910065B0F0 /* RoutePlugin.xcframework in Frameworks */,
+				132987ED6E18A612A864326B /* Pods_RNMapsSampleApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +152,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				605124D0243A8367FC328466 /* PrivacyInfo.xcprivacy */,
 			);
 			name = RNMapsSampleApp;
 			sourceTree = "<group>";
@@ -157,18 +160,15 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6C4347222B92273400003507 /* MapsReactNativeLibrary.xcframework */,
-				6C18F90D2B02B73600B5BBDA /* RoutePlugin.xcframework */,
-				6C2689C72AD9A4EF0059834F /* TrimbleMapsWebservicesClient.xcframework */,
-				6C2689BD2AD9A3580059834F /* Polyline.xcframework */,
-				6C2689BC2AD9A3580059834F /* Turf.xcframework */,
-				6C392AC72AB8AC5400B62CA3 /* JWTDecode.xcframework */,
-				6C392AC52AB8AC5400B62CA3 /* TrimbleMaps.xcframework */,
-				6C392AC62AB8AC5400B62CA3 /* TrimbleMapsAccounts.xcframework */,
-				6C392AC32AB8AC5400B62CA3 /* TrimbleMapsMobileEvents.xcframework */,
+				6C145B022B6D3F2F0080D52B /* MapsReactNativeLibrary.xcframework */,
+				6C1415D52B58768F0065B0F0 /* RoutePlugin.xcframework */,
+				6CE5B1292B226A57005B6AFF /* TrimbleMapsMobileEvents.xcframework */,
+				6CE5B11B2B226518005B6AFF /* TrimbleMaps.xcframework */,
+				6CE5B11A2B226510005B6AFF /* TrimbleMapsAccounts.xcframework */,
+				6CE5B1152B2264C4005B6AFF /* JWTDecode.xcframework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				F5F9332BC89139CCC35B0ED6 /* Pods_RNMapsSampleApp.framework */,
-				458D42EB5B708578E4D7060E /* Pods_RNMapsSampleApp_RNMapsSampleAppTests.framework */,
+				0485ADEFC9A4FCD98DC8FBE9 /* Pods_RNMapsSampleApp.framework */,
+				407FB411BC66396B51257B46 /* Pods_RNMapsSampleApp_RNMapsSampleAppTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -207,10 +207,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				AF6B702652BF08976455B0ED /* Pods-RNMapsSampleApp.debug.xcconfig */,
-				B7730CE8A781ACB22ECB7DFE /* Pods-RNMapsSampleApp.release.xcconfig */,
-				7D5B3D0885A309B5D1DF0BF5 /* Pods-RNMapsSampleApp-RNMapsSampleAppTests.debug.xcconfig */,
-				E93952F0C9A3EBE2D76A0536 /* Pods-RNMapsSampleApp-RNMapsSampleAppTests.release.xcconfig */,
+				72CA15604A680A0211E5B8A9 /* Pods-RNMapsSampleApp.debug.xcconfig */,
+				7550E73E792540299110EE94 /* Pods-RNMapsSampleApp.release.xcconfig */,
+				4AD1043105CCE3C62955E4BC /* Pods-RNMapsSampleApp-RNMapsSampleAppTests.debug.xcconfig */,
+				E856901DA8241ED6D0F02CC1 /* Pods-RNMapsSampleApp-RNMapsSampleAppTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -222,11 +222,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "RNMapsSampleAppTests" */;
 			buildPhases = (
-				4724B1DE8C3FC29FABBB197C /* [CP] Check Pods Manifest.lock */,
+				73030D9BCB8C05EA81BE639B /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				78BB9386E245DBA9805EFB40 /* [CP] Embed Pods Frameworks */,
+				01BAC64435EFE6179F308E6E /* [CP] Embed Pods Frameworks */,
+				DFC751140AFD7162BB40E1A1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -242,15 +243,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "RNMapsSampleApp" */;
 			buildPhases = (
-				3719A862076B8BF65FDE5CDF /* [CP] Check Pods Manifest.lock */,
+				97E3F93FBC60E1CC1E4B3A49 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				6C7BCFA22A8FBE2A00FF4F92 /* Embed Frameworks */,
-				0F4F0F302E81A6CD0085A7B4 /* Run Script */,
-				50656EFB31DC780FCBCBF813 /* [CP] Embed Pods Frameworks */,
+				6D254E0FFD3DB17B0A5AF080 /* [CP] Embed Pods Frameworks */,
+				297EAD8E39E7C50796513B0F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -311,6 +312,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				734E06EE9D79B71AC19292B5 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,47 +335,58 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		0F4F0F302E81A6CD0085A7B4 /* Run Script */ = {
+		01BAC64435EFE6179F308E6E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RNMapsSampleApp-RNMapsSampleAppTests/Pods-RNMapsSampleApp-RNMapsSampleAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
-			name = "Run Script";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RNMapsSampleApp-RNMapsSampleAppTests/Pods-RNMapsSampleApp-RNMapsSampleAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/bash\nset -e\n\necho \"Setting up framework compatibility for React Native 0.74.3\"\n\n# Function to create framework and binary links\ncreate_framework_links() {\n    local base_dir=\"$1\"\n    local source_framework=\"$2\"\n    local target_framework=\"$3\"\n    local binary_name=\"$4\"\n    \n    cd \"$base_dir\"\n    \n    if [ -d \"$source_framework\" ] && [ ! -L \"$target_framework\" ]; then\n        echo \"Creating framework link: $target_framework -> $source_framework\"\n        ln -sf \"$source_framework\" \"$target_framework\"\n        \n        # Create binary link inside the framework if specified\n        if [ -n \"$binary_name\" ]; then\n            cd \"$target_framework\"\n            local source_binary=$(ls | grep -v \"Headers\\|Modules\\|_CodeSignature\\|Info.plist\" | head -1)\n            if [ -f \"$source_binary\" ] && [ ! -L \"$binary_name\" ]; then\n                echo \"Creating binary link: $binary_name -> $source_binary\"\n                ln -sf \"$source_binary\" \"$binary_name\"\n            fi\n            cd \"$base_dir\"\n        fi\n        \n        echo \"Links created for $target_framework in: $base_dir\"\n    else\n        echo \"Framework $target_framework already exists or source $source_framework not found in: $base_dir\"\n    fi\n}\n\n# Framework compatibility mappings\n# Format: \"source_framework:target_framework:binary_name\"\nFRAMEWORK_MAPPINGS=(\n    \"React-jsinspector/jsinspector_modern.framework:jsinspector.framework:jsinspector\"\n    \"RCT-Folly/folly.framework:libevent.framework:libevent\"\n)\n\n# Process each mapping for build products directory\necho \"Setting up build products directory...\"\nfor mapping in \"${FRAMEWORK_MAPPINGS[@]}\"; do\n    IFS=':' read -r source_fw target_fw binary_name <<< \"$mapping\"\n    if [ -d \"${BUILT_PRODUCTS_DIR}/$source_fw\" ]; then\n        create_framework_links \"${BUILT_PRODUCTS_DIR}\" \"$source_fw\" \"$target_fw\" \"$binary_name\"\n    fi\ndone\n\n# Process each mapping for app bundle directory\necho \"Setting up app bundle directory...\"\nAPP_FRAMEWORKS_DIR=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Frameworks\"\nfor mapping in \"${FRAMEWORK_MAPPINGS[@]}\"; do\n    IFS=':' read -r source_fw target_fw binary_name <<< \"$mapping\"\n    # For app bundle, use just the framework name (no subdirectory)\n    source_fw_name=$(basename \"$source_fw\")\n    if [ -d \"$APP_FRAMEWORKS_DIR/$source_fw_name\" ]; then\n        create_framework_links \"$APP_FRAMEWORKS_DIR\" \"$source_fw_name\" \"$target_fw\" \"$binary_name\"\n    fi\ndone\n\necho \"Framework compatibility setup complete!\"\n\n# Verification\necho \"Verification:\"\nfor mapping in \"${FRAMEWORK_MAPPINGS[@]}\"; do\n    IFS=':' read -r source_fw target_fw binary_name <<< \"$mapping\"\n    \n    # Check build products\n    if [ -f \"${BUILT_PRODUCTS_DIR}/$target_fw/$binary_name\" ]; then\n        echo \"Build products $target_fw/$binary_name: OK\"\n    else\n        echo \"Build products $target_fw/$binary_name: MISSING\"\n    fi\n    \n    # Check app bundle\n    if [ -f \"$APP_FRAMEWORKS_DIR/$target_fw/$binary_name\" ]; then\n        echo \"App bundle $target_fw/$binary_name: OK\"\n    else\n        echo \"App bundle $target_fw/$binary_name: MISSING\"\n    fi\ndone\n";
-		};
-		3719A862076B8BF65FDE5CDF /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RNMapsSampleApp-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNMapsSampleApp-RNMapsSampleAppTests/Pods-RNMapsSampleApp-RNMapsSampleAppTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4724B1DE8C3FC29FABBB197C /* [CP] Check Pods Manifest.lock */ = {
+		297EAD8E39E7C50796513B0F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RNMapsSampleApp/Pods-RNMapsSampleApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RNMapsSampleApp/Pods-RNMapsSampleApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNMapsSampleApp/Pods-RNMapsSampleApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D254E0FFD3DB17B0A5AF080 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RNMapsSampleApp/Pods-RNMapsSampleApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RNMapsSampleApp/Pods-RNMapsSampleApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNMapsSampleApp/Pods-RNMapsSampleApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73030D9BCB8C05EA81BE639B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -395,46 +408,43 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		50656EFB31DC780FCBCBF813 /* [CP] Embed Pods Frameworks */ = {
+		97E3F93FBC60E1CC1E4B3A49 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RNMapsSampleApp/Pods-RNMapsSampleApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RNMapsSampleApp/Pods-RNMapsSampleApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RNMapsSampleApp-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNMapsSampleApp/Pods-RNMapsSampleApp-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		78BB9386E245DBA9805EFB40 /* [CP] Embed Pods Frameworks */ = {
+		DFC751140AFD7162BB40E1A1 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RNMapsSampleApp-RNMapsSampleAppTests/Pods-RNMapsSampleApp-RNMapsSampleAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-RNMapsSampleApp-RNMapsSampleAppTests/Pods-RNMapsSampleApp-RNMapsSampleAppTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RNMapsSampleApp-RNMapsSampleAppTests/Pods-RNMapsSampleApp-RNMapsSampleAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RNMapsSampleApp-RNMapsSampleAppTests/Pods-RNMapsSampleApp-RNMapsSampleAppTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNMapsSampleApp-RNMapsSampleAppTests/Pods-RNMapsSampleApp-RNMapsSampleAppTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNMapsSampleApp-RNMapsSampleAppTests/Pods-RNMapsSampleApp-RNMapsSampleAppTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -489,7 +499,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7D5B3D0885A309B5D1DF0BF5 /* Pods-RNMapsSampleApp-RNMapsSampleAppTests.debug.xcconfig */;
+			baseConfigurationReference = 4AD1043105CCE3C62955E4BC /* Pods-RNMapsSampleApp-RNMapsSampleAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -516,7 +526,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E93952F0C9A3EBE2D76A0536 /* Pods-RNMapsSampleApp-RNMapsSampleAppTests.release.xcconfig */;
+			baseConfigurationReference = E856901DA8241ED6D0F02CC1 /* Pods-RNMapsSampleApp-RNMapsSampleAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -540,7 +550,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AF6B702652BF08976455B0ED /* Pods-RNMapsSampleApp.debug.xcconfig */;
+			baseConfigurationReference = 72CA15604A680A0211E5B8A9 /* Pods-RNMapsSampleApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -559,12 +569,17 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(inherited)",
+					"-DRCT_NEW_ARCH_ENABLED=0",
+					"-DFOLLY_CFG_NO_COROUTINES=1",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.trimblemaps.reactnative.test.RNMapsSampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.trimblemaps.reactnative.debug.RNMapsSampleApp;
 				PRODUCT_NAME = RNMapsSampleApp;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "RNMapsSampleApp-Bridging-Header.h";
@@ -576,7 +591,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B7730CE8A781ACB22ECB7DFE /* Pods-RNMapsSampleApp.release.xcconfig */;
+			baseConfigurationReference = 7550E73E792540299110EE94 /* Pods-RNMapsSampleApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -594,6 +609,12 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(inherited)",
+					"-DNDEBUG",
+					"-DRCT_NEW_ARCH_ENABLED=0",
+					"-DFOLLY_CFG_NO_COROUTINES=1",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -669,24 +690,6 @@
 					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon/ReactCommon.framework/Headers",
 					"${PODS_CONFIGURATION_BUILD_DIR}/React-Fabric/React_Fabric.framework/Headers/react/renderer/components/view/platform/cxx",
 					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers",
-					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon/ReactCommon.framework/Headers",
-					"${PODS_CONFIGURATION_BUILD_DIR}/React-Fabric/React_Fabric.framework/Headers/react/renderer/components/view/platform/cxx",
-					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers",
-					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon/ReactCommon.framework/Headers",
-					"${PODS_CONFIGURATION_BUILD_DIR}/React-Fabric/React_Fabric.framework/Headers/react/renderer/components/view/platform/cxx",
-					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers",
-					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon/ReactCommon.framework/Headers",
-					"${PODS_CONFIGURATION_BUILD_DIR}/React-Fabric/React_Fabric.framework/Headers/react/renderer/components/view/platform/cxx",
-					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers",
-					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon/ReactCommon.framework/Headers",
-					"${PODS_CONFIGURATION_BUILD_DIR}/React-Fabric/React_Fabric.framework/Headers/react/renderer/components/view/platform/cxx",
-					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers",
-					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon/ReactCommon.framework/Headers",
-					"${PODS_CONFIGURATION_BUILD_DIR}/React-Fabric/React_Fabric.framework/Headers/react/renderer/components/view/platform/cxx",
-					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers",
-					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon/ReactCommon.framework/Headers",
-					"${PODS_CONFIGURATION_BUILD_DIR}/React-Fabric/React_Fabric.framework/Headers/react/renderer/components/view/platform/cxx",
-					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -707,9 +710,13 @@
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)  ";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
 				USE_HERMES = true;
 			};
 			name = Debug;
@@ -768,24 +775,6 @@
 					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon/ReactCommon.framework/Headers",
 					"${PODS_CONFIGURATION_BUILD_DIR}/React-Fabric/React_Fabric.framework/Headers/react/renderer/components/view/platform/cxx",
 					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers",
-					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon/ReactCommon.framework/Headers",
-					"${PODS_CONFIGURATION_BUILD_DIR}/React-Fabric/React_Fabric.framework/Headers/react/renderer/components/view/platform/cxx",
-					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers",
-					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon/ReactCommon.framework/Headers",
-					"${PODS_CONFIGURATION_BUILD_DIR}/React-Fabric/React_Fabric.framework/Headers/react/renderer/components/view/platform/cxx",
-					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers",
-					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon/ReactCommon.framework/Headers",
-					"${PODS_CONFIGURATION_BUILD_DIR}/React-Fabric/React_Fabric.framework/Headers/react/renderer/components/view/platform/cxx",
-					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers",
-					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon/ReactCommon.framework/Headers",
-					"${PODS_CONFIGURATION_BUILD_DIR}/React-Fabric/React_Fabric.framework/Headers/react/renderer/components/view/platform/cxx",
-					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers",
-					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon/ReactCommon.framework/Headers",
-					"${PODS_CONFIGURATION_BUILD_DIR}/React-Fabric/React_Fabric.framework/Headers/react/renderer/components/view/platform/cxx",
-					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers",
-					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon/ReactCommon.framework/Headers",
-					"${PODS_CONFIGURATION_BUILD_DIR}/React-Fabric/React_Fabric.framework/Headers/react/renderer/components/view/platform/cxx",
-					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -805,7 +794,10 @@
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)  ";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;

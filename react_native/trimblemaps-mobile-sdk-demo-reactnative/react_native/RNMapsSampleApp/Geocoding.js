@@ -10,11 +10,22 @@ import { TrimbleMapsMap } from "./TrimbleMapsMapViewManager";
 
 const TrimbleMapsMapView = NativeModules.TrimbleMapsMapViewModule;
 const TrimbleMapsGeocoding = NativeModules.TrimbleMapsGeocoding;
-const TrimbleMapsMapViewConstants = TrimbleMapsMapView.getConstants();
 
 export const Geocoding = () => {
   const [mapLoaded, setMapLoaded] = useState(false);
+  const [styleURL, setStyleURL] = useState(null);
   const searchTerm = "1 Independence Way Princeton NJ 08540";
+
+  useEffect(() => {
+    // Load the style URL
+    TrimbleMapsMapView.MobileDay()
+      .then((style) => {
+        setStyleURL(style);
+      })
+      .catch((error) => {
+        console.error("Failed to load style:", error);
+      });
+  }, []);
 
   useEffect(() => {
     const geocodeCallback = (error, results) => {
@@ -65,12 +76,16 @@ export const Geocoding = () => {
     },
   });
 
+  if (!styleURL) {
+    return <View style={styles.container} />;
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.container}>
         <TrimbleMapsMap
           style={styles.mapStyle}
-          styleURL={TrimbleMapsMapViewConstants.MOBILE_DAY}
+          styleURL={styleURL}
           onMapLoaded={onMapLoaded}
         />
       </View>

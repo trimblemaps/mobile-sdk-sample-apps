@@ -14,22 +14,31 @@ const TrimbleMapsMapView = NativeModules.TrimbleMapsMapViewModule;
 const TrimbleMapsMapViewConstants = TrimbleMapsMapView.getConstants();
 
 export const MapStyles = () => {
-  const BUTTONS = [
-    { id: 0, label: "MOBILE_DAY", style: TrimbleMapsMapViewConstants.MOBILE_DAY },
-    { id: 1, label: "MOBILE_NIGHT", style: TrimbleMapsMapViewConstants.MOBILE_NIGHT },
-    { id: 2, label: "MOBILE_SATELLITE", style: TrimbleMapsMapViewConstants.MOBILE_SATELLITE },
-    { id: 3, label: "TERRAIN", style: TrimbleMapsMapViewConstants.TERRAIN },
-    { id: 4, label: "TRANSPORTATION", style: TrimbleMapsMapViewConstants.TRANSPORTATION },
-    { id: 5, label: "BASIC", style: TrimbleMapsMapViewConstants.BASIC },
-    { id: 6, label: "DATADARK", style: TrimbleMapsMapViewConstants.MOBILE_DAY },
-    { id: 7, label: "DATALIGHT", style: TrimbleMapsMapViewConstants.DATALIGHT },
-    { id: 8, label: "DEFAULT", style: TrimbleMapsMapViewConstants.DEFAULT },
-    { id: 9, label: "MOBILE_DEFAULT", style: TrimbleMapsMapViewConstants.MOBILE_DEFAULT },
-    { id: 10, label: "SATELLITE", style: TrimbleMapsMapViewConstants.SATELLITE },
-  ];
-
   const [highlightedButtonId, setHighlightedButtonId] = useState(0);
   const [mapLoaded, setMapLoaded] = useState(false);
+  const [styleURL, setStyleURL] = useState(null);
+  const [styles, setStyles] = useState({});
+
+  useEffect(() => {
+    // Load all style URLs
+    Promise.all([
+      TrimbleMapsMapView.MobileDay(),
+      TrimbleMapsMapView.MobileNight(),
+      TrimbleMapsMapView.MobileSatellite(),
+    ])
+      .then(([mobileDay, mobileNight, mobileSatellite]) => {
+        const loadedStyles = {
+          MOBILE_DAY: mobileDay,
+          MOBILE_NIGHT: mobileNight,
+          MOBILE_SATELLITE: mobileSatellite
+        };
+        setStyles(loadedStyles);
+        setStyleURL(mobileDay);
+      })
+      .catch((error) => {
+        console.error("Failed to load styles:", error);
+      });
+  }, []);
 
   useEffect(() => {
     if (mapLoaded) {
@@ -53,7 +62,7 @@ export const MapStyles = () => {
     setMapLoaded(true);
   };
 
-  const styles = StyleSheet.create({
+  const styleSheet = StyleSheet.create({
     container: {
       flex: 1,
     },
@@ -87,30 +96,42 @@ export const MapStyles = () => {
     },
   });
 
-  const switchStyles = async (buttonId, buttonStyle) => {
+  const switchStyles = async (buttonId, styleName) => {
     setHighlightedButtonId(buttonId);
-    TrimbleMapsMapView.setStyle(buttonStyle);
+    if (styles[styleName]) {
+      TrimbleMapsMapView.setStyle(styles[styleName]);
+    }
   };
 
+  const BUTTONS = [
+    { id: 0, label: "MOBILE_DAY", style: "MOBILE_DAY" },
+    { id: 1, label: "MOBILE_NIGHT", style: "MOBILE_NIGHT" },
+    { id: 2, label: "MOBILE_SATELLITE", style: "MOBILE_SATELLITE" },
+  ];
+
+  if (!styleURL || Object.keys(styles).length === 0) {
+    return <View style={styleSheet.container} />;
+  }
+
   return (
-    <View style={styles.container}>
-      <View style={styles.container}>
+    <View style={styleSheet.container}>
+      <View style={styleSheet.container}>
         <TrimbleMapsMap
-          style={styles.mapStyle}
-          styleURL={TrimbleMapsMapViewConstants.MOBILE_DAY}
+          style={styleSheet.mapStyle}
+          styleURL={styleURL}
           onMapLoaded={onMapLoaded}
         />
-        <View style={styles.buttonContainer}>
+        <View style={styleSheet.buttonContainer}>
           {BUTTONS.map((button) => (
             <TouchableOpacity
               key={button.id}
               style={[
-                styles.button,
-                highlightedButtonId === button.id && styles.highlightedButton,
+                styleSheet.button,
+                highlightedButtonId === button.id && styleSheet.highlightedButton,
               ]}
               onPress={() => switchStyles(button.id, button.style)}
             >
-              <Text style={styles.buttonText}>{button.label}</Text>
+              <Text style={styleSheet.buttonText}>{button.label}</Text>
             </TouchableOpacity>
           ))}
         </View>

@@ -10,10 +10,20 @@ import {
 import { TrimbleMapsMap } from "./TrimbleMapsMapViewManager";
 
 const TrimbleMapsMapView = NativeModules.TrimbleMapsMapViewModule;
-const TrimbleMapsMapViewConstants = TrimbleMapsMapView.getConstants();
 
 export const TrimbleLayers = () => {
+  const [styleURL, setStyleURL] = useState(null);
+
   useEffect(() => {
+    // Load the style URL
+    TrimbleMapsMapView.MobileDay()
+      .then((style) => {
+        setStyleURL(style);
+      })
+      .catch((error) => {
+        console.error("Failed to load style:", error);
+      });
+
     if (Platform.OS === "ios") {
       TrimbleMapsMapView.setCenterCoordinateAndZoom(
         40.758476,
@@ -92,6 +102,10 @@ export const TrimbleLayers = () => {
     false,
   ]);
 
+  if (!styleURL) {
+    return <View style={styles.container} />;
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.buttonContainer}>
@@ -119,7 +133,7 @@ export const TrimbleLayers = () => {
       <View style={styles.container}>
         <TrimbleMapsMap
           style={styles.mapStyle}
-          styleURL={TrimbleMapsMapViewConstants.MOBILE_DAY}
+          styleURL={styleURL}
         />
       </View>
     </View>

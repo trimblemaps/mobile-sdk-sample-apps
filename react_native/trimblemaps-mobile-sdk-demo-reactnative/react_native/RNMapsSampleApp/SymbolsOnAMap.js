@@ -8,10 +8,22 @@ const TrimbleMapsMapViewConstants = TrimbleMapsMapView.getConstants();
 
 export const SymbolsOnAMap = () => {
   const [mapLoaded, setMapLoaded] = useState(false);
+  const [styleURL, setStyleURL] = useState(null);
 
   let symbolLayerId = "SymbolLayerId";
   let symbolLayer = "SymbolLayer";
   let imageId = "main_activity_alk_logo";
+
+  useEffect(() => {
+    // Load the style URL
+    TrimbleMapsMapView.MobileDay()
+      .then((style) => {
+        setStyleURL(style);
+      })
+      .catch((error) => {
+        console.error("Failed to load style:", error);
+      });
+  }, []);
 
   useEffect(() => {
     if (mapLoaded) {
@@ -86,12 +98,16 @@ export const SymbolsOnAMap = () => {
     mapStyle: { flex: 1 },
   });
 
+  if (!styleURL) {
+    return <View style={styles.container} />;
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.container}>
         <TrimbleMapsMap
           style={styles.mapStyle}
-          styleURL={TrimbleMapsMapViewConstants.MOBILE_DAY}
+          styleURL={styleURL}
           onMapLoaded={onMapLoaded}
         />
       </View>

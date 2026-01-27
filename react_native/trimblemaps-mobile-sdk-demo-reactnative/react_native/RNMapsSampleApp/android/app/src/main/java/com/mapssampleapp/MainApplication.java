@@ -1,5 +1,7 @@
 package com.mapssampleapp;
 
+import static com.facebook.react.ReactNativeApplicationEntryPoint.loadReactNative;
+
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
@@ -7,8 +9,6 @@ import com.maps.react.TrimbleMapsPackages;
 import com.reactnativecommunity.checkbox.ReactCheckBoxPackage;
 import com.reactnativerestart.RestartPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
-import com.rnfs.RNFSPackage;
-import com.reactnativecommunity.slider.ReactSliderPackage;
 import com.swmansion.rnscreens.RNScreensPackage;
 import com.swmansion.gesturehandler.RNGestureHandlerPackage;
 import com.facebook.react.ReactNativeHost;
@@ -37,8 +37,6 @@ public class MainApplication extends Application implements ReactApplication {
         new ReactCheckBoxPackage(),
         new RestartPackage(),
         new VectorIconsPackage(),
-        new RNFSPackage(),
-        new ReactSliderPackage(),
         new TrimbleMapsPackages(),
         new RNScreensPackage(),
         new RNGestureHandlerPackage(),
@@ -62,6 +60,6 @@ public class MainApplication extends Application implements ReactApplication {
   @Override
   public void onCreate() {
     super.onCreate();
-    SoLoader.init(this, /* native exopackage */ false);
+    loadReactNative(this);
   }
 }

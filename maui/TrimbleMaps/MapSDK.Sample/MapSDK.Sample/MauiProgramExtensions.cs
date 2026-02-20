@@ -5,6 +5,7 @@ using Microsoft.Maui.Handlers;
 using TrimbleMaps.Controls.Forms;
 using TrimbleMaps.Controls.MapsSDK.Platform.Droid;
 using TrimbleMaps.MapSDK.Sample;
+using MapsSDK = TrimbleMaps.MapsSDK;
 
 namespace MapSDK.Sample;
 
@@ -22,8 +23,11 @@ public static class MauiProgramExtensions
                 handlers.AddHandler(typeof(Image), typeof(ImageHandler));
             });
 
+        builder.Services.AddSingleton<MapsSDK.IAvoidFavorsService, AvoidFavorsServiceImplementation>();
 
-        return builder.Build();
+        var app = builder.Build();
+        MapsSDK.AvoidFavorsServiceProvider.Current = app.Services.GetService<MapsSDK.IAvoidFavorsService>();
+        return app;
     }
 }
 

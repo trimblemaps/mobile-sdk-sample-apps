@@ -52,6 +52,12 @@ namespace TrimbleMaps.MapSDK.Sample
                                 TargetPage = typeof(MapSDK.Sample.TrimbleLayers),
                                 ImageSource =  ImageSource.FromResource("MapSDK.Sample.Resources.Images.general_splash.png"),
                                 screenWidth = DeviceWidth
+                            },
+                            new NavigationItem{
+                                Title ="Avoid Favors",
+                                TargetPage = typeof(MapSDK.Sample.AvoidFavors),
+                                ImageSource =  ImageSource.FromResource("MapSDK.Sample.Resources.Images.general_splash.png"),
+                                screenWidth = DeviceWidth
                             }
                         };
         }

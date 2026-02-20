@@ -31,8 +31,8 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.0" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="10.0.0" />
-		<PackageReference Include="TrimbleMaps.MapsSDK" Version="1.1.0" />
-		<PackageReference Include="TrimbleMaps.MapsSDK.Platform.Droid" Version="1.1.0" />
+		<PackageReference Include="TrimbleMaps.MapsSDK" Version="2.0.1" />
+		<PackageReference Include="TrimbleMaps.MapsSDK.Platform.Droid" Version="2.0.1" />
 	</ItemGroup>
 
 	<ItemGroup>

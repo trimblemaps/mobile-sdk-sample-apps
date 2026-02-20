@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrimbleMaps.MapSDK.Sample.AvoidFavors"
+             Title="Avoid Favors Layer" 
+             xmlns:TrimbleMaps="clr-namespace:TrimbleMaps.Controls.Forms;assembly=TrimbleMaps.MapsSDK">
+    <Grid>
+        <TrimbleMaps:MapView
+            x:Name="Map"
+            ShowUserLocation="false"
+            UserLocationTracking="None"
+            ZoomMaxLevel="21"
+            CompassEnabled="True"
+            CompassFadeFacingNorth="False"
+            >
+        </TrimbleMaps:MapView>
+
+        <!-- Buttons -->
+        <VerticalStackLayout Padding="20" Spacing="10" VerticalOptions="End" HorizontalOptions="End">
+            <Button x:Name="ToggleLayerButton"
+                    Text="HIDE AVOID/FAVORS"
+                    Clicked="OnToggleLayerClicked"
+                    BackgroundColor="#FAF5F5"
+                    TextColor="Black"
+                    CornerRadius="10"
+                    HorizontalOptions="End"
+                    VerticalOptions="End" />
+
+            <Button x:Name="FilterBySetIdButton"
+                    Text="FILTER BY SET ID"
+                    Clicked="OnFilterBySetIdClicked"
+                    BackgroundColor="#FAF5F5"
+                    TextColor="Black"
+                    CornerRadius="10"
+                    HorizontalOptions="End"
+                    VerticalOptions="End"
+                    IsEnabled="False" />
+
+            <Button x:Name="FilterByAssetButton"
+                    Text="FILTER BY ASSET AFs"
+                    Clicked="OnFilterByAssetClicked"
+                    BackgroundColor="#FAF5F5"
+                    TextColor="Black"
+                    CornerRadius="10"
+                    HorizontalOptions="End"
+                    VerticalOptions="End"
+                    IsEnabled="False" />
+        </VerticalStackLayout>
+
+        <!-- Filter Dialog Overlay -->
+        <Frame x:Name="FilterOverlay"
+               IsVisible="False"
+               BackgroundColor="White"
+               CornerRadius="10"
+               Padding="16"
+               Margin="20"
+               VerticalOptions="Center"
+               HorizontalOptions="Fill"
+               HasShadow="True">
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Select Set IDs to Display"
+                       FontSize="18"
+                       FontAttributes="Bold"
+                       TextColor="Black" />
+
+                <HorizontalStackLayout Spacing="10">
+                    <Button Text="Select All"
+                            Clicked="OnSelectAllClicked"
+                            BackgroundColor="#2196F3"
+                            TextColor="White"
+                            CornerRadius="5"
+                            HorizontalOptions="FillAndExpand" />
+                    <Button Text="Clear All"
+                            Clicked="OnClearAllClicked"
+                            BackgroundColor="#2196F3"
+                            TextColor="White"
+                            CornerRadius="5"
+                            HorizontalOptions="FillAndExpand" />
+                </HorizontalStackLayout>
+
+                <BoxView HeightRequest="1" Color="LightGray" />
+
+                <CollectionView x:Name="SetIdListView"
+                                HeightRequest="300"
+                                SelectionMode="None">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <HorizontalStackLayout Spacing="8" Padding="4">
+                                <CheckBox IsChecked="{Binding IsSelected}"
+                                          CheckedChanged="OnSetIdCheckedChanged"
+                                          Color="#2196F3" />
+                                <Label Text="{Binding DisplayText}"
+                                       VerticalOptions="Center"
+                                       TextColor="Black" />
+                            </HorizontalStackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <HorizontalStackLayout Spacing="10" HorizontalOptions="End">
+                    <Button Text="Cancel"
+                            Clicked="OnCancelFilterClicked"
+                            BackgroundColor="Gray"
+                            TextColor="White"
+                            CornerRadius="5" />
+                    <Button Text="Update"
+                            Clicked="OnUpdateFilterClicked"
+                            BackgroundColor="#2196F3"
+                            TextColor="White"
+                            CornerRadius="5" />
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </Frame>
+
+        <!-- Loading Overlay -->
+        <Frame x:Name="LoadingOverlay"
+               IsVisible="True"
+               BackgroundColor="White"
+               CornerRadius="10"
+               Padding="20"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               HasShadow="True">
+            <VerticalStackLayout Spacing="10" HorizontalOptions="Center">
+                <ActivityIndicator IsRunning="True" Color="#2196F3" />
+                <Label Text="Loading Set IDs..." FontSize="16" HorizontalOptions="Center" TextColor="Black" />
+            </VerticalStackLayout>
+        </Frame>
+    </Grid>
+</ContentPage>

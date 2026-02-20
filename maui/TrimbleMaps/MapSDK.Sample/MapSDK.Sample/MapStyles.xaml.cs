@@ -37,38 +37,6 @@ namespace TrimbleMaps.MapSDK.Sample
                         Map.MapStyle = MapStyle.MOBILE_SATELLITE;
                         Toast.Make("MOBILE_SATELLITE is enabled", ToastDuration.Short, 14).Show();
                         break;
-                    case "TERRAIN":
-                        Map.MapStyle = MapStyle.TERRAIN;
-                        Toast.Make("TERRAIN is enabled", ToastDuration.Short, 14).Show();
-                        break;
-                    case "TRANSPORTANTION":
-                        Map.MapStyle = MapStyle.TRANSPORTATION;
-                        Toast.Make("TRANSPORTATION is enabled", ToastDuration.Short, 14).Show();
-                        break;
-                    case "BASIC":
-                        Map.MapStyle = MapStyle.BASIC;
-                        Toast.Make("BASIC is enabled", ToastDuration.Short, 14).Show();
-                        break;
-                    case "DATADARK":
-                        Map.MapStyle = MapStyle.DATADARK;
-                        Toast.Make("DATADARK is enabled", ToastDuration.Short, 14).Show();
-                        break;
-                    case "DATALIGHT":
-                        Map.MapStyle = MapStyle.DATALIGHT;
-                        Toast.Make("DATALIGHT is enabled", ToastDuration.Short, 14).Show();
-                        break;
-                    case "SATELLITE":
-                        Map.MapStyle = MapStyle.SATELLITE;
-                        Toast.Make("SATELLITE is enabled", ToastDuration.Short, 14).Show();
-                        break;
-                    case "DEFAULT":
-                        Map.MapStyle = MapStyle.DEFAULT;
-                        Toast.Make("DEFAULT is enabled", ToastDuration.Short, 14).Show();
-                        break;
-                    case "MOBILE_DEFAULT":
-                        Map.MapStyle = MapStyle.MOBILE_DEFAULT;
-                        Toast.Make("MOBILE_DEFAULT is enabled", ToastDuration.Short, 14).Show();
-                        break;
                 }
             }
         }

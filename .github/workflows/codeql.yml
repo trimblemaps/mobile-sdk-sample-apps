@@ -13,13 +13,8 @@ jobs:
     name: Analyze (${{ matrix.language }})
     runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
     permissions:
-      # required for all workflows
       security-events: write
-
-      # required to fetch internal or private CodeQL packs
       packages: read
-
-      # only required for workflows in private repositories
       actions: read
       contents: read
 
@@ -39,12 +34,12 @@ jobs:
       with:
         persist-credentials: false
 
-    # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
       uses: github/codeql-action/init@0d579ffd059c29b07949a3cce3983f0780820c98 # v4.32.6
       with:
         languages: ${{ matrix.language }}
         build-mode: ${{ matrix.build-mode }}
+        token: ${{ secrets.GITHUB_TOKEN }}
 
     - if: ${{ matrix.build-mode == 'manual' && matrix.language == 'swift' }}
       shell: bash

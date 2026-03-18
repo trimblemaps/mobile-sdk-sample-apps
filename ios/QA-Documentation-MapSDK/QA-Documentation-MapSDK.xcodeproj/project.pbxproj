@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F90F5752F6B06D5006D68A9 /* AvoidFavorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F90F5742F6B06D5006D68A9 /* AvoidFavorsViewController.swift */; };
 		55361E702D5B5B10005EEC15 /* RoutingProfilesPlugin.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55361E622D5B5B10005EEC15 /* RoutingProfilesPlugin.xcframework */; };
 		55361E712D5B5B10005EEC15 /* RoutingProfilesPlugin.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55361E622D5B5B10005EEC15 /* RoutingProfilesPlugin.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		55361E722D5B5B10005EEC15 /* TrimbleMapsAccounts.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55361E632D5B5B10005EEC15 /* TrimbleMapsAccounts.xcframework */; };
@@ -82,6 +83,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0F90F5742F6B06D5006D68A9 /* AvoidFavorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvoidFavorsViewController.swift; sourceTree = "<group>"; };
 		55361E622D5B5B10005EEC15 /* RoutingProfilesPlugin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RoutingProfilesPlugin.xcframework; path = ../Carthage/Build/RoutingProfilesPlugin.xcframework; sourceTree = "<group>"; };
 		55361E632D5B5B10005EEC15 /* TrimbleMapsAccounts.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMapsAccounts.xcframework; path = ../Carthage/Build/TrimbleMapsAccounts.xcframework; sourceTree = "<group>"; };
 		55361E642D5B5B10005EEC15 /* TrimbleMaps.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrimbleMaps.xcframework; path = ../Carthage/Build/TrimbleMaps.xcframework; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 		BB02C9752B6D52B50042ED35 /* QA-Documentation-MapSDK */ = {
 			isa = PBXGroup;
 			children = (
+				0F90F5742F6B06D5006D68A9 /* AvoidFavorsViewController.swift */,
 				BB02C9762B6D52B50042ED35 /* AppDelegate.swift */,
 				BB02C9782B6D52B50042ED35 /* SceneDelegate.swift */,
 				BB02C97A2B6D52B50042ED35 /* ViewController.swift */,
@@ -283,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F90F5752F6B06D5006D68A9 /* AvoidFavorsViewController.swift in Sources */,
 				BB02C97B2B6D52B50042ED35 /* ViewController.swift in Sources */,
 				BB02C9B02B6D902B0042ED35 /* TrackingViewController.swift in Sources */,
 				BB02C9772B6D52B50042ED35 /* AppDelegate.swift in Sources */,

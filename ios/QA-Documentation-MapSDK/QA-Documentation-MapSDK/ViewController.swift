@@ -34,7 +34,8 @@ class ViewController: UIViewController {
             addButton(image: "general_splash", title: "Dots On a Map", action: #selector(dotsOnAMapButtonTapped)),
             addButton(image: "van_nav_splash", title: "Lines On a Map", action: #selector(linesOnAMapButtonTapped)),
             addButton(image: "general_splash", title: "Sample Framing", action: #selector(sampleFramingButtonTapped)),
-            addButton(image: "van_nav_splash", title: "Clickable Points", action: #selector(clickablePointsButtonTapped))
+            addButton(image: "van_nav_splash", title: "Clickable Points", action: #selector(clickablePointsButtonTapped)),
+            addButton(image: "general_splash", title: "Avoid Favors", action: #selector(avoidFavorsButtonTapped))
         ]
 
         for button in buttons {
@@ -151,6 +152,12 @@ class ViewController: UIViewController {
         present(navigationController, animated: true, completion: nil)
     }
 
+    @objc func avoidFavorsButtonTapped(_ sender: UIButton) {
+        let avoidFavorsViewController = AvoidFavorsViewController()
+        let navigationController = UINavigationController(rootViewController: avoidFavorsViewController)
+        navigationController.modalPresentationStyle = .fullScreen
+        present(navigationController, animated: true, completion: nil)
+    }
 }
 
 

@@ -119,7 +119,7 @@ struct TrimbleMapsMapView: UIViewRepresentable {
             currentColorScheme = styleUrl
             mapView.styleURL = styleUrl
             tripPreviewViewModel.tripPreviewMapModel.navigationMapView.styleURL = styleUrl
-            if styleUrl == TMGLStyle.mobileDayStyleURL {
+            if styleUrl == TMGLTrimbleMobileStyle.mobileDayStyleURL {
                 navigationViewController?.styleManager.applyStyle(type: StyleType.day)
             } else {
                 navigationViewController?.styleManager.applyStyle(type: StyleType.night)
@@ -181,7 +181,7 @@ struct TrimbleMapsMapView: UIViewRepresentable {
 
             navigationViewController.routeLineTracksTraversal = true
 
-            if currentColorScheme == TMGLStyle.mobileDayStyleURL {
+            if currentColorScheme == TMGLTrimbleMobileStyle.mobileDayStyleURL {
                 navigationViewController.styleManager.applyStyle(type: StyleType.day)
             } else {
                 navigationViewController.styleManager.applyStyle(type: StyleType.night)

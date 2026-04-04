@@ -42,7 +42,7 @@
     "@react-native/babel-preset": "0.80.2",
     "prettier": "3.6.2",
     "typescript": "5.9.3",
-    "@react-native-community/cli": "19.1.2"
+    "@react-native-community/cli": "20.1.2"
   },
   "engines": {
     "node": ">=16"

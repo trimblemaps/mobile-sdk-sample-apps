@@ -1,9 +1,23 @@
 version: 2
 updates:
-  - package-ecosystem: npm
+  - package-ecosystem: github-actions
     directory: "/"
     schedule:
       interval: monthly
+    cooldown:
+      default-days: 7
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+    open-pull-requests-limit: 1
+
+  - package-ecosystem: npm
+    directory: "/react_native/trimblemaps-mobile-sdk-demo-reactnative/react_native/RNMapsSampleApp"
+    schedule:
+      interval: monthly
+    cooldown:
+      default-days: 7
     versioning-strategy: increase
     open-pull-requests-limit: 1
     groups:
@@ -11,15 +25,4 @@ updates:
         patterns:
           - "*"
         update-types:
-          - "minor"
           - "patch"
-
-  - package-ecosystem: github-actions
-    directory: "/"
-    schedule:
-      interval: monthly
-    groups:
-      github-actions:
-        patterns:
-          - "*"
-    open-pull-requests-limit: 1

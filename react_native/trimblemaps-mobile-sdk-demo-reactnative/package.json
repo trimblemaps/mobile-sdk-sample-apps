@@ -1,0 +1,16 @@
+{
+  "name": "trimblemaps-mobile-sdk-demo-reactnative",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "start": "yarn workspace documentation-sdk start",
+    "android": "yarn workspace documentation-sdk android",
+    "ios": "yarn workspace documentation-sdk ios",
+    "ios:setup": "yarn workspace documentation-sdk ios:setup",
+    "lint": "yarn workspace documentation-sdk lint",
+    "postinstall": "node scripts/patch-react-native-gradle-plugin.js"
+  },
+  "packageManager": "yarn@4.10.3"
+}

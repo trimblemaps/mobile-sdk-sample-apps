@@ -1,0 +1,14 @@
+pluginManagement {
+    includeBuild("../node_modules/@react-native/gradle-plugin")
+    plugins {
+        id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
+    }
+}
+plugins {
+    id("com.facebook.react.settings")
+    id("org.gradle.toolchains.foojay-resolver-convention")
+}
+extensions.configure(com.facebook.react.ReactSettingsExtension) { ex -> ex.autolinkLibrariesFromCommand() }
+rootProject.name = 'TrimbleMapsReactNativeExample'
+include ':app'
+includeBuild('../node_modules/@react-native/gradle-plugin')

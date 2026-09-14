@@ -44,3 +44,4 @@ nuget_packages/
 **/*.Android/**/[Rr]esource.[Dd]esigner.cs
 **/Android/**/[Rr]esource.[Dd]esigner.cs
 **/Droid/**/[Rr]esource.[Dd]esigner.cs
+react_native/trimblemaps-mobile-sdk-demo-reactnative/apps/documentation-sdk/android/local.properties

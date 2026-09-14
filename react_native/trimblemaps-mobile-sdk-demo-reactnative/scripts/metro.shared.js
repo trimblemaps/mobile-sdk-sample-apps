@@ -1,10 +1,6 @@
 const fs = require("node:fs");
 const path = require("node:path");
-const { withMetroConfig } = require("react-native-monorepo-config");
-const {
-  wrapWithReanimatedMetroConfig,
-} = require("react-native-reanimated/metro-config");
-
+const { createRequire } = require("node:module");
 const {
   buildExtraNodeModules,
   buildLocalPackageMetroConfig,
@@ -80,6 +76,12 @@ function resolveLocalPackageModule(
 }
 
 function withMetroShared(config, { project }) {
+  const projectRequire = createRequire(path.join(project, "package.json"));
+  const { withMetroConfig } = projectRequire("react-native-monorepo-config");
+  const {
+    wrapWithReanimatedMetroConfig,
+  } = projectRequire("react-native-reanimated/metro-config");
+
   const searchPaths = [project, root];
   const metroConfig = wrapWithReanimatedMetroConfig(
     withMetroConfig(config, {

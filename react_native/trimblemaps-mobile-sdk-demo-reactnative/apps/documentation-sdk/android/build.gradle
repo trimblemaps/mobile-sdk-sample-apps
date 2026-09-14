@@ -1,3 +1,14 @@
+// Windows: deep monorepo paths exceed CMake's default 250-char object path limit.
+// AGP's bundled Ninja (1.10.x) also lacks long-path support; use a newer Ninja if installed.
+def windowsNinja = new File(
+        System.getenv("LOCALAPPDATA"),
+        "Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/ninja.exe"
+)
+ext.windowsCmakeArgs = ["-DCMAKE_OBJECT_PATH_MAX=1024"]
+if (windowsNinja.isFile()) {
+    ext.windowsCmakeArgs += "-DCMAKE_MAKE_PROGRAM=${windowsNinja.absolutePath.replace('\\', '/')}"
+}
+
 buildscript {
     ext {
         buildToolsVersion = "36.0.0"
@@ -25,6 +36,20 @@ allprojects {
         mavenLocal()
         maven {
             url "https://trimblemaps.jfrog.io/artifactory/android"
+        }
+    }
+}
+
+subprojects { subproject ->
+    subproject.plugins.withId("com.android.library") {
+        subproject.android {
+            defaultConfig {
+                externalNativeBuild {
+                    cmake {
+                        arguments(*rootProject.ext.windowsCmakeArgs)
+                    }
+                }
+            }
         }
     }
 }

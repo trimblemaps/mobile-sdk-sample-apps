@@ -1,9 +1,4 @@
 {
-  "packages": {
-    "@trimblemaps/account-react-native": "../trimblemaps-react-native-services/packages/account-react-native",
-    "@trimblemaps/maps-react-native": "../trimblemaps-react-native-maps/packages/maps-react-native",
-    "@trimblemaps/services-react-native": "../trimblemaps-react-native-services/packages/services-react-native",
-    "@trimblemaps/plugins-react-native": "../trimblemaps-react-native-plugins/packages/plugins-react-native"
-  },
+  "packages": {},
   "frameworks": {}
 }

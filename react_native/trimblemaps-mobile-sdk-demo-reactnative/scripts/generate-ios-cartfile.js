@@ -14,10 +14,9 @@ const appName = process.argv.find((arg) => arg.startsWith("--app="))?.slice(6)
   ?? "documentation-sdk";
 const appRoot = path.join(repoRoot, "apps", appName);
 const outputPath = path.join(appRoot, "Cartfile");
-const privateCartfilePath = path.join(appRoot, "Cartfile.private");
 const checkOnly = process.argv.includes("--check");
 const headerLines = [
-  `# Effective Cartfile for trimblemaps-react-native-mobile-sdk-demo (${appName}).`,
+  `# Effective Cartfile for trimblemaps-mobile-sdk-demo-reactnative (${appName}).`,
 ];
 
 const packageSpecs = [
@@ -59,7 +58,6 @@ if (checkOnly) {
   try {
     checkGeneratedCartfile({
       outputPath,
-      privateCartfilePath,
       mergedEntries,
       headerLines,
     });

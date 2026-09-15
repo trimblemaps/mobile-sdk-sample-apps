@@ -1434,7 +1434,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 10c0/b11adc90d3097ae62e875b5fc8b6ad111aabca46f2dbf0b7455516b785c976b69d54f2e4451d48abc65894cf13bbc33e52a72dad802212c984089364d395ced4
+  checksum: 10c0/ee86560beea156f4b6e811f5966aa1fa19035cdc6b1705471c682c3643bd755fadb1c40f6b4754ad53eb1947dc24f4b4f7594e98505e22ea8cb08c5e9bab2ca9
   languageName: node
   linkType: hard
 
@@ -4873,8 +4873,6 @@ __metadata:
 "trimblemaps-mobile-sdk-demo-reactnative@workspace:.":
   version: 0.0.0-use.local
   resolution: "trimblemaps-mobile-sdk-demo-reactnative@workspace:."
-  dependencies:
-    react-native-monorepo-config: "npm:0.3.5"
   languageName: unknown
   linkType: soft
 

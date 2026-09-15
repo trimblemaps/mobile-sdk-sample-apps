@@ -89,4 +89,5 @@ apps/documentation-sdk/   # React Native app (16 samples)
 scripts/                  # Metro, Cartfile, credential loader
 .yarnrc.yml               # public @trimblemaps npm scope
 trimble.config.example.js # API key template
+local-dependencies.example.json  # optional SDK dev overrides (copy to local-dependencies.json)
 ```

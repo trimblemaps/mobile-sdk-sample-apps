@@ -5,7 +5,6 @@ const repoRoot = path.join(__dirname, "..");
 const candidateRoots = [
   repoRoot,
   path.join(repoRoot, "apps/documentation-sdk"),
-  path.join(repoRoot, "apps/release-candidate-sdk"),
 ];
 
 const patch = (settingsFile) => {

@@ -9,18 +9,8 @@ def trimble_app_root
   File.expand_path("..", Pod::Config.instance.installation_root)
 end
 
-def trimble_repo_root
-  File.expand_path("../..", trimble_app_root)
-end
-
 def trimble_services_pod_root
-  candidate = File.join(trimble_app_root, "node_modules/@trimblemaps/services-react-native")
-  return candidate if File.directory?(candidate)
-
-  File.expand_path(
-    "../../../trimblemaps-react-native-services/packages/services-react-native",
-    trimble_app_root,
-  )
+  File.join(trimble_app_root, "node_modules/@trimblemaps/services-react-native")
 end
 
 def trimble_shared_framework_search_paths
@@ -30,13 +20,6 @@ def trimble_shared_framework_search_paths
     "\"#{trimble_carthage_build_path}\"",
     "\"#{File.join(trimble_carthage_build_path, 'iOS')}\"",
   ]
-
-  [
-    File.join(trimble_repo_root, "../trimblemaps-react-native-plugins/packages/plugins-react-native/ios/Frameworks"),
-    File.join(trimble_repo_root, "../trimblemaps-react-native-maps/packages/maps-react-native/ios/Frameworks"),
-  ].each do |framework_dir|
-    paths << "\"#{framework_dir}\"" if File.directory?(framework_dir)
-  end
 
   trimble_xcframework_slice_search_paths(trimble_carthage_build_path).each do |slice_dir|
     paths << "\"#{slice_dir}\""

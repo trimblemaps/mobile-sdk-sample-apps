@@ -61,8 +61,8 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1'
     debugImplementation 'androidx.compose.ui:ui-tooling:1.4.3'
 
-    implementation "com.trimblemaps.mapsdk:maps-sdk-services:2.2.0"
-    implementation "com.trimblemaps.mapsdk:maps-android-sdk:2.4.1"
-    implementation "com.trimblemaps.mapsdk:maps-android-plugin-route:2.2.1"
-    implementation "com.trimblemaps.mapsdk:maps-android-plugin-places:2.2.1"
+    implementation "com.trimblemaps.mapsdk:maps-sdk-services:2.2.1"
+    implementation "com.trimblemaps.mapsdk:maps-android-sdk:2.4.2"
+    implementation "com.trimblemaps.mapsdk:maps-android-plugin-route:2.2.2"
+    implementation "com.trimblemaps.mapsdk:maps-android-plugin-places:2.2.2"
 }
